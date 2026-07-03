@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/components.css">
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/interactions.css">
+  <link rel="stylesheet" href="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/styles.css">
+  <script src="_ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; background: var(--paper); }
+    textarea::placeholder, input::placeholder { color: var(--slate); opacity: 0.55; }
+  </style>
+</helmet>
+
+<a href="#contact" style="position:absolute; left:-9999px; top:0; z-index:100; background:var(--paper); color:var(--ink); padding:14px 22px; font-family:var(--font-sans); font-size:14px; text-decoration:none; border:1px solid var(--line)" style-focus="left:0">Skip to contact form</a>
+
+<main style="background:var(--paper)">
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Hero" style="position:relative; min-height:100dvh; background:var(--ink); display:flex; align-items:center; justify-content:center; overflow:hidden">
+    <canvas ref="{{ heroCanvasRef }}" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%"></canvas>
+
+    <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:36px; padding:96px 24px; max-width:760px">
+
+      <!-- Self-contained, swappable logo lockup (geometry from assets/akenius-logo-inverse.svg; descriptor cross-fades) -->
+      <svg width="216" height="175" viewBox="0 0 200 162" role="img" aria-label="Akenius">
+        <circle cx="100" cy="22" r="7.5" fill="none" stroke="var(--brass)" stroke-width="2.8"></circle>
+        <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="var(--paper)" stroke-width="3.2" stroke-linecap="round"></path>
+        <line x1="84" y1="66" x2="116" y2="66" stroke="var(--paper)" stroke-width="3.2" stroke-linecap="round"></line>
+        <text x="100" y="122" text-anchor="middle" font-size="21" letter-spacing="7.5" fill="var(--paper)" font-weight="500" font-family="Georgia, serif">AKENIUS</text>
+        <line x1="52" y1="138" x2="148" y2="138" stroke="var(--slate)" stroke-width="1"></line>
+        <text x="100" y="157" text-anchor="middle" font-size="11" letter-spacing="4.4" font-weight="600" fill="var(--brass)" font-family="IBM Plex Sans, sans-serif" style="opacity:{{ descAO }}; transition:opacity 1.5s ease-in-out">{{ descA }}</text>
+        <text x="100" y="157" text-anchor="middle" font-size="11" letter-spacing="4.4" font-weight="600" fill="var(--brass)" font-family="IBM Plex Sans, sans-serif" style="opacity:{{ descBO }}; transition:opacity 1.5s ease-in-out">{{ descB }}</text>
+      </svg>
+
+      <!-- Tagline options:
+           A (used): "Senior leadership. Hands-on results."
+           B: "Judgment you can borrow."
+           C: "Operator first. Adviser second." -->
+      <h1 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(40px, 5.6vw, 66px); line-height:1.06; color:var(--paper); text-wrap:balance">Senior leadership. Hands&#8209;on results.</h1>
+
+      <p style="margin:0; font-family:var(--font-sans, 'IBM Plex Sans', sans-serif); font-size:17px; line-height:1.6; color:var(--line); max-width:56ch">Advisory, interim leadership and ventures — built on twenty&#8209;five years of running building&#8209;industry businesses across the Nordics. Based in Helsingborg. One principal, no bench.</p>
+
+      <a href="#contact" onClick="{{ scrollToContact }}" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 34px; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; text-decoration:none; border:1px solid var(--paper); transition:background 150ms ease-out, color 150ms ease-out" style-hover="background:#FFFFFF" style-active="background:var(--paper-deep)">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ============ SIGNATURE ANIMATION — wordless brand interlude ============ -->
+  <sc-if value="{{ showSignature }}" hint-placeholder-val="{{ true }}">
+    <section data-screen-label="Signature animation" aria-label="Decorative animated illustration" style="position:relative; background:var(--ink); height:clamp(340px, 48vh, 540px); overflow:hidden">
+      <canvas ref="{{ sigCanvasRef }}" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%"></canvas>
+    </section>
+  </sc-if>
+
+  <!-- ============ THREE PILLARS ============ -->
+  <section data-screen-label="Pillars" id="pillars" style="background:var(--paper); border-top:1px solid var(--line); padding:112px 24px">
+    <div style="max-width:1200px; margin:0 auto; display:flex; flex-direction:column; gap:56px">
+      <div data-reveal="1" style="display:flex; flex-direction:column; gap:16px; max-width:560px">
+        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Eyebrow" hint-size="auto,14px">What Akenius does</x-import>
+        <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--ink)">Three ways in</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px">
+        <article data-reveal="1" style="background:var(--card); border:1px solid var(--line); border-top:2px solid var(--brass); padding:36px 28px 40px; display:flex; flex-direction:column; gap:18px; transition:border-color 150ms ease-out" style-hover="border-color:var(--border-strong); border-top-color:var(--brass)">
+          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="briefcase" size="30" color="var(--ink)" hint-size="30px,30px"></x-import>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:27px; line-height:1.15; color:var(--ink)">Advisory &amp; interim leadership</h3>
+          <p style="margin:0; font-family:var(--font-sans); font-size:15.5px; line-height:1.6; color:var(--slate); max-width:44ch">Profitability, pricing and commercial direction for mid&#8209;sized companies — or an interim executive who takes the chair, not the minutes, until the job is done.</p>
+        </article>
+
+        <article data-reveal="1" style="background:var(--card); border:1px solid var(--line); border-top:2px solid var(--brass); padding:36px 28px 40px; display:flex; flex-direction:column; gap:18px; transition:border-color 150ms ease-out" style-hover="border-color:var(--border-strong); border-top-color:var(--brass)">
+          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="server" size="30" color="var(--ink)" hint-size="30px,30px"></x-import>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:27px; line-height:1.15; color:var(--ink)">Digital services &amp; hosting</h3>
+          <p style="margin:0; font-family:var(--font-sans); font-size:15.5px; line-height:1.6; color:var(--slate); max-width:44ch">Webhosting and web services for businesses that want them run quietly and well — by someone who answers when you call.</p>
+        </article>
+
+        <article data-reveal="1" style="background:var(--card); border:1px solid var(--line); border-top:2px solid var(--brass); padding:36px 28px 40px; display:flex; flex-direction:column; gap:18px; transition:border-color 150ms ease-out" style-hover="border-color:var(--border-strong); border-top-color:var(--brass)">
+          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="lightbulb" size="30" color="var(--ink)" hint-size="30px,30px"></x-import>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:27px; line-height:1.15; color:var(--ink)">Product &amp; IP ventures</h3>
+          <p style="margin:0; font-family:var(--font-sans); font-size:15.5px; line-height:1.6; color:var(--slate); max-width:44ch">Part&#8209;ownership and product collaborations where operating experience is the capital. We build with founders, not for them.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE STRIP ============ -->
+  <section data-screen-label="Experience" style="background:var(--ink); padding:72px 24px">
+    <div data-reveal="1" style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; column-gap:22px; row-gap:14px">
+      <span style="font-family:var(--font-sans); font-size:15px; letter-spacing:0.03em; color:var(--paper); white-space:nowrap">25+ years in the international building industry</span>
+      <span aria-hidden="true" style="width:5px; height:5px; background:var(--brass); border-radius:50%; flex:none"></span>
+      <span style="font-family:var(--font-sans); font-size:15px; letter-spacing:0.03em; color:var(--paper); white-space:nowrap">P&amp;L ownership</span>
+      <span aria-hidden="true" style="width:5px; height:5px; background:var(--brass); border-radius:50%; flex:none"></span>
+      <span style="font-family:var(--font-sans); font-size:15px; letter-spacing:0.03em; color:var(--paper); white-space:nowrap">Nordic markets</span>
+      <span aria-hidden="true" style="width:5px; height:5px; background:var(--brass); border-radius:50%; flex:none"></span>
+      <span style="font-family:var(--font-sans); font-size:15px; letter-spacing:0.03em; color:var(--paper); white-space:nowrap">Board experience</span>
+      <span aria-hidden="true" style="width:5px; height:5px; background:var(--brass); border-radius:50%; flex:none"></span>
+      <span style="font-family:var(--font-sans); font-size:15px; letter-spacing:0.03em; color:var(--paper); white-space:nowrap">Executive MBA, INSEAD</span>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section data-screen-label="Contact" id="contact" style="background:var(--paper); padding:112px 24px">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:56px; align-items:start">
+      <div data-reveal="1" style="display:flex; flex-direction:column; gap:16px">
+        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Eyebrow" hint-size="auto,14px">Contact</x-import>
+        <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--ink)">Start with a conversation</h2>
+        <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate); max-width:44ch">Write a few lines about your situation. You will hear back from the person who would do the work — usually within a day.</p>
+      </div>
+
+      <form data-reveal="1" onSubmit="{{ submit }}" noValidate="{{ true }}" style="background:var(--card); border:1px solid var(--line); padding:40px 36px; display:flex; flex-direction:column; gap:22px">
+        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Input" label="Name" name="name" value="{{ name }}" onChange="{{ onNameChange }}" onBlur="{{ onNameBlur }}" error="{{ nameErr }}" autoComplete="name" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Input" label="Email" name="email" type="email" value="{{ email }}" onChange="{{ onEmailChange }}" onBlur="{{ onEmailBlur }}" error="{{ emailErr }}" autoComplete="email" hint-size="100%,72px"></x-import>
+
+        <label style="display:block">
+          <span style="display:block; font-family:var(--font-sans); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--slate); margin-bottom:8px">Message</span>
+          <textarea name="message" rows="{{ five }}" value="{{ message }}" onChange="{{ onMessageChange }}" onBlur="{{ onMessageBlur }}" style="display:block; width:100%; box-sizing:border-box; font-family:var(--font-sans); font-size:15px; line-height:1.6; color:var(--ink); background:var(--card); border:1px solid {{ messageBorder }}; border-radius:0; padding:12px 14px; resize:vertical; min-height:120px; transition:border-color 150ms ease-out"></textarea>
+          <sc-if value="{{ msgErr }}" hint-placeholder-val="{{ false }}"><span style="display:block; font-family:var(--font-sans); font-size:12px; color:var(--error); margin-top:6px">{{ msgErr }}</span></sc-if>
+        </label>
+
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+          <button type="submit" disabled="{{ sending }}" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; min-width:160px; padding:12px 32px; background:var(--ink); color:var(--paper); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; border:1px solid var(--ink); border-radius:0; cursor:pointer; transition:background 150ms ease-out" style-hover="background:var(--ink-soft)">{{ submitLabel }}</button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <span role="status" style="font-family:var(--font-sans); font-size:14px; color:var(--brass-deep)">Thank you — your message is on its way.</span>
+          </sc-if>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer data-screen-label="Footer" style="background:var(--ink); border-top:1px solid var(--brass); padding:56px 24px">
+    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px">
+      <img src="assets/akenius-wordmark-inverse.svg" alt="Akenius" style="height:20px; display:block">
+      <p style="margin:0; font-family:var(--font-sans); font-size:13px; line-height:1.6; color:var(--line)">Akenius AB · Helsingborg, Sweden · Org. nr 559XXX&#8209;XXXX</p>
+      <p style="margin:0; font-family:var(--font-sans); font-size:13px; color:var(--line)">© Akenius AB 2026</p>
+    </div>
+  </footer>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;motion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Animation&quot; },
+  &quot;descriptorSeconds&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4.5, &quot;min&quot;: 3, &quot;max&quot;: 8, &quot;step&quot;: 0.5, &quot;unit&quot;: &quot;s&quot;, &quot;section&quot;: &quot;Animation&quot; },
+  &quot;signatureBand&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    descA: "ADVISORY", descB: "INTERIM", showA: true,
+    name: "", email: "", message: "",
+    nameErr: "", emailErr: "", msgErr: "",
+    sending: false, sent: false
+  };
+
+  heroCanvasRef = React.createRef();
+  sigCanvasRef = React.createRef();
+  wordIdx = 0;
+  rafIds = [];
+  cleanups = [];
+
+  // ---------- lifecycle ----------
+  componentDidMount() {
+    this.reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    this.motionOn = (this.props.motion ?? true) && !this.reduced;
+    this.startDescriptorCycle();
+    this.initHeroField();
+    this.initSignature();
+    this.setupReveals();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.descTimer);
+    this.rafIds.forEach(id => cancelAnimationFrame(id));
+    this.cleanups.forEach(fn => fn());
+  }
+
+  // ---------- descriptor crossfade ----------
+  startDescriptorCycle() {
+    if (!this.motionOn) return;
+    const words = ["ADVISORY", "INTERIM", "OPERATIONS", "DIGITAL", "VENTURES"];
+    const tick = () => {
+      const secs = Math.max(2, this.props.descriptorSeconds ?? 4.5);
+      this.descTimer = setTimeout(() => {
+        this.wordIdx = (this.wordIdx + 1) % words.length;
+        const next = words[this.wordIdx];
+        this.setState(s => (s.showA ? { descB: next, showA: false } : { descA: next, showA: true }));
+        tick();
+      }, secs * 1000);
+    };
+    tick();
+  }
+
+  // ---------- shared canvas helpers ----------
+  fitCanvas(canvas) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.round(r.width * dpr));
+    canvas.height = Math.max(1, Math.round(r.height * dpr));
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  observeVisible(canvas, onChange) {
+    const io = new IntersectionObserver(es => onChange(es[0].isIntersecting), { threshold: 0.02 });
+    io.observe(canvas);
+    this.cleanups.push(() => io.disconnect());
+  }
+
+  // ---------- hero particle field ----------
+  initHeroField() {
+    const canvas = this.heroCanvasRef.current;
+    if (!canvas) return;
+    let env = this.fitCanvas(canvas);
+    // canvas pixels can't use CSS vars — these are the token values (paper, line, brass)
+    const PAPER = "242,243,241", LINE = "216,220,218", BRASS = "168,118,62";
+    const count = Math.min(90, Math.floor(env.w * env.h / 16000));
+    const ps = [];
+    for (let i = 0; i < count; i++) {
+      ps.push({
+        x: Math.random() * env.w, y: Math.random() * env.h,
+        vx: (Math.random() - 0.5) * 0.45, vy: (Math.random() - 0.5) * 0.45,
+        brass: Math.random() < 0.12
+      });
+    }
+    const mouse = { x: -9999, y: -9999 };
+    const onMove = e => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    };
+    const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
+    const host = canvas.parentElement;
+    host.addEventListener("mousemove", onMove);
+    host.addEventListener("mouseleave", onLeave);
+    this.cleanups.push(() => { host.removeEventListener("mousemove", onMove); host.removeEventListener("mouseleave", onLeave); });
+
+    const onResize = () => { env = this.fitCanvas(canvas); };
+    window.addEventListener("resize", onResize);
+    this.cleanups.push(() => window.removeEventListener("resize", onResize));
+
+    const maxDist = 130;
+    const draw = (step) => {
+      const { ctx, w, h } = env;
+      ctx.clearRect(0, 0, w, h);
+      for (const p of ps) {
+        if (step) {
+          const dx = mouse.x - p.x, dy = mouse.y - p.y, d2 = dx * dx + dy * dy;
+          if (d2 < 40000 && d2 > 1) { const d = Math.sqrt(d2); p.vx += dx / d * 0.006; p.vy += dy / d * 0.006; }
+          const sp = Math.hypot(p.vx, p.vy);
+          if (sp > 0.4) { p.vx *= 0.4 / sp; p.vy *= 0.4 / sp; }
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < -10) p.x = w + 10; if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10; if (p.y > h + 10) p.y = -10;
+        }
+      }
+      for (let i = 0; i < ps.length; i++) {
+        for (let j = i + 1; j < ps.length; j++) {
+          const a = ps[i], b = ps[j];
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < maxDist) {
+            ctx.strokeStyle = `rgba(${LINE},${(1 - d / maxDist) * 0.11})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+      }
+      for (const p of ps) {
+        ctx.fillStyle = p.brass ? `rgba(${BRASS},0.6)` : `rgba(${PAPER},0.32)`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.brass ? 1.6 : 1.2, 0, 7); ctx.fill();
+      }
+    };
+
+    if (!this.motionOn) { draw(false); return; }
+    let visible = true, raf;
+    const loop = () => { if (visible) draw(true); raf = requestAnimationFrame(loop); this.rafIds[0] = raf; };
+    this.observeVisible(canvas, v => { visible = v; });
+    loop();
+  }
+
+  // ---------- signature animation ----------
+  initSignature() {
+    const canvas = this.sigCanvasRef.current;
+    if (!canvas) return;
+    let env = this.fitCanvas(canvas);
+    const PAPER = "242,243,241", LINE = "216,220,218", BRASS = "168,118,62", SLATE = "126,148,162";
+    const N = 72, T = 22; // node count, loop seconds
+    const rand = [];
+    for (let i = 0; i < N * 6; i++) rand.push(Math.random());
+
+    const onResize = () => { env = this.fitCanvas(canvas); };
+    window.addEventListener("resize", onResize);
+    this.cleanups.push(() => window.removeEventListener("resize", onResize));
+
+    const ss = (u, a, b) => { const x = Math.min(1, Math.max(0, (u - a) / (b - a))); return x * x * (3 - 2 * x); };
+    const orbits = [
+      { r: 1.28, fl: 0.36, tilt: -0.45, sp: 0.10 },
+      { r: 1.58, fl: 0.30, tilt: 0.25, sp: -0.07 },
+      { r: 1.92, fl: 0.42, tilt: 0.85, sp: 0.055 }
+    ];
+    const orbitXY = (o, ang, cx, cy, R) => {
+      const x0 = R * o.r * Math.cos(ang), y0 = R * o.r * o.fl * Math.sin(ang);
+      const c = Math.cos(o.tilt), s = Math.sin(o.tilt);
+      return [cx + x0 * c - y0 * s, cy + x0 * s + y0 * c];
+    };
+
+    const draw = (t) => {
+      const { ctx, w, h } = env;
+      const cx = w / 2, cy = h / 2, R = Math.min(h * 0.30, w * 0.16, 150);
+      const u = (t % T) / T;
+      const gatherW = ss(u, 0.14, 0.34) * (1 - ss(u, 0.92, 1.0));
+      const resolveW = ss(u, 0.62, 0.78) * (1 - ss(u, 0.90, 0.998));
+      const flowW = ss(u, 0.34, 0.44) * (1 - ss(u, 0.60, 0.72));
+      const scatterW = (1 - gatherW) * (1 - resolveW);
+      const globeW = ss(u, 0.20, 0.38) * (1 - ss(u, 0.62, 0.80));
+      ctx.clearRect(0, 0, w, h);
+
+      // node positions: scatter -> orbit -> ordered ring
+      const pos = [];
+      for (let i = 0; i < N; i++) {
+        const r0 = rand[i * 6], r1 = rand[i * 6 + 1], r2 = rand[i * 6 + 2], r3 = rand[i * 6 + 3];
+        const sx = w * (0.04 + 0.92 * r0) + Math.sin(t * (0.15 + r2 * 0.2) + r3 * 9) * 26;
+        const sy = h * (0.08 + 0.84 * r1) + Math.cos(t * (0.12 + r3 * 0.2) + r2 * 7) * 20;
+        const o = orbits[i % 3];
+        const [ox, oy] = orbitXY(o, r2 * 6.283 + t * o.sp * 6, cx, cy, R);
+        const ra = (i / N) * 6.283 + t * 0.03;
+        const rx = cx + R * 1.38 * Math.cos(ra), ry = cy + R * 1.38 * Math.sin(ra) * 0.9;
+        let x = sx + (ox - sx) * gatherW, y = sy + (oy - sy) * gatherW;
+        x = x + (rx - x) * resolveW; y = y + (ry - y) * resolveW;
+        pos.push([x, y, r1]);
+      }
+
+      // scatter: jagged tangled lines
+      if (scatterW > 0.02) {
+        ctx.lineWidth = 1;
+        for (let i = 0; i < 14; i++) {
+          const a = pos[i], b = pos[(i * 7 + 11) % N], m = pos[(i * 13 + 5) % N];
+          ctx.strokeStyle = `rgba(${SLATE},${scatterW * 0.10})`;
+          ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(m[0], m[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+        }
+      }
+
+      // wireframe globe
+      if (globeW > 0.02) {
+        const pulse = 1 + flowW * 0.025 * Math.sin(t * 2.1);
+        const Rg = R * pulse;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = `rgba(${LINE},${globeW * 0.34})`;
+        ctx.beginPath(); ctx.arc(cx, cy, Rg, 0, 7); ctx.stroke();
+        for (const la of [-0.55, 0, 0.55]) {
+          const yy = cy + Rg * Math.sin(la) * 0.9, rr = Rg * Math.cos(la);
+          ctx.beginPath(); ctx.ellipse(cx, yy, rr, rr * 0.26, 0, 0, 7); ctx.stroke();
+        }
+        for (const f of [0.72, 0.38, 0.08]) {
+          ctx.beginPath(); ctx.ellipse(cx, cy, Rg * f, Rg, 0, 0, 7); ctx.stroke();
+        }
+      }
+
+      // orbital paths
+      if (gatherW > 0.02) {
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = `rgba(${LINE},${gatherW * (1 - resolveW) * 0.20})`;
+        for (const o of orbits) {
+          ctx.beginPath();
+          for (let k = 0; k <= 90; k++) {
+            const [x, y] = orbitXY(o, k / 90 * 6.283, cx, cy, R);
+            k ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+          }
+          ctx.stroke();
+        }
+      }
+
+      // flow: connections + brass pulses + node flashes
+      if (flowW > 0.02) {
+        const md = R * 0.95;
+        for (let i = 0; i < N; i += 2) {
+          for (let j = i + 2; j < N; j += 3) {
+            const d = Math.hypot(pos[i][0] - pos[j][0], pos[i][1] - pos[j][1]);
+            if (d < md) {
+              const flicker = 0.5 + 0.5 * Math.sin(t * 1.7 + i + j);
+              ctx.strokeStyle = `rgba(${LINE},${flowW * (1 - d / md) * 0.16 * flicker})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(pos[i][0], pos[i][1]); ctx.lineTo(pos[j][0], pos[j][1]); ctx.stroke();
+            }
+          }
+        }
+        orbits.forEach((o, oi) => {
+          for (let k = 0; k < 2; k++) {
+            const ang = t * (0.5 + oi * 0.13) * (o.sp > 0 ? 1 : -1) + k * 3.14 + oi;
+            const [x, y] = orbitXY(o, ang, cx, cy, R);
+            ctx.fillStyle = `rgba(${BRASS},${flowW * 0.28})`;
+            ctx.beginPath(); ctx.arc(x, y, 5, 0, 7); ctx.fill();
+            ctx.fillStyle = `rgba(${BRASS},${flowW * 0.9})`;
+            ctx.beginPath(); ctx.arc(x, y, 2, 0, 7); ctx.fill();
+          }
+        });
+      }
+
+      // resolution: concentric circles + brass curve drawing itself
+      if (resolveW > 0.02) {
+        ctx.lineWidth = 1;
+        for (const f of [0.5, 0.9, 1.38]) {
+          ctx.strokeStyle = `rgba(${LINE},${resolveW * 0.26})`;
+          ctx.beginPath(); ctx.ellipse(cx, cy, R * f, R * f * (f > 1 ? 0.9 : 1), 0, 0, 7); ctx.stroke();
+        }
+        const p = this.motionOn ? ss(u, 0.70, 0.86) : 1;
+        if (p > 0.01) {
+          const x0 = cx - R * 1.7, y0 = cy + R * 0.55, x1 = cx + R * 1.7, y1 = cy - R * 0.6;
+          ctx.strokeStyle = `rgba(${BRASS},${resolveW * 0.9})`;
+          ctx.lineWidth = 1.6;
+          ctx.beginPath(); ctx.moveTo(x0, y0);
+          const steps = Math.floor(60 * p);
+          for (let k = 1; k <= steps; k++) {
+            const s = k / 60, i1 = 1 - s;
+            ctx.lineTo(i1 * i1 * x0 + 2 * i1 * s * (cx - R * 0.2) + s * s * x1, i1 * i1 * y0 + 2 * i1 * s * (cy + R * 0.75) + s * s * y1);
+          }
+          ctx.stroke();
+        }
+      }
+
+      // nodes
+      for (let i = 0; i < N; i++) {
+        const flash = flowW * Math.pow(Math.max(0, Math.sin(t * 1.3 + i * 0.9)), 14);
+        const a = 0.18 + 0.22 * gatherW + 0.25 * resolveW + pos[i][2] * 0.12;
+        if (flash > 0.05) {
+          ctx.fillStyle = `rgba(${BRASS},${flash * 0.8})`;
+          ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 3.2, 0, 7); ctx.fill();
+        }
+        ctx.fillStyle = `rgba(${PAPER},${a})`;
+        ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 1.4, 0, 7); ctx.fill();
+      }
+    };
+
+    if (!this.motionOn) { draw(0.72 * T); return; } // static "resolved" frame
+    let visible = true, raf;
+    const start = performance.now();
+    const loop = (now) => {
+      if (visible) draw((now - start) / 1000 + T * 0.05);
+      raf = requestAnimationFrame(loop);
+      this.rafIds[1] = raf;
+    };
+    this.observeVisible(canvas, v => { visible = v; });
+    raf = requestAnimationFrame(loop);
+  }
+
+  // ---------- scroll reveals ----------
+  setupReveals() {
+    const els = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (!this.motionOn || !els.length) return;
+    els.forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(18px)";
+      el.style.transition = "opacity 420ms ease-out, transform 420ms ease-out";
+    });
+    let batch = 0, lastTime = 0;
+    const io = new IntersectionObserver(entries => {
+      const now = performance.now();
+      if (now - lastTime > 200) batch = 0;
+      lastTime = now;
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target, d = batch++ * 45;
+        setTimeout(() => { el.style.opacity = "1"; el.style.transform = "none"; }, d);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    els.forEach(el => io.observe(el));
+    this.cleanups.push(() => io.disconnect());
+  }
+
+  // ---------- form ----------
+  vName(v) { return v.trim() ? "" : "Please tell us your name."; }
+  vEmail(v) {
+    if (!v.trim()) return "Please add an email so we can reply.";
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "That email address doesn't look right.";
+  }
+  vMsg(v) { return v.trim().length >= 10 ? "" : "A few lines about your situation helps — ten characters or more."; }
+
+  scrollToContactFn = (e) => {
+    e.preventDefault();
+    const el = document.getElementById("contact");
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top, behavior: this.motionOn ? "smooth" : "auto" });
+  };
+
+  submitFn = (e) => {
+    e.preventDefault();
+    const { name, email, message } = this.state;
+    const errs = { nameErr: this.vName(name), emailErr: this.vEmail(email), msgErr: this.vMsg(message) };
+    this.setState(errs);
+    if (errs.nameErr || errs.emailErr || errs.msgErr) return;
+    this.setState({ sending: true, sent: false });
+    setTimeout(() => {
+      this.setState({ sending: false, sent: true, name: "", email: "", message: "" });
+    }, 1200);
+  };
+
+  renderVals() {
+    const s = this.state;
+    return {
+      // hero refs + descriptor
+      heroCanvasRef: this.heroCanvasRef,
+      sigCanvasRef: this.sigCanvasRef,
+      descA: s.descA, descB: s.descB,
+      descAO: s.showA ? 1 : 0, descBO: s.showA ? 0 : 1,
+      showSignature: this.props.signatureBand ?? true,
+      scrollToContact: this.scrollToContactFn,
+      // form
+      five: 5,
+      name: s.name, email: s.email, message: s.message,
+      nameErr: s.nameErr, emailErr: s.emailErr, msgErr: s.msgErr,
+      messageBorder: s.msgErr ? "var(--error)" : "var(--line)",
+      onNameChange: e => this.setState({ name: e.target.value, nameErr: "" }),
+      onEmailChange: e => this.setState({ email: e.target.value, emailErr: "" }),
+      onMessageChange: e => this.setState({ message: e.target.value, msgErr: "" }),
+      onNameBlur: e => this.setState({ nameErr: this.vName(e.target.value) }),
+      onEmailBlur: e => this.setState({ emailErr: this.vEmail(e.target.value) }),
+      onMessageBlur: e => this.setState({ msgErr: this.vMsg(e.target.value) }),
+      sending: s.sending, sent: s.sent,
+      submitLabel: s.sending ? "Sending…" : "Send message",
+      submit: this.submitFn
+    };
+  }
+}
+</script>
+</body>
+</html>

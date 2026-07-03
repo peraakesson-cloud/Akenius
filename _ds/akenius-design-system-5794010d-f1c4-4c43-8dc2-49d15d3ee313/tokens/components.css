@@ -1,0 +1,27 @@
+/* Akenius AB — component-layer tokens (primitive → semantic → component).
+   Components read these; retheme a component without touching the palette. */
+:root {
+  /* Button */
+  --button-primary-bg: var(--ink);
+  --button-primary-bg-hover: var(--ink-soft);
+  --button-primary-fg: var(--paper);
+  --button-outline-border: var(--ink);
+  --button-ghost-fg: var(--brass);
+  --button-ghost-fg-hover: var(--brass-deep);
+
+  /* Card */
+  --card-bg: var(--card);
+  --card-border: var(--line);
+  --card-border-hover: var(--ink);
+  --card-padding: 24px 20px 18px;
+
+  /* Input */
+  --input-bg: var(--card);
+  --input-border: var(--line);
+  --input-border-focus: var(--brass);
+  --input-border-error: var(--error);
+
+  /* Link */
+  --link-fg: var(--brass);
+  --link-fg-hover: var(--brass-deep);
+}

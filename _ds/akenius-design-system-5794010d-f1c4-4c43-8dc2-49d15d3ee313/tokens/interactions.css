@@ -1,0 +1,29 @@
+/* Akenius AB — interaction states (applies to all consumers).
+   From the house rules: hover = darker shade, press = same (no shrink),
+   focus = 2px brass ring, motion = restrained fades. */
+
+/* Focus: 2px brass, 2px offset — on anything focusable */
+:focus-visible {
+  outline: 2px solid var(--focus-ring, #A8763E);
+  outline-offset: 2px;
+}
+
+/* Selection in brand */
+::selection {
+  background: var(--brass);
+  color: var(--paper);
+}
+
+/* Disabled convention (components also set opacity inline) */
+[disabled], [aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Respect reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

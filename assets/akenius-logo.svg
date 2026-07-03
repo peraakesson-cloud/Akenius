@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="144" viewBox="0 0 200 144">
+  <circle cx="100" cy="22" r="7.5" fill="none" stroke="#A8763E" stroke-width="2.8"></circle>
+  <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="#182B36" stroke-width="3.2" stroke-linecap="round"></path>
+  <line x1="84" y1="66" x2="116" y2="66" stroke="#182B36" stroke-width="3.2" stroke-linecap="round"></line>
+  <text x="100" y="122" text-anchor="middle" font-size="21" letter-spacing="7.5" fill="#182B36" font-weight="500" font-family="Georgia, serif">AKENIUS</text>
+  <line x1="52" y1="138" x2="148" y2="138" stroke="#D8DCDA" stroke-width="1"></line>
+</svg>

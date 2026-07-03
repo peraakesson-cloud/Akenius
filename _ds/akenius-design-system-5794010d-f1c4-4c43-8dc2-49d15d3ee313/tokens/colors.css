@@ -1,0 +1,31 @@
+/* Akenius AB — color tokens.
+   Base values come verbatim from the Akenius descriptor system (ground truth).
+   Semantic aliases are what components should reference. */
+:root {
+  /* Base palette */
+  --paper: #F2F3F1;        /* warm grey-green paper — default page background */
+  --card: #FFFFFF;         /* card / raised surface */
+  --ink: #182B36;          /* deep blue-black — headings, primary text, dark surfaces */
+  --slate: #3E5462;        /* secondary text */
+  --brass: #A8763E;        /* the single accent — descriptors, eyebrows, links */
+  --line: #D8DCDA;         /* hairline borders and dividers */
+
+  /* Derived shades (oklch-harmonised with the base palette) */
+  --brass-deep: #8A5F30;   /* brass hover / pressed */
+  --ink-soft: #243B49;     /* ink hover on dark buttons */
+  --paper-deep: #E8EAE6;   /* subtle wells, table stripes, hover on paper */
+  --error: #8C3B2E;        /* form validation only */
+
+  /* Semantic aliases */
+  --surface-page: var(--paper);
+  --surface-card: var(--card);
+  --surface-inverse: var(--ink);
+  --text-heading: var(--ink);
+  --text-body: var(--ink);
+  --text-muted: var(--slate);
+  --text-inverse: var(--paper);
+  --text-accent: var(--brass);
+  --border-hairline: var(--line);
+  --border-strong: var(--ink);
+  --focus-ring: var(--brass);
+}

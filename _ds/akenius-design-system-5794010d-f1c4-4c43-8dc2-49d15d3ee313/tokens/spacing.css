@@ -1,0 +1,34 @@
+/* Akenius AB — spacing, radii, borders, motion. */
+:root {
+  /* 4px base unit */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 144px;  /* section rhythm on marketing pages */
+
+  /* Corners are square. Everywhere. */
+  --radius: 0px;
+  --radius-pill: 999px; /* tags only */
+
+  /* Borders */
+  --border-width: 1px;
+
+  /* Shadows: none. Depth comes from hairlines and surface color. */
+  --shadow-none: none;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --duration-fast: 150ms; /* @kind other */
+  --duration-slow: 400ms; /* @kind other */
+
+  /* Layout */
+  --measure: 560px;      /* max width for body prose */
+  --page-max: 1200px;    /* content column */
+  --page-pad: 24px;
+}
