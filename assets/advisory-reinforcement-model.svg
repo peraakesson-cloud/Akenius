@@ -1,0 +1,51 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="560" fill="#F7F5F1"/>
+
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">WHY GROWTH STALLS</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">Three systems that must reinforce each other</text>
+
+  <defs>
+    <marker id="arrowBrass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B08D57"/>
+    </marker>
+  </defs>
+
+  <!-- Triangle nodes -->
+  <!-- Strategy (top) -->
+  <circle cx="480" cy="190" r="64" fill="#FFFFFF" stroke="#23303D" stroke-width="1.5"/>
+  <text x="480" y="185" font-size="18" fill="#23303D" text-anchor="middle">Strategy</text>
+  <text x="480" y="207" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">the choices</text>
+
+  <!-- Process (bottom left) -->
+  <circle cx="300" cy="400" r="64" fill="#FFFFFF" stroke="#23303D" stroke-width="1.5"/>
+  <text x="300" y="395" font-size="18" fill="#23303D" text-anchor="middle">Processes</text>
+  <text x="300" y="417" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">how work flows</text>
+
+  <!-- Execution (bottom right) -->
+  <circle cx="660" cy="400" r="64" fill="#FFFFFF" stroke="#23303D" stroke-width="1.5"/>
+  <text x="660" y="388" font-size="18" fill="#23303D" text-anchor="middle">Commercial</text>
+  <text x="660" y="408" font-size="18" fill="#23303D" text-anchor="middle">execution</text>
+  <text x="660" y="428" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">sales, marketing, pricing</text>
+
+  <!-- Reinforcement arrows (circular flow) -->
+  <path d="M 425 232 Q 330 290 306 332" fill="none" stroke="#B08D57" stroke-width="2" marker-end="url(#arrowBrass)"/>
+  <path d="M 364 415 Q 480 460 596 415" fill="none" stroke="#B08D57" stroke-width="2" marker-end="url(#arrowBrass)"/>
+  <path d="M 655 333 Q 630 290 536 232" fill="none" stroke="#B08D57" stroke-width="2" marker-end="url(#arrowBrass)"/>
+
+  <!-- Centre statement -->
+  <text x="480" y="330" font-size="13.5" fill="#B08D57" text-anchor="middle" font-style="italic">Growth stalls when</text>
+  <text x="480" y="349" font-size="13.5" fill="#B08D57" text-anchor="middle" font-style="italic">these stop reinforcing</text>
+  <text x="480" y="368" font-size="13.5" fill="#B08D57" text-anchor="middle" font-style="italic">each other</text>
+
+  <!-- Side annotations -->
+  <text x="120" y="200" font-size="12.5" fill="#5B6672">Strategy without process</text>
+  <text x="120" y="218" font-size="12.5" fill="#5B6672" font-style="italic">= ambition that never lands</text>
+
+  <text x="700" y="200" font-size="12.5" fill="#5B6672">Execution without strategy</text>
+  <text x="700" y="218" font-size="12.5" fill="#5B6672" font-style="italic">= activity without direction</text>
+
+  <text x="395" y="505" font-size="12.5" fill="#5B6672">Process without execution</text>
+  <text x="395" y="523" font-size="12.5" fill="#5B6672" font-style="italic">= efficiency nobody sells</text>
+
+  <text x="900" y="548" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · ADVISORY</text>
+</svg>
