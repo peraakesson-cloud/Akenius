@@ -312,13 +312,24 @@ class Component extends DCLogic {
       const c = Math.cos(o.tilt), s = Math.sin(o.tilt);
       return [cx + x0 * c - y0 * s, cy + x0 * s + y0 * c];
     };
+    // target point on the Akenius mark outline (in mark/SVG coords), per node index.
+    // legs L(72,88)->apex(97,32) & R(128,88)->apex(103,32), crossbar 84..116 @66, crown circle c(100,22) r7.5
+    const markPt = (i) => {
+      if (i < 24) { const p = i / 23; return [72 + 25 * p, 88 - 56 * p]; }        // left leg
+      if (i < 48) { const p = (i - 24) / 23; return [128 - 25 * p, 88 - 56 * p]; } // right leg
+      if (i < 60) { const p = (i - 48) / 11; return [84 + 32 * p, 66]; }           // crossbar
+      const p = (i - 60) / 12, a = -1.5708 + p * 6.283;                            // crown circle
+      return [100 + 7.5 * Math.cos(a), 22 + 7.5 * Math.sin(a)];
+    };
 
     const draw = (t) => {
       const { ctx, w, h } = env;
       const cx = w / 2, cy = h / 2, R = Math.min(h * 0.30, w * 0.16, 150);
+      // mark space -> canvas: mark is ~100 wide, centered vertically on row 51
+      const sM = R / 34, MX = (mx) => cx + (mx - 100) * sM, MY = (my) => cy + (my - 51) * sM;
       const u = (t % T) / T;
       const gatherW = ss(u, 0.14, 0.34) * (1 - ss(u, 0.92, 1.0));
-      const resolveW = ss(u, 0.62, 0.78) * (1 - ss(u, 0.90, 0.998));
+      const resolveW = ss(u, 0.62, 0.78) * (1 - ss(u, 0.93, 0.999));
       const flowW = ss(u, 0.34, 0.44) * (1 - ss(u, 0.60, 0.72));
       const scatterW = (1 - gatherW) * (1 - resolveW);
       const globeW = ss(u, 0.20, 0.38) * (1 - ss(u, 0.62, 0.80));
@@ -332,8 +343,8 @@ class Component extends DCLogic {
         const sy = h * (0.08 + 0.84 * r1) + Math.cos(t * (0.12 + r3 * 0.2) + r2 * 7) * 20;
         const o = orbits[i % 3];
         const [ox, oy] = orbitXY(o, r2 * 6.283 + t * o.sp * 6, cx, cy, R);
-        const ra = (i / N) * 6.283 + t * 0.03;
-        const rx = cx + R * 1.38 * Math.cos(ra), ry = cy + R * 1.38 * Math.sin(ra) * 0.9;
+        const [mmx, mmy] = markPt(i);
+        const rx = MX(mmx), ry = MY(mmy);
         let x = sx + (ox - sx) * gatherW, y = sy + (oy - sy) * gatherW;
         x = x + (rx - x) * resolveW; y = y + (ry - y) * resolveW;
         pos.push([x, y, r1]);
@@ -405,26 +416,39 @@ class Component extends DCLogic {
         });
       }
 
-      // resolution: concentric circles + brass curve drawing itself
+      // resolution: the Akenius mark draws itself out of the settled nodes
       if (resolveW > 0.02) {
-        ctx.lineWidth = 1;
-        for (const f of [0.5, 0.9, 1.38]) {
-          ctx.strokeStyle = `rgba(${LINE},${resolveW * 0.26})`;
-          ctx.beginPath(); ctx.ellipse(cx, cy, R * f, R * f * (f > 1 ? 0.9 : 1), 0, 0, 7); ctx.stroke();
-        }
-        const p = this.motionOn ? ss(u, 0.70, 0.86) : 1;
-        if (p > 0.01) {
-          const x0 = cx - R * 1.7, y0 = cy + R * 0.55, x1 = cx + R * 1.7, y1 = cy - R * 0.6;
-          ctx.strokeStyle = `rgba(${BRASS},${resolveW * 0.9})`;
-          ctx.lineWidth = 1.6;
-          ctx.beginPath(); ctx.moveTo(x0, y0);
-          const steps = Math.floor(60 * p);
-          for (let k = 1; k <= steps; k++) {
-            const s = k / 60, i1 = 1 - s;
-            ctx.lineTo(i1 * i1 * x0 + 2 * i1 * s * (cx - R * 0.2) + s * s * x1, i1 * i1 * y0 + 2 * i1 * s * (cy + R * 0.75) + s * s * y1);
-          }
+        const legP = this.motionOn ? ss(u, 0.64, 0.80) : 1;   // legs grow base -> apex
+        const barP = this.motionOn ? ss(u, 0.72, 0.84) : 1;   // crossbar grows left -> right
+        const crP = this.motionOn ? ss(u, 0.78, 0.88) : 1;    // crown circle draws in from top
+        const wS = Math.max(2, R * 0.05);
+        ctx.lineCap = "round"; ctx.lineJoin = "round";
+        // legs (paper)
+        if (legP > 0.01) {
+          ctx.strokeStyle = `rgba(${PAPER},${resolveW})`;
+          ctx.lineWidth = wS;
+          ctx.beginPath();
+          ctx.moveTo(MX(72), MY(88)); ctx.lineTo(MX(72 + 25 * legP), MY(88 - 56 * legP));
+          ctx.moveTo(MX(128), MY(88)); ctx.lineTo(MX(128 - 25 * legP), MY(88 - 56 * legP));
           ctx.stroke();
         }
+        // crossbar (paper)
+        if (barP > 0.01) {
+          ctx.strokeStyle = `rgba(${PAPER},${resolveW})`;
+          ctx.lineWidth = wS;
+          ctx.beginPath();
+          ctx.moveTo(MX(84), MY(66)); ctx.lineTo(MX(84 + 32 * barP), MY(66));
+          ctx.stroke();
+        }
+        // crown circle (brass)
+        if (crP > 0.01) {
+          ctx.strokeStyle = `rgba(${BRASS},${resolveW})`;
+          ctx.lineWidth = Math.max(1.6, R * 0.045);
+          ctx.beginPath();
+          ctx.arc(MX(100), MY(22), 7.5 * sM, -1.5708, -1.5708 + 6.283 * crP);
+          ctx.stroke();
+        }
+        ctx.lineCap = "butt"; ctx.lineJoin = "miter";
       }
 
       // nodes
@@ -440,7 +464,7 @@ class Component extends DCLogic {
       }
     };
 
-    if (!this.motionOn) { draw(0.72 * T); return; } // static "resolved" frame
+    if (!this.motionOn) { draw(0.90 * T); return; } // static "resolved" frame — fully-formed mark
     let visible = true, raf;
     const start = performance.now();
     const loop = (now) => {
