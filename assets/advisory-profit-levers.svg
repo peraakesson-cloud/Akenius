@@ -10,7 +10,8 @@
   <!-- Bar 1: Price -->
   <rect x="222" y="168" width="460" height="44" fill="#B08D57"/>
   <text x="200" y="196" font-size="15" fill="#23303D" text-anchor="end">Price</text>
-  <text x="694" y="196" font-size="14" fill="#23303D" font-style="italic">the fastest lever — no new cost, no new capacity</text>
+  <text x="694" y="184" font-size="12.5" fill="#23303D" font-style="italic">the fastest lever —</text>
+  <text x="694" y="202" font-size="12.5" fill="#23303D" font-style="italic">no new cost, no new capacity</text>
 
   <!-- Bar 2: Variable cost -->
   <rect x="222" y="238" width="330" height="44" fill="#23303D"/>
