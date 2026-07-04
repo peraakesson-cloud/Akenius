@@ -268,15 +268,15 @@ class Component extends DCLogic {
           const a = ps[i], b = ps[j];
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < maxDist) {
-            ctx.strokeStyle = `rgba(${LINE},${(1 - d / maxDist) * 0.11})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(${LINE},${(1 - d / maxDist) * 0.22})`;
+            ctx.lineWidth = 1.3;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
           }
         }
       }
       for (const p of ps) {
-        ctx.fillStyle = p.brass ? `rgba(${BRASS},0.6)` : `rgba(${PAPER},0.32)`;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.brass ? 1.6 : 1.2, 0, 7); ctx.fill();
+        ctx.fillStyle = p.brass ? `rgba(${BRASS},0.85)` : `rgba(${PAPER},0.55)`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.brass ? 2.0 : 1.6, 0, 7); ctx.fill();
       }
     };
 
@@ -352,10 +352,10 @@ class Component extends DCLogic {
 
       // scatter: jagged tangled lines
       if (scatterW > 0.02) {
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.3;
         for (let i = 0; i < 14; i++) {
           const a = pos[i], b = pos[(i * 7 + 11) % N], m = pos[(i * 13 + 5) % N];
-          ctx.strokeStyle = `rgba(${SLATE},${scatterW * 0.10})`;
+          ctx.strokeStyle = `rgba(${SLATE},${scatterW * 0.20})`;
           ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(m[0], m[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
         }
       }
@@ -364,8 +364,8 @@ class Component extends DCLogic {
       if (globeW > 0.02) {
         const pulse = 1 + flowW * 0.025 * Math.sin(t * 2.1);
         const Rg = R * pulse;
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = `rgba(${LINE},${globeW * 0.34})`;
+        ctx.lineWidth = 1.3;
+        ctx.strokeStyle = `rgba(${LINE},${globeW * 0.55})`;
         ctx.beginPath(); ctx.arc(cx, cy, Rg, 0, 7); ctx.stroke();
         for (const la of [-0.55, 0, 0.55]) {
           const yy = cy + Rg * Math.sin(la) * 0.9, rr = Rg * Math.cos(la);
@@ -378,8 +378,8 @@ class Component extends DCLogic {
 
       // orbital paths
       if (gatherW > 0.02) {
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = `rgba(${LINE},${gatherW * (1 - resolveW) * 0.20})`;
+        ctx.lineWidth = 1.3;
+        ctx.strokeStyle = `rgba(${LINE},${gatherW * (1 - resolveW) * 0.34})`;
         for (const o of orbits) {
           ctx.beginPath();
           for (let k = 0; k <= 90; k++) {
@@ -398,8 +398,8 @@ class Component extends DCLogic {
             const d = Math.hypot(pos[i][0] - pos[j][0], pos[i][1] - pos[j][1]);
             if (d < md) {
               const flicker = 0.5 + 0.5 * Math.sin(t * 1.7 + i + j);
-              ctx.strokeStyle = `rgba(${LINE},${flowW * (1 - d / md) * 0.16 * flicker})`;
-              ctx.lineWidth = 1;
+              ctx.strokeStyle = `rgba(${LINE},${flowW * (1 - d / md) * 0.30 * flicker})`;
+              ctx.lineWidth = 1.3;
               ctx.beginPath(); ctx.moveTo(pos[i][0], pos[i][1]); ctx.lineTo(pos[j][0], pos[j][1]); ctx.stroke();
             }
           }
@@ -408,8 +408,8 @@ class Component extends DCLogic {
           for (let k = 0; k < 2; k++) {
             const ang = t * (0.5 + oi * 0.13) * (o.sp > 0 ? 1 : -1) + k * 3.14 + oi;
             const [x, y] = orbitXY(o, ang, cx, cy, R);
-            ctx.fillStyle = `rgba(${BRASS},${flowW * 0.28})`;
-            ctx.beginPath(); ctx.arc(x, y, 5, 0, 7); ctx.fill();
+            ctx.fillStyle = `rgba(${BRASS},${flowW * 0.4})`;
+            ctx.beginPath(); ctx.arc(x, y, 5.5, 0, 7); ctx.fill();
             ctx.fillStyle = `rgba(${BRASS},${flowW * 0.9})`;
             ctx.beginPath(); ctx.arc(x, y, 2, 0, 7); ctx.fill();
           }
@@ -454,13 +454,13 @@ class Component extends DCLogic {
       // nodes
       for (let i = 0; i < N; i++) {
         const flash = flowW * Math.pow(Math.max(0, Math.sin(t * 1.3 + i * 0.9)), 14);
-        const a = 0.18 + 0.22 * gatherW + 0.25 * resolveW + pos[i][2] * 0.12;
+        const a = 0.34 + 0.26 * gatherW + 0.30 * resolveW + pos[i][2] * 0.14;
         if (flash > 0.05) {
-          ctx.fillStyle = `rgba(${BRASS},${flash * 0.8})`;
-          ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 3.2, 0, 7); ctx.fill();
+          ctx.fillStyle = `rgba(${BRASS},${flash * 0.9})`;
+          ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 3.6, 0, 7); ctx.fill();
         }
         ctx.fillStyle = `rgba(${PAPER},${a})`;
-        ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 1.4, 0, 7); ctx.fill();
+        ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 1.9, 0, 7); ctx.fill();
       }
     };
 
