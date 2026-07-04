@@ -58,3 +58,43 @@ body.svc-page { margin: 0; background: var(--paper); color: var(--ink); font-fam
 /* "Read more" link on the home-page service rows */
 .svc-more { align-self: flex-start; margin-top: 6px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--brass-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
 .svc-more:hover { color: var(--ink); }
+
+/* ---- rich content sections (sub-pages) ---- */
+.section { padding: 92px 0; }
+.section.ink { background: var(--ink); }
+.sec-head { max-width: 760px; margin: 0 0 44px; }
+.sec-head .kick { margin-bottom: 14px; }
+.sec-head h2 { margin: 0; font-family: var(--font-serif); font-weight: 600; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.1; color: var(--ink); }
+.section.ink .sec-head h2 { color: var(--paper); }
+.sec-head .lead-in { margin: 20px 0 0; font-family: var(--font-sans); font-size: 18px; line-height: 1.65; color: var(--slate); max-width: 66ch; }
+
+/* embedded figures */
+.figure { margin: 40px 0 0; }
+.figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: #F7F5F1; }
+.figcap { margin: 12px 0 0; font-family: var(--font-sans); font-size: 13px; font-style: italic; color: var(--slate); }
+
+/* value situations */
+.value-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 28px 40px; margin-top: 40px; }
+.value-item { display: flex; flex-direction: column; gap: 12px; border-top: 2px solid var(--brass); padding-top: 22px; }
+.value-item h3 { margin: 0; font-family: var(--font-serif); font-weight: 600; font-size: 23px; line-height: 1.2; color: var(--ink); }
+.value-item p { margin: 0; font-family: var(--font-sans); font-size: 15.5px; line-height: 1.65; color: var(--slate); }
+.value-item .role { color: var(--brass-deep); font-style: italic; }
+
+/* reasons grid */
+.reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px 44px; margin-top: 8px; }
+.reason { display: flex; flex-direction: column; gap: 8px; }
+.reason h3 { margin: 0; font-family: var(--font-serif); font-weight: 600; font-size: 21px; line-height: 1.2; color: var(--ink); }
+.reason p { margin: 0; font-family: var(--font-sans); font-size: 15.5px; line-height: 1.62; color: var(--slate); }
+
+/* engagement phases */
+.phase-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px; margin-top: 44px; }
+.phase { border-top: 1px solid var(--line); padding-top: 18px; }
+.phase .n { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: var(--brass); }
+.phase h3 { margin: 7px 0 9px; font-family: var(--font-serif); font-weight: 600; font-size: 21px; line-height: 1.15; color: var(--ink); }
+.phase p { margin: 0; font-family: var(--font-sans); font-size: 15px; line-height: 1.6; color: var(--slate); }
+
+/* why akenius (ink) */
+.why p { font-family: var(--font-sans); font-size: 17px; line-height: 1.72; color: var(--line); max-width: 68ch; margin: 0 0 20px; }
+.why .closer { font-family: var(--font-serif); font-style: italic; font-size: clamp(23px, 3vw, 29px); line-height: 1.35; color: var(--paper); margin: 16px 0 0; max-width: 26ch; }
+.why .email { display: inline-block; margin-top: 14px; font-family: var(--font-sans); font-style: normal; font-size: 16px; color: var(--brass); text-decoration: none; }
+.why .email:hover { color: var(--paper); }

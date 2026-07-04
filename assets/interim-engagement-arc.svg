@@ -1,0 +1,58 @@
+<svg viewBox="0 0 960 460" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="460" fill="#F7F5F1"/>
+
+  <!-- Title block -->
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57" font-family="Georgia, serif">THE AKENIUS INTERIM MODEL</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">One mandate, four phases</text>
+
+  <!-- Baseline -->
+  <line x1="60" y1="330" x2="900" y2="330" stroke="#D8D3C8" stroke-width="1.5"/>
+  <!-- Brass progress line -->
+  <line x1="60" y1="330" x2="900" y2="330" stroke="#B08D57" stroke-width="3" stroke-dasharray="0" opacity="0.9"/>
+
+  <!-- Phase 1 -->
+  <circle cx="130" cy="330" r="7" fill="#23303D"/>
+  <text x="130" y="170" font-size="15" letter-spacing="2" fill="#B08D57" text-anchor="middle">01</text>
+  <text x="130" y="198" font-size="20" fill="#23303D" text-anchor="middle">Diagnose</text>
+  <text x="130" y="222" font-size="12.5" fill="#5B6672" text-anchor="middle">Numbers, customers,</text>
+  <text x="130" y="240" font-size="12.5" fill="#5B6672" text-anchor="middle">people, cash. Agree the</text>
+  <text x="130" y="258" font-size="12.5" fill="#5B6672" text-anchor="middle">mandate and objectives</text>
+  <text x="130" y="276" font-size="12.5" fill="#5B6672" text-anchor="middle">with the board.</text>
+  <text x="130" y="362" font-size="12" fill="#8A939E" text-anchor="middle" font-style="italic">Weeks 1–4</text>
+
+  <!-- Phase 2 -->
+  <circle cx="356" cy="330" r="7" fill="#23303D"/>
+  <text x="356" y="170" font-size="15" letter-spacing="2" fill="#B08D57" text-anchor="middle">02</text>
+  <text x="356" y="198" font-size="20" fill="#23303D" text-anchor="middle">Stabilise</text>
+  <text x="356" y="222" font-size="12.5" fill="#5B6672" text-anchor="middle">Secure cash flow, key</text>
+  <text x="356" y="240" font-size="12.5" fill="#5B6672" text-anchor="middle">customers and key people.</text>
+  <text x="356" y="258" font-size="12.5" fill="#5B6672" text-anchor="middle">Restore decision rhythm</text>
+  <text x="356" y="276" font-size="12.5" fill="#5B6672" text-anchor="middle">and confidence.</text>
+  <text x="356" y="362" font-size="12" fill="#8A939E" text-anchor="middle" font-style="italic">First months</text>
+
+  <!-- Phase 3 -->
+  <circle cx="582" cy="330" r="7" fill="#23303D"/>
+  <text x="582" y="170" font-size="15" letter-spacing="2" fill="#B08D57" text-anchor="middle">03</text>
+  <text x="582" y="198" font-size="20" fill="#23303D" text-anchor="middle">Deliver</text>
+  <text x="582" y="222" font-size="12.5" fill="#5B6672" text-anchor="middle">Execute the agreed agenda:</text>
+  <text x="582" y="240" font-size="12.5" fill="#5B6672" text-anchor="middle">turnaround, transformation</text>
+  <text x="582" y="258" font-size="12.5" fill="#5B6672" text-anchor="middle">or growth. Transparent</text>
+  <text x="582" y="276" font-size="12.5" fill="#5B6672" text-anchor="middle">monthly reporting.</text>
+  <text x="582" y="362" font-size="12" fill="#8A939E" text-anchor="middle" font-style="italic">Core of the assignment</text>
+
+  <!-- Phase 4 -->
+  <circle cx="820" cy="330" r="7" fill="#B08D57"/>
+  <circle cx="820" cy="330" r="12" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+  <text x="820" y="170" font-size="15" letter-spacing="2" fill="#B08D57" text-anchor="middle">04</text>
+  <text x="820" y="198" font-size="20" fill="#23303D" text-anchor="middle">Hand over</text>
+  <text x="820" y="222" font-size="12.5" fill="#5B6672" text-anchor="middle">Transfer ownership,</text>
+  <text x="820" y="240" font-size="12.5" fill="#5B6672" text-anchor="middle">knowledge and momentum.</text>
+  <text x="820" y="258" font-size="12.5" fill="#5B6672" text-anchor="middle">Leave the company</text>
+  <text x="820" y="276" font-size="12.5" fill="#5B6672" text-anchor="middle">stronger than we found it.</text>
+  <text x="820" y="362" font-size="12" fill="#8A939E" text-anchor="middle" font-style="italic">Planned from day one</text>
+
+  <!-- Footer rule + tagline -->
+  <line x1="60" y1="408" x2="900" y2="408" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="60" y="436" font-size="13" fill="#8A939E" font-style="italic">Full operational responsibility throughout — accountable for the P&amp;L, measured on outcomes.</text>
+  <text x="900" y="436" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · INTERIM</text>
+</svg>

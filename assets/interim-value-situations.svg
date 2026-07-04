@@ -1,0 +1,44 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="560" fill="#F7F5F1"/>
+
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">WHERE INTERIM LEADERSHIP CREATES VALUE</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">Four situations, one common factor: time</text>
+
+  <!-- Card 1: Leadership gap -->
+  <rect x="60" y="130" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="60" y="130" width="6" height="180" fill="#B08D57"/>
+  <text x="92" y="172" font-size="19" fill="#23303D">The leadership gap</text>
+  <text x="92" y="200" font-size="13" fill="#5B6672">A key departure while the executive search —</text>
+  <text x="92" y="219" font-size="13" fill="#5B6672">often six months or more — runs its course.</text>
+  <text x="92" y="252" font-size="12.5" fill="#B08D57" font-style="italic">The interim role: hold the chair at full</text>
+  <text x="92" y="270" font-size="12.5" fill="#B08D57" font-style="italic">authority. Bridge, don't babysit.</text>
+
+  <!-- Card 2: Turnaround -->
+  <rect x="496" y="130" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="496" y="130" width="6" height="180" fill="#B08D57"/>
+  <text x="528" y="172" font-size="19" fill="#23303D">The turnaround</text>
+  <text x="528" y="200" font-size="13" fill="#5B6672">Results deteriorating; cash, cost and confidence</text>
+  <text x="528" y="219" font-size="13" fill="#5B6672">need stabilising — in that order.</text>
+  <text x="528" y="252" font-size="12.5" fill="#B08D57" font-style="italic">The interim role: diagnose fast, decide without</text>
+  <text x="528" y="270" font-size="12.5" fill="#B08D57" font-style="italic">defending past choices.</text>
+
+  <!-- Card 3: Transformation -->
+  <rect x="60" y="340" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="60" y="340" width="6" height="180" fill="#B08D57"/>
+  <text x="92" y="382" font-size="19" fill="#23303D">The transformation</text>
+  <text x="92" y="410" font-size="13" fill="#5B6672">Merger, ownership change, generational shift,</text>
+  <text x="92" y="429" font-size="13" fill="#5B6672">repositioning. Change leadership is its own craft.</text>
+  <text x="92" y="462" font-size="12.5" fill="#B08D57" font-style="italic">The interim role: carry the organisation</text>
+  <text x="92" y="480" font-size="12.5" fill="#B08D57" font-style="italic">through — and know where change stalls.</text>
+
+  <!-- Card 4: Critical initiative -->
+  <rect x="496" y="340" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="496" y="340" width="6" height="180" fill="#B08D57"/>
+  <text x="528" y="382" font-size="19" fill="#23303D">The critical initiative</text>
+  <text x="528" y="410" font-size="13" fill="#5B6672">Market entry, building a commercial function,</text>
+  <text x="528" y="429" font-size="13" fill="#5B6672">integrating an acquisition. Too important to share.</text>
+  <text x="528" y="462" font-size="12.5" fill="#B08D57" font-style="italic">The interim role: own the outcome,</text>
+  <text x="528" y="480" font-size="12.5" fill="#B08D57" font-style="italic">not just the plan.</text>
+
+  <text x="900" y="548" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · INTERIM</text>
+</svg>
