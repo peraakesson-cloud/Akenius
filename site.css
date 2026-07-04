@@ -2,6 +2,21 @@
    Linked from index.html (via helmet) and every sub-page.
    Colors/fonts come from the design-system token CSS. */
 
+/* ---- fluid cross-page fade (View Transitions API; progressive enhancement) ----
+   Enables a smooth cross-fade between full page loads on this multi-page site.
+   Every page opts in via this shared file; unsupported browsers just navigate
+   normally. Disabled under reduced-motion. */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}
+
 /* ---- base (sub-pages; index sets its own body reset in helmet) ---- */
 .svc-page *, .svc-page *::before, .svc-page *::after { box-sizing: border-box; }
 body.svc-page { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
