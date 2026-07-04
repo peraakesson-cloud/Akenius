@@ -89,8 +89,74 @@
         <article class="detail">
           <h3>Pricing and profit optimization</h3>
           <p>Pricing is the fastest profit lever a company has, and the most neglected. In a typical business, a one percent improvement in realised price does more for operating profit than a one percent improvement in volume or variable cost — yet pricing is often the least managed number in the company, set years ago and eroded quietly through discounting.</p>
-          <figure class="figure">
-            <img src="assets/advisory-profit-levers.svg" alt="Bar chart: the relative impact on operating profit of a 1% improvement in each lever. Price has the largest effect, ahead of variable cost, volume and fixed cost — yet price is usually the least managed of the four.">
+          <!-- Animated "profit levers" bar chart: self-contained embed, grows once when scrolled into view -->
+          <figure class="ak-pl" style="margin:24px auto 0; max-width:960px;">
+            <style>
+              .ak-pl svg { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+              @keyframes ak-pl-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+              @keyframes ak-pl-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+              .ak-pl [class*="ak-pl-a"] { animation-play-state: paused; }
+              .ak-pl.is-visible [class*="ak-pl-a"] { animation-play-state: running; }
+              .ak-pl-a-title { animation: ak-pl-fade .5s ease-out 0s   both; }
+              .ak-pl-a-axis  { animation: ak-pl-fade .5s ease-out .2s  both; }
+              .ak-pl-a-bar   { transform-box: fill-box; transform-origin: left center;
+                               animation: ak-pl-grow .6s ease-out both; }
+              .ak-pl-a-bar1  { animation-delay: .4s; }
+              .ak-pl-a-bar2  { animation-delay: .8s; }
+              .ak-pl-a-bar3  { animation-delay: 1.2s; }
+              .ak-pl-a-bar4  { animation-delay: 1.6s; }
+              .ak-pl-a-text  { animation: ak-pl-fade .5s ease-out 2.4s both; }
+              .ak-pl-a-foot  { animation: ak-pl-fade .5s ease-out 2.8s both; }
+              @media (prefers-reduced-motion: reduce) {
+                .ak-pl [class*="ak-pl-a"] { animation-duration: 0s; animation-delay: 0s; }
+              }
+            </style>
+
+            <svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif" role="img" aria-label="Bar chart: a 1% improvement in price has the largest impact on operating profit, ahead of variable cost, volume, and fixed cost.">
+              <rect width="960" height="520" fill="#F7F5F1"></rect>
+
+              <g class="ak-pl-a-title">
+                <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">THE PROFIT LEVERS</text>
+                <text x="60" y="92" font-size="27" fill="#23303D">What a 1% improvement does to operating profit</text>
+                <text x="900" y="140" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · ADVISORY</text>
+              </g>
+
+              <line class="ak-pl-a-axis" x1="220" y1="150" x2="220" y2="420" stroke="#8A939E" stroke-width="1.2"></line>
+
+              <rect class="ak-pl-a-bar ak-pl-a-bar1" x="222" y="168" width="460" height="44" fill="#B08D57"></rect>
+              <rect class="ak-pl-a-bar ak-pl-a-bar2" x="222" y="238" width="330" height="44" fill="#23303D"></rect>
+              <rect class="ak-pl-a-bar ak-pl-a-bar3" x="222" y="308" width="190" height="44" fill="#5B6672"></rect>
+              <rect class="ak-pl-a-bar ak-pl-a-bar4" x="222" y="378" width="130" height="44" fill="#B9BEC5"></rect>
+
+              <g class="ak-pl-a-text">
+                <text x="200" y="196" font-size="15" fill="#23303D" text-anchor="end">Price</text>
+                <text x="694" y="184" font-size="12.5" fill="#23303D" font-style="italic">the fastest lever —</text>
+                <text x="694" y="202" font-size="12.5" fill="#23303D" font-style="italic">no new cost, no new capacity</text>
+                <text x="200" y="266" font-size="15" fill="#23303D" text-anchor="end">Variable cost</text>
+                <text x="200" y="336" font-size="15" fill="#23303D" text-anchor="end">Volume</text>
+                <text x="200" y="406" font-size="15" fill="#23303D" text-anchor="end">Fixed cost</text>
+                <text x="222" y="450" font-size="12.5" fill="#8A939E" font-style="italic">Relative impact on operating profit of a 1% improvement in each lever (illustrative, typical cost structure)</text>
+              </g>
+
+              <g class="ak-pl-a-foot">
+                <line x1="60" y1="474" x2="900" y2="474" stroke="#D8D3C8" stroke-width="1"></line>
+                <text x="60" y="500" font-size="13" fill="#5B6672">Yet in most companies, price is the least managed of the four — set years ago, eroded quietly through discounting.</text>
+              </g>
+            </svg>
+
+            <script>
+              (function () {
+                var fig = document.currentScript.closest('.ak-pl');
+                if (!('IntersectionObserver' in window)) { fig.classList.add('is-visible'); return; }
+                var io = new IntersectionObserver(function (entries) {
+                  if (entries.some(function (e) { return e.isIntersecting; })) {
+                    fig.classList.add('is-visible');
+                    io.disconnect();
+                  }
+                }, { threshold: 0.3 });
+                io.observe(fig);
+              })();
+            </script>
           </figure>
           <p>We find the margin hiding in your price structure, discounting behaviour and product mix. This is the area where our background runs deepest — global pricing leadership across Nordic markets — and where results arrive fastest, because price changes need no new factory, no new system and no new headcount.</p>
           <p class="typical"><strong>Typical results:</strong> a price architecture that matches value delivered; discounting brought under governance; mix steered toward margin. Often self-funding within months.</p>
