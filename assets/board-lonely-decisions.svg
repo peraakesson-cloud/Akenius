@@ -1,0 +1,44 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="560" fill="#F7F5F1"/>
+
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">THE LONELY DECISIONS</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">The higher the stakes, the fewer people you can ask</text>
+
+  <!-- Card 1 -->
+  <rect x="60" y="130" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="60" y="130" width="6" height="180" fill="#B08D57"/>
+  <text x="92" y="172" font-size="19" fill="#23303D">Ownership &amp; succession</text>
+  <text x="92" y="200" font-size="13" fill="#5B6672">Generational shifts, partner buy-outs, bringing in</text>
+  <text x="92" y="219" font-size="13" fill="#5B6672">capital, preparing a company for sale.</text>
+  <text x="92" y="252" font-size="12.5" fill="#B08D57" font-style="italic">Can rarely be discussed inside the company</text>
+  <text x="92" y="270" font-size="12.5" fill="#B08D57" font-style="italic">at all — and never too early outside it.</text>
+
+  <!-- Card 2 -->
+  <rect x="496" y="130" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="496" y="130" width="6" height="180" fill="#B08D57"/>
+  <text x="528" y="172" font-size="19" fill="#23303D">Major commitments</text>
+  <text x="528" y="200" font-size="13" fill="#5B6672">Acquisitions, market entries, large investments —</text>
+  <text x="528" y="219" font-size="13" fill="#5B6672">bets the company only gets to place once.</text>
+  <text x="528" y="252" font-size="12.5" fill="#B08D57" font-style="italic">Worth one hard, independent stress test</text>
+  <text x="528" y="270" font-size="12.5" fill="#B08D57" font-style="italic">before the money moves.</text>
+
+  <!-- Card 3 -->
+  <rect x="60" y="340" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="60" y="340" width="6" height="180" fill="#B08D57"/>
+  <text x="92" y="382" font-size="19" fill="#23303D">Leadership changes</text>
+  <text x="92" y="410" font-size="13" fill="#5B6672">Replacing a key executive, restructuring the team,</text>
+  <text x="92" y="429" font-size="13" fill="#5B6672">the co-founder conversation nobody wants to open.</text>
+  <text x="92" y="462" font-size="12.5" fill="#B08D57" font-style="italic">The decisions you can't test on the</text>
+  <text x="92" y="480" font-size="12.5" fill="#B08D57" font-style="italic">people they concern.</text>
+
+  <!-- Card 4 -->
+  <rect x="496" y="340" width="404" height="180" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <rect x="496" y="340" width="6" height="180" fill="#B08D57"/>
+  <text x="528" y="382" font-size="19" fill="#23303D">Changing course</text>
+  <text x="528" y="410" font-size="13" fill="#5B6672">A strategy that isn't working, a market that has</text>
+  <text x="528" y="429" font-size="13" fill="#5B6672">moved, a business model past its best years.</text>
+  <text x="528" y="462" font-size="12.5" fill="#B08D57" font-style="italic">Hardest to see from inside — and hardest</text>
+  <text x="528" y="480" font-size="12.5" fill="#B08D57" font-style="italic">to admit to the people who built it.</text>
+
+  <text x="900" y="548" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · ADVISORY</text>
+</svg>
