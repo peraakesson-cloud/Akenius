@@ -1,0 +1,51 @@
+<svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="500" fill="#F7F5F1"/>
+
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">OPERATOR CAPITAL</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">What we invest — and what it changes</text>
+
+  <!-- Column 1: Time -->
+  <rect x="80" y="140" width="248" height="264" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <line x1="80" y1="140" x2="328" y2="140" stroke="#B08D57" stroke-width="4"/>
+  <text x="104" y="184" font-size="18" fill="#23303D">Time</text>
+  <text x="104" y="216" font-size="12" fill="#5B6672">Real working involvement,</text>
+  <text x="104" y="233" font-size="12" fill="#5B6672">not a monthly phone call.</text>
+  <text x="104" y="264" font-size="12" fill="#5B6672">Ownership of defined</text>
+  <text x="104" y="281" font-size="12" fill="#5B6672">commercial ground: pricing,</text>
+  <text x="104" y="298" font-size="12" fill="#5B6672">negotiations, channels,</text>
+  <text x="104" y="315" font-size="12" fill="#5B6672">go-to-market.</text>
+  <text x="104" y="352" font-size="12" fill="#B08D57" font-style="italic">Changes: the commercial</text>
+  <text x="104" y="369" font-size="12" fill="#B08D57" font-style="italic">side stops depending on</text>
+  <text x="104" y="386" font-size="12" fill="#B08D57" font-style="italic">the founder's calendar.</text>
+
+  <!-- Column 2: Commercial leadership -->
+  <rect x="356" y="140" width="248" height="264" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <line x1="356" y1="140" x2="604" y2="140" stroke="#B08D57" stroke-width="4"/>
+  <text x="380" y="184" font-size="18" fill="#23303D">Commercial leadership</text>
+  <text x="380" y="216" font-size="12" fill="#5B6672">25+ years of P&amp;L ownership,</text>
+  <text x="380" y="233" font-size="12" fill="#5B6672">global pricing responsibility</text>
+  <text x="380" y="250" font-size="12" fill="#5B6672">and channel building across</text>
+  <text x="380" y="267" font-size="12" fill="#5B6672">Nordic markets.</text>
+  <text x="380" y="298" font-size="12" fill="#5B6672">For products entering the</text>
+  <text x="380" y="315" font-size="12" fill="#5B6672">Nordics: the market itself.</text>
+  <text x="380" y="352" font-size="12" fill="#B08D57" font-style="italic">Changes: prices go up, the</text>
+  <text x="380" y="369" font-size="12" fill="#B08D57" font-style="italic">first big deal doesn't give</text>
+  <text x="380" y="386" font-size="12" fill="#B08D57" font-style="italic">away the margin.</text>
+
+  <!-- Column 3: Skin in the game -->
+  <rect x="632" y="140" width="248" height="264" fill="#FFFFFF" stroke="#B08D57" stroke-width="1.5"/>
+  <line x1="632" y1="140" x2="880" y2="140" stroke="#B08D57" stroke-width="4"/>
+  <text x="656" y="184" font-size="18" fill="#23303D">Skin in the game</text>
+  <text x="656" y="216" font-size="12" fill="#5B6672">Part-ownership or a results-</text>
+  <text x="656" y="233" font-size="12" fill="#5B6672">based stake — never a fee-</text>
+  <text x="656" y="250" font-size="12" fill="#5B6672">for-advice arrangement</text>
+  <text x="656" y="267" font-size="12" fill="#5B6672">dressed up as partnership.</text>
+  <text x="656" y="352" font-size="12" fill="#B08D57" font-style="italic">Changes: everything. If the</text>
+  <text x="656" y="369" font-size="12" fill="#B08D57" font-style="italic">venture doesn't create value,</text>
+  <text x="656" y="386" font-size="12" fill="#B08D57" font-style="italic">neither do we.</text>
+
+  <!-- Footer -->
+  <line x1="60" y1="436" x2="900" y2="436" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="60" y="464" font-size="13" fill="#8A939E" font-style="italic">An adviser gets paid either way. We don't — that alignment changes every conversation that follows.</text>
+  <text x="900" y="464" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · VENTURES</text>
+</svg>
