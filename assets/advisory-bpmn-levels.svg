@@ -1,0 +1,117 @@
+<svg viewBox="0 0 960 680" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="680" fill="#F7F5F1"/>
+
+  <text x="60" y="52" font-size="13" letter-spacing="3" fill="#B08D57">HOW WE MAP — BPMN 2.0</text>
+  <text x="60" y="86" font-size="26" fill="#23303D">From the big picture to how work actually flows</text>
+
+  <defs>
+    <marker id="arrowBpmn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5B6672"/>
+    </marker>
+  </defs>
+
+  <!-- LEVEL 1 -->
+  <text x="60" y="128" font-size="12" letter-spacing="2" fill="#8A939E">LEVEL 1 · THE VALUE CHAIN</text>
+
+  <!-- Five collapsed sub-processes -->
+  <g stroke="#5B6672" stroke-width="1.3" fill="#FFFFFF">
+    <rect x="60"  y="142" width="148" height="54" rx="8"/>
+    <rect x="236" y="142" width="148" height="54" rx="8" stroke="#B08D57" stroke-width="2"/>
+    <rect x="412" y="142" width="148" height="54" rx="8"/>
+    <rect x="588" y="142" width="148" height="54" rx="8"/>
+    <rect x="764" y="142" width="148" height="54" rx="8"/>
+  </g>
+  <text x="134" y="174" font-size="13" fill="#23303D" text-anchor="middle">Lead handling</text>
+  <text x="310" y="174" font-size="13" fill="#23303D" text-anchor="middle">Quote to order</text>
+  <text x="486" y="174" font-size="13" fill="#23303D" text-anchor="middle">Order handling</text>
+  <text x="662" y="174" font-size="13" fill="#23303D" text-anchor="middle">Delivery</text>
+  <text x="838" y="174" font-size="13" fill="#23303D" text-anchor="middle">Invoice &amp; follow-up</text>
+  <!-- sub-process [+] markers -->
+  <g stroke="#8A939E" stroke-width="1" fill="none">
+    <rect x="127" y="182" width="14" height="10" rx="2"/><line x1="134" y1="184" x2="134" y2="190"/><line x1="131" y1="187" x2="137" y2="187"/>
+    <rect x="303" y="182" width="14" height="10" rx="2"/><line x1="310" y1="184" x2="310" y2="190"/><line x1="307" y1="187" x2="313" y2="187"/>
+    <rect x="479" y="182" width="14" height="10" rx="2"/><line x1="486" y1="184" x2="486" y2="190"/><line x1="483" y1="187" x2="489" y2="187"/>
+    <rect x="655" y="182" width="14" height="10" rx="2"/><line x1="662" y1="184" x2="662" y2="190"/><line x1="659" y1="187" x2="665" y2="187"/>
+    <rect x="831" y="182" width="14" height="10" rx="2"/><line x1="838" y1="184" x2="838" y2="190"/><line x1="835" y1="187" x2="841" y2="187"/>
+  </g>
+  <!-- sequence flows -->
+  <g stroke="#5B6672" stroke-width="1.3">
+    <line x1="208" y1="169" x2="230" y2="169" marker-end="url(#arrowBpmn)"/>
+    <line x1="384" y1="169" x2="406" y2="169" marker-end="url(#arrowBpmn)"/>
+    <line x1="560" y1="169" x2="582" y2="169" marker-end="url(#arrowBpmn)"/>
+    <line x1="736" y1="169" x2="758" y2="169" marker-end="url(#arrowBpmn)"/>
+  </g>
+
+  <!-- Drill-down indicator -->
+  <line x1="250" y1="196" x2="120" y2="262" stroke="#B08D57" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <line x1="370" y1="196" x2="880" y2="262" stroke="#B08D57" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+  <!-- LEVEL 2 -->
+  <text x="60" y="252" font-size="12" letter-spacing="2" fill="#8A939E">LEVEL 2 · ONE PROCESS, OPENED UP — QUOTE TO ORDER</text>
+
+  <!-- Pool -->
+  <rect x="60" y="262" width="852" height="280" fill="#FFFFFF" stroke="#5B6672" stroke-width="1.3"/>
+  <!-- Lane divider -->
+  <line x1="92" y1="402" x2="912" y2="402" stroke="#D8D3C8" stroke-width="1"/>
+  <!-- Lane labels (vertical) -->
+  <line x1="92" y1="262" x2="92" y2="542" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="80" y="332" font-size="12" fill="#5B6672" transform="rotate(-90 80 332)" text-anchor="middle">Sales</text>
+  <text x="80" y="472" font-size="12" fill="#5B6672" transform="rotate(-90 80 472)" text-anchor="middle">Finance</text>
+
+  <!-- Sales lane elements -->
+  <!-- Start event -->
+  <circle cx="140" cy="330" r="14" fill="#FFFFFF" stroke="#23303D" stroke-width="1.3"/>
+  <text x="140" y="366" font-size="10.5" fill="#8A939E" text-anchor="middle">Request received</text>
+
+  <!-- Task: Qualify need -->
+  <rect x="186" y="304" width="118" height="52" rx="8" fill="#FFFFFF" stroke="#23303D" stroke-width="1.3"/>
+  <text x="245" y="334" font-size="12" fill="#23303D" text-anchor="middle">Qualify need</text>
+
+  <!-- Gateway -->
+  <g transform="translate(360 330)">
+    <rect x="-18" y="-18" width="36" height="36" fill="#FFFFFF" stroke="#23303D" stroke-width="1.3" transform="rotate(45)"/>
+    <line x1="-8" y1="-8" x2="8" y2="8" stroke="#23303D" stroke-width="1.5"/>
+    <line x1="-8" y1="8" x2="8" y2="-8" stroke="#23303D" stroke-width="1.5"/>
+  </g>
+  <text x="360" y="288" font-size="10.5" fill="#8A939E" text-anchor="middle">Standard terms?</text>
+
+  <!-- Task: Prepare quote -->
+  <rect x="450" y="304" width="118" height="52" rx="8" fill="#FFFFFF" stroke="#23303D" stroke-width="1.3"/>
+  <text x="509" y="334" font-size="12" fill="#23303D" text-anchor="middle">Prepare quote</text>
+
+  <!-- Task: Send quote -->
+  <rect x="640" y="304" width="118" height="52" rx="8" fill="#FFFFFF" stroke="#23303D" stroke-width="1.3"/>
+  <text x="699" y="334" font-size="12" fill="#23303D" text-anchor="middle">Send quote</text>
+
+  <!-- End event -->
+  <circle cx="830" cy="330" r="14" fill="#FFFFFF" stroke="#23303D" stroke-width="3"/>
+  <text x="830" y="366" font-size="10.5" fill="#8A939E" text-anchor="middle">Quote sent</text>
+
+  <!-- Finance lane task -->
+  <rect x="450" y="440" width="118" height="52" rx="8" fill="#FFFFFF" stroke="#23303D" stroke-width="1.3"/>
+  <text x="509" y="462" font-size="12" fill="#23303D" text-anchor="middle">Review &amp;</text>
+  <text x="509" y="479" font-size="12" fill="#23303D" text-anchor="middle">approve pricing</text>
+
+  <!-- Sequence flows level 2 -->
+  <g stroke="#5B6672" stroke-width="1.3" fill="none">
+    <line x1="154" y1="330" x2="180" y2="330" marker-end="url(#arrowBpmn)"/>
+    <line x1="304" y1="330" x2="334" y2="330" marker-end="url(#arrowBpmn)"/>
+    <line x1="386" y1="330" x2="444" y2="330" marker-end="url(#arrowBpmn)"/>
+    <line x1="568" y1="330" x2="634" y2="330" marker-end="url(#arrowBpmn)"/>
+    <line x1="758" y1="330" x2="810" y2="330" marker-end="url(#arrowBpmn)"/>
+    <!-- No branch: gateway down to Finance, then back up to Prepare quote -->
+    <path d="M 360 356 L 360 466 L 444 466" marker-end="url(#arrowBpmn)"/>
+    <path d="M 568 466 L 600 466 L 600 380 L 509 380 L 509 362" marker-end="url(#arrowBpmn)"/>
+  </g>
+  <text x="368" y="382" font-size="10.5" fill="#8A939E">no</text>
+  <text x="396" y="324" font-size="10.5" fill="#8A939E">yes</text>
+
+  <!-- Caption -->
+  <text x="60" y="576" font-size="12.5" fill="#5B6672" font-style="italic">Level 1 is how the business describes itself. Level 2 is how work actually flows — the handoffs, decisions and</text>
+  <text x="60" y="594" font-size="12.5" fill="#5B6672" font-style="italic">waiting points where time and margin disappear. We map to the level where the problem becomes visible.</text>
+
+  <!-- Footer -->
+  <line x1="60" y1="622" x2="900" y2="622" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="60" y="650" font-size="12" fill="#8A939E" font-style="italic">Illustrative extract, BPMN 2.0 notation — not client material.</text>
+  <text x="900" y="650" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · ADVISORY</text>
+</svg>
