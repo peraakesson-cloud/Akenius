@@ -20,21 +20,21 @@
   <text x="878" y="424" font-size="12" fill="#8A939E" text-anchor="middle">12</text>
   <text x="494" y="452" font-size="12.5" fill="#8A939E" text-anchor="middle" font-style="italic">Months from vacancy</text>
 
-  <!-- Gap shading between the two curves (approx, up to month ~10) -->
+  <!-- Gap shading: exactly bounded by the interim curve (top) and the permanent curve (bottom) -->
   <path d="M 110 400
            C 180 330, 260 280, 360 258
            C 470 236, 620 226, 750 222
-           L 750 396
-           C 700 392, 680 390, 654 386
-           C 600 380, 560 384, 494 398
-           L 494 400 L 110 400 Z"
+           C 800 221, 850 220, 878 220
+           L 878 248
+           C 856 268, 830 295, 782 330
+           C 700 380, 660 400, 560 400
+           L 110 400 Z"
         fill="#B08D57" opacity="0.10"/>
 
-  <!-- Permanent recruitment curve: flat/zero during search (0-7 mo), onboarding dip-then-rise -->
-  <path d="M 110 400 L 494 400
-           C 560 384, 600 380, 654 386
-           C 700 390, 730 380, 782 340
-           C 830 302, 856 272, 878 250"
+  <!-- Permanent recruitment curve: flat during search (0-6 mo), then a smooth onboarding rise -->
+  <path d="M 110 400 L 560 400
+           C 660 400, 700 380, 782 330
+           C 830 295, 856 268, 878 248"
         fill="none" stroke="#8A939E" stroke-width="2.5" stroke-dasharray="7 5"/>
 
   <!-- Interim curve: rapid rise from ~week 2 -->
@@ -45,16 +45,16 @@
         fill="none" stroke="#B08D57" stroke-width="3"/>
 
   <!-- Curve labels -->
-  <text x="380" y="240" font-size="14" fill="#B08D57">Interim leadership</text>
-  <text x="380" y="258" font-size="11.5" fill="#B08D57" font-style="italic">operational within weeks</text>
+  <text x="500" y="190" font-size="14" fill="#B08D57">Interim leadership</text>
+  <text x="500" y="208" font-size="11.5" fill="#B08D57" font-style="italic">operational within weeks</text>
 
-  <text x="560" y="372" font-size="14" fill="#5B6672">Permanent recruitment</text>
-  <text x="560" y="390" font-size="11.5" fill="#8A939E" font-style="italic">search 6–9 months, then onboarding</text>
+  <text x="520" y="348" font-size="14" fill="#5B6672">Permanent recruitment</text>
+  <text x="520" y="366" font-size="11.5" fill="#8A939E" font-style="italic">search 6–9 months, then onboarding</text>
 
   <!-- Gap annotation -->
   <line x1="330" y1="262" x2="330" y2="396" stroke="#B08D57" stroke-width="1" stroke-dasharray="3 4"/>
-  <text x="344" y="330" font-size="12.5" fill="#B08D57" font-style="italic">The gap: momentum, margin and</text>
-  <text x="344" y="348" font-size="12.5" fill="#B08D57" font-style="italic">decisions an empty chair never makes</text>
+  <text x="344" y="292" font-size="12.5" fill="#B08D57" font-style="italic">The gap: momentum, margin and</text>
+  <text x="344" y="310" font-size="12.5" fill="#B08D57" font-style="italic">decisions an empty chair never makes</text>
 
   <!-- Note + footer -->
   <line x1="60" y1="474" x2="900" y2="474" stroke="#D8D3C8" stroke-width="1"/>
