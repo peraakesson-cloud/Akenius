@@ -94,9 +94,97 @@
         <p class="lead-in">A permanent executive search typically runs six to nine months from mandate to first day. An interim leader is operational within weeks — and the cost of an empty chair is rarely visible in the accounts, but always visible in the result a year later.</p>
       </div>
 
-      <figure class="figure">
-        <img src="assets/interim-time-to-impact.svg" alt="Time-to-impact chart: interim leadership becomes operational within weeks, while permanent recruitment contributes little for six to nine months of search plus onboarding. The gap is lost momentum, margin and decisions.">
-        <figcaption class="figcap">Illustrative. Interim and permanent recruitment are complements, not alternatives — the interim period protects the business while the right hire is found.</figcaption>
+      <!-- Animated "time to impact" chart: self-contained embed, draws once when scrolled into view -->
+      <figure class="ak-tti" style="margin:40px auto 0; max-width:960px;">
+        <style>
+          .ak-tti svg { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+          @keyframes ak-tti-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+          @keyframes ak-tti-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+          @keyframes ak-tti-fill { from { opacity: 0; } to { opacity: .10; } }
+          .ak-tti [class*="ak-tti-a"] { animation-play-state: paused; }
+          .ak-tti.is-visible [class*="ak-tti-a"] { animation-play-state: running; }
+          .ak-tti-a-title   { animation: ak-tti-fade .5s ease-out 0s    both; }
+          .ak-tti-a-axes    { animation: ak-tti-fade .5s ease-out .2s   both; }
+          .ak-tti-a-brass   { stroke-dasharray: 1; stroke-dashoffset: 1;
+                              animation: ak-tti-draw 1.2s ease-out .4s  both; }
+          .ak-tti-a-dashrev { stroke-dasharray: 1; stroke-dashoffset: 1;
+                              animation: ak-tti-draw 1.2s ease-out .9s  both; }
+          .ak-tti-a-int     { animation: ak-tti-fade .5s ease-out 1.4s  both; }
+          .ak-tti-a-fillarea{ animation: ak-tti-fill .8s ease-out 1.8s  both; }
+          .ak-tti-a-perm    { animation: ak-tti-fade .5s ease-out 1.9s  both; }
+          .ak-tti-a-gap     { animation: ak-tti-fade .5s ease-out 2.3s  both; }
+          .ak-tti-a-foot    { animation: ak-tti-fade .5s ease-out 2.7s  both; }
+          @media (prefers-reduced-motion: reduce) {
+            .ak-tti [class*="ak-tti-a"] { animation-duration: 0s; animation-delay: 0s; }
+          }
+        </style>
+
+        <svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif" role="img" aria-label="Chart: interim leadership reaches impact within weeks; permanent recruitment takes 6 to 9 months plus onboarding.">
+          <rect width="960" height="520" fill="#F7F5F1"></rect>
+
+          <mask id="ak-tti-dash-reveal">
+            <path class="ak-tti-a-dashrev" d="M 110 400 L 560 400 C 660 400, 700 380, 782 330 C 830 295, 856 268, 878 248" pathLength="1" fill="none" stroke="#ffffff" stroke-width="12"></path>
+          </mask>
+
+          <g class="ak-tti-a-title">
+            <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">TIME TO IMPACT</text>
+            <text x="60" y="92" font-size="27" fill="#23303D">The cost of an empty chair</text>
+            <text x="900" y="140" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · INTERIM</text>
+          </g>
+
+          <g class="ak-tti-a-axes">
+            <line x1="110" y1="150" x2="110" y2="400" stroke="#8A939E" stroke-width="1.2"></line>
+            <line x1="110" y1="400" x2="880" y2="400" stroke="#8A939E" stroke-width="1.2"></line>
+            <text x="60" y="270" font-size="12.5" fill="#8A939E" transform="rotate(-90 60 270)" text-anchor="middle">Leadership impact</text>
+            <text x="110" y="424" font-size="12" fill="#8A939E" text-anchor="middle">0</text>
+            <text x="302" y="424" font-size="12" fill="#8A939E" text-anchor="middle">3</text>
+            <text x="494" y="424" font-size="12" fill="#8A939E" text-anchor="middle">6</text>
+            <text x="686" y="424" font-size="12" fill="#8A939E" text-anchor="middle">9</text>
+            <text x="878" y="424" font-size="12" fill="#8A939E" text-anchor="middle">12</text>
+            <text x="494" y="452" font-size="12.5" fill="#8A939E" text-anchor="middle" font-style="italic">Months from vacancy</text>
+          </g>
+
+          <path class="ak-tti-a-fillarea" d="M 110 400 C 180 330, 260 280, 360 258 C 470 236, 620 226, 750 222 C 800 221, 850 220, 878 220 L 878 248 C 856 268, 830 295, 782 330 C 700 380, 660 400, 560 400 L 110 400 Z" fill="#B08D57"></path>
+
+          <path d="M 110 400 L 560 400 C 660 400, 700 380, 782 330 C 830 295, 856 268, 878 248" fill="none" stroke="#8A939E" stroke-width="2.5" stroke-dasharray="7 5" mask="url(#ak-tti-dash-reveal)"></path>
+
+          <path class="ak-tti-a-brass" d="M 110 400 C 180 330, 260 280, 360 258 C 470 236, 620 226, 750 222 C 800 221, 850 220, 878 220" pathLength="1" fill="none" stroke="#B08D57" stroke-width="3"></path>
+
+          <g class="ak-tti-a-int">
+            <text x="500" y="190" font-size="14" fill="#B08D57">Interim leadership</text>
+            <text x="500" y="208" font-size="11.5" fill="#B08D57" font-style="italic">operational within weeks</text>
+          </g>
+
+          <g class="ak-tti-a-perm">
+            <text x="520" y="348" font-size="14" fill="#5B6672">Permanent recruitment</text>
+            <text x="520" y="366" font-size="11.5" fill="#8A939E" font-style="italic">search 6–9 months, then onboarding</text>
+          </g>
+
+          <g class="ak-tti-a-gap">
+            <line x1="330" y1="262" x2="330" y2="396" stroke="#B08D57" stroke-width="1" stroke-dasharray="3 4"></line>
+            <text x="344" y="292" font-size="12.5" fill="#B08D57" font-style="italic">The gap: momentum, margin and</text>
+            <text x="344" y="310" font-size="12.5" fill="#B08D57" font-style="italic">decisions an empty chair never makes</text>
+          </g>
+
+          <g class="ak-tti-a-foot">
+            <line x1="60" y1="474" x2="900" y2="474" stroke="#D8D3C8" stroke-width="1"></line>
+            <text x="60" y="500" font-size="12" fill="#8A939E" font-style="italic">Illustrative. Interim and permanent recruitment are complements, not alternatives — the interim period protects the business while the right hire is found.</text>
+          </g>
+        </svg>
+
+        <script>
+          (function () {
+            var fig = document.currentScript.closest('.ak-tti');
+            if (!('IntersectionObserver' in window)) { fig.classList.add('is-visible'); return; }
+            var io = new IntersectionObserver(function (entries) {
+              if (entries.some(function (e) { return e.isIntersecting; })) {
+                fig.classList.add('is-visible');
+                io.disconnect();
+              }
+            }, { threshold: 0.3 });
+            io.observe(fig);
+          })();
+        </script>
       </figure>
 
       <div class="reasons" style="margin-top:52px">
