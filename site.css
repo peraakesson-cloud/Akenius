@@ -1,0 +1,60 @@
+/* Akenius — shared site shell + top-right navigation dropdown.
+   Linked from index.html (via helmet) and every sub-page.
+   Colors/fonts come from the design-system token CSS. */
+
+/* ---- base (sub-pages; index sets its own body reset in helmet) ---- */
+.svc-page *, .svc-page *::before, .svc-page *::after { box-sizing: border-box; }
+body.svc-page { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+.skip { position: absolute; left: -9999px; top: 0; z-index: 300; background: var(--paper); color: var(--ink); padding: 14px 22px; font-family: var(--font-sans); font-size: 14px; text-decoration: none; border: 1px solid var(--line); }
+.skip:focus { left: 0; }
+
+/* ---- top-right dropdown (native <details>, no JS) ---- */
+.nav-menu { position: fixed; top: 18px; right: 18px; z-index: 200; font-family: var(--font-sans); }
+.nav-menu > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; padding: 9px 15px; background: var(--paper); color: var(--ink); border: 1px solid var(--border-strong); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; user-select: none; transition: background 150ms ease, color 150ms ease; }
+.nav-menu > summary::-webkit-details-marker { display: none; }
+.nav-menu > summary::marker { content: ""; }
+.nav-menu > summary .car { width: 7px; height: 7px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 180ms ease; }
+.nav-menu[open] > summary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.nav-menu[open] > summary .car { transform: translateY(2px) rotate(-135deg); }
+.nav-panel { position: absolute; top: calc(100% + 8px); right: 0; min-width: 258px; background: var(--paper); border: 1px solid var(--border-strong); display: flex; flex-direction: column; box-shadow: 0 14px 40px rgba(24, 43, 54, 0.22); overflow: hidden; }
+.nav-panel a { padding: 13px 18px; font-family: var(--font-sans); font-size: 14px; line-height: 1.3; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); transition: background 120ms ease, color 120ms ease; }
+.nav-panel a:last-child { border-bottom: 0; }
+.nav-panel a:hover { background: var(--paper-deep); color: var(--brass-deep); }
+.nav-panel a[aria-current="page"] { color: var(--brass); font-weight: 600; background: var(--paper-deep); }
+
+/* ---- sub-page shell ---- */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+.svc-hero { background: var(--ink); padding: 30px 0 96px; }
+.home { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+.home svg { display: block; }
+.home .wm { font-family: Georgia, serif; font-size: 15px; letter-spacing: 5.5px; color: var(--paper); font-weight: 500; }
+.svc-hero .kick { margin: 64px 0 0; }
+.kick { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin: 0; }
+.svc-hero h1 { margin: 16px 0 0; font-family: var(--font-serif); font-weight: 600; font-size: clamp(38px, 5.4vw, 60px); line-height: 1.05; color: var(--paper); }
+.svc-hero .lead { margin: 22px 0 0; font-family: var(--font-sans); font-size: 18px; line-height: 1.6; color: var(--line); max-width: 60ch; }
+
+.content { padding: 88px 0; }
+.content p { margin: 0 0 20px; font-family: var(--font-sans); font-size: 17px; line-height: 1.7; color: var(--slate); max-width: 66ch; }
+.content .pull { font-family: var(--font-serif); font-size: 25px; font-style: italic; line-height: 1.4; color: var(--ink); }
+.svc-list { margin: 0 0 24px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px; max-width: 66ch; }
+.svc-list li { display: flex; gap: 14px; align-items: flex-start; font-family: var(--font-sans); font-size: 17px; line-height: 1.65; color: var(--slate); }
+.svc-list li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 9px; background: var(--brass); }
+.svc-list strong { color: var(--ink); font-weight: 600; }
+.soon { font-size: 15px !important; color: var(--slate); border-top: 1px solid var(--line); padding-top: 28px; margin-top: 40px !important; }
+.soon a { color: var(--brass-deep); }
+
+.cta { background: var(--paper-deep); border-top: 1px solid var(--line); padding: 64px 0; }
+.cta .container { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 32px; background: var(--ink); color: var(--paper); font-family: var(--font-sans); font-size: 15px; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; border: 1px solid var(--ink); transition: background 150ms ease; }
+.btn:hover { background: var(--ink-soft); }
+.back { font-family: var(--font-sans); font-size: 15px; color: var(--slate); text-decoration: none; }
+.back:hover { color: var(--brass-deep); }
+
+.site-footer { background: var(--ink); border-top: 1px solid var(--brass); padding: 48px 0; }
+.site-footer .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; max-width: 1100px; }
+.site-footer p { margin: 0; font-family: var(--font-sans); font-size: 13px; line-height: 1.6; color: var(--line); }
+
+/* "Read more" link on the home-page service rows */
+.svc-more { align-self: flex-start; margin-top: 6px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--brass-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+.svc-more:hover { color: var(--ink); }
