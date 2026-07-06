@@ -7,14 +7,28 @@
    Every page opts in via this shared file; unsupported browsers just navigate
    normally. Disabled under reduced-motion. */
 @view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+/* Root crossfade — shorter than the sluggish default. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 320ms;
-  animation-timing-function: ease;
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) { animation: none; }
+/* Paired service-title morph (index h3 <-> sub-page h1), a touch slower than the fade. */
+::view-transition-group(svc-interim),
+::view-transition-group(svc-consultancy),
+::view-transition-group(svc-board),
+::view-transition-group(svc-digital),
+::view-transition-group(svc-ventures) {
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+/* Sub-page kicker + lead arrive just after the title lands. */
+@keyframes subheroRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .svc-hero .kick, .svc-hero .lead { animation: subheroRise 400ms cubic-bezier(0.33, 1, 0.68, 1) 200ms both; }
 }
 
 /* ---- hero grain overlay (Part A4 / B): static SVG feTurbulence noise, ~4%,

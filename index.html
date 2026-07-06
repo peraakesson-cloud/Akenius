@@ -51,6 +51,29 @@
       html.akenius-motion .hero-line:nth-child(2) .hero-line-inner { animation-delay: 120ms; }
       html.akenius-motion .hero-reveal { animation: heroFade 700ms cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 1350ms; }
     }
+    /* Logo "A" mark draw-on (Part 2A): legs -> crossbar -> crown, ~1.6s, once then static.
+       Default is fully drawn (reduced-motion / no-JS); only the motion path starts from zero. */
+    .mark-stroke { stroke-dasharray: 1; stroke-dashoffset: 0; }
+    @keyframes markDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: no-preference) {
+      html.akenius-motion .mark-leg   { animation: markDraw 700ms cubic-bezier(0.33, 1, 0.68, 1) 0ms   both; }
+      html.akenius-motion .mark-bar   { animation: markDraw 450ms cubic-bezier(0.33, 1, 0.68, 1) 550ms both; }
+      html.akenius-motion .mark-crown { animation: markDraw 700ms cubic-bezier(0.33, 1, 0.68, 1) 900ms both; }
+    }
+    /* Service rows (Part 2C): numbered index, whole-row link, hover affordance. */
+    .svc-num { font-family: var(--font-sans); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; color: var(--brass); }
+    .svc-row { position: relative; cursor: pointer; }
+    .svc-more .arr { display: inline-block; }
+    .svc-more::after { content: ""; position: absolute; inset: 0; }
+    .svc-row::before { content: ""; position: absolute; left: -18px; top: 0; bottom: 0; width: 2px; background: var(--brass); transform: scaleY(0); transform-origin: top; }
+    @media (prefers-reduced-motion: no-preference) {
+      .svc-row { transition: background-color 250ms ease-out; }
+      .svc-row::before { transition: transform 250ms cubic-bezier(0.33, 1, 0.68, 1); }
+      .svc-more .arr { transition: transform 250ms cubic-bezier(0.33, 1, 0.68, 1); }
+      .svc-row:hover, .svc-row:focus-within { background-color: rgba(24, 43, 54, 0.03); }
+      .svc-row:hover::before, .svc-row:focus-within::before { transform: scaleY(1); }
+      .svc-row:hover .arr, .svc-row:focus-within .arr { transform: translateX(4px); }
+    }
   </style>
 </helmet>
 
@@ -78,10 +101,15 @@
 
     <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:36px; padding:96px 24px; max-width:760px">
 
-      <!-- Logo lockup: animated brand mark (dots -> globe -> A morph) above the wordmark + crossfading descriptor -->
+      <!-- Logo lockup: line-drawn "A" mark (draws once on load, then static) above the wordmark + crossfading descriptor -->
       <div style="display:flex; flex-direction:column; align-items:center; gap:4px">
         <div style="width:184px; max-width:64vw; height:150px; position:relative">
-          <canvas ref="{{ sigCanvasRef }}" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%"></canvas>
+          <svg width="100%" height="100%" viewBox="35 -2 130 106" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke="var(--brass)" stroke-width="2.25" stroke-linecap="round" style="display:block">
+            <path class="mark-stroke mark-leg" pathLength="1" d="M 72 88 L 97 32"></path>
+            <path class="mark-stroke mark-leg" pathLength="1" d="M 128 88 L 103 32"></path>
+            <path class="mark-stroke mark-bar" pathLength="1" d="M 84 66 L 116 66"></path>
+            <path class="mark-stroke mark-crown" pathLength="1" d="M 100 14.5 A 7.5 7.5 0 0 1 100 29.5 A 7.5 7.5 0 0 1 100 14.5"></path>
+          </svg>
         </div>
         <svg width="216" height="63" viewBox="0 106 200 58" role="img" aria-label="Akenius" style="display:block">
           <text x="100" y="122" text-anchor="middle" font-size="21" letter-spacing="7.5" fill="var(--paper)" font-weight="500" font-family="Georgia, serif">AKENIUS</text>
@@ -122,25 +150,27 @@
       <!-- Interim leadership -->
       <article data-reveal="1" class="svc-row">
         <div style="display:flex; flex-direction:column; gap:14px">
+          <span class="svc-num" aria-hidden="true">01</span>
           <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="briefcase" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
           <p class="kick">Interim</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink)">Interim leadership</h3>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-interim">Interim leadership</h3>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Sometimes a company can't wait for the perfect recruitment. A departure, a transition, a turnaround, an ownership change — the P&amp;L doesn't pause while you search.</p>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We step into the role — CEO or senior commercial leadership — take full ownership from day one, and hand over a stronger, more capable business when the permanent solution is in place. Not a caretaker. An operator with a mandate.</p>
-          <a class="svc-more" href="interim-leadership.html">Read more &#8594;</a>
+          <a class="svc-more" href="interim-leadership.html">How interim works <span class="arr" aria-hidden="true">&#8594;</span></a>
         </div>
       </article>
 
       <!-- Commercial consultancy -->
       <article data-reveal="1" class="svc-row">
         <div style="display:flex; flex-direction:column; gap:14px">
+          <span class="svc-num" aria-hidden="true">02</span>
           <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="chart-line" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
           <p class="kick">Advisory</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink)">Commercial consultancy</h3>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-consultancy">Commercial consultancy</h3>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Growth rarely stalls for lack of ideas. It stalls because strategy, processes and commercial execution stop reinforcing each other.</p>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We take on focused engagements where the result is measurable:</p>
           <ul style="margin:4px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:16px">
@@ -149,49 +179,52 @@
             <li style="display:flex; gap:14px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:var(--brass)"></span><span style="font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate)"><strong style="color:var(--ink); font-weight:600">Sales and marketing effectiveness.</strong> We accelerate what already works and fix what doesn't — pipeline, pricing conversations, channel focus, marketing that pulls its weight.</span></li>
             <li style="display:flex; gap:14px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:var(--brass)"></span><span style="font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate)"><strong style="color:var(--ink); font-weight:600">Pricing and profit optimization.</strong> Pricing is the fastest profit lever a company has, and the most neglected. We find the margin hiding in your price structure, discounting behaviour and product mix.</span></li>
           </ul>
-          <a class="svc-more" href="commercial-consultancy.html">Read more &#8594;</a>
+          <a class="svc-more" href="commercial-consultancy.html">Inside the practice <span class="arr" aria-hidden="true">&#8594;</span></a>
         </div>
       </article>
 
       <!-- Board work & senior advisory -->
       <article data-reveal="1" class="svc-row">
         <div style="display:flex; flex-direction:column; gap:14px">
+          <span class="svc-num" aria-hidden="true">03</span>
           <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="landmark" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
           <p class="kick">Board</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink)">Board work &amp; senior advisory</h3>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-board">Board work &amp; senior advisory</h3>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Owners and CEOs rarely lack information. What's scarce is an experienced counterpart — someone to test the difficult decisions against before they're made.</p>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We serve as board member, chair support or standing sparring partner, bringing governance experience from Nordic boards and the perspective of someone who has sat on the operating side of the table.</p>
-          <a class="svc-more" href="board-advisory.html">Read more &#8594;</a>
+          <a class="svc-more" href="board-advisory.html">How we support boards <span class="arr" aria-hidden="true">&#8594;</span></a>
         </div>
       </article>
 
       <!-- Digital services -->
       <article data-reveal="1" class="svc-row">
         <div style="display:flex; flex-direction:column; gap:14px">
+          <span class="svc-num" aria-hidden="true">04</span>
           <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="cloud" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
           <p class="kick">Digital</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink)">Digital services</h3>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-digital">Digital services</h3>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Smaller businesses and associations need a web presence that simply works — without an agency retainer, without chasing three different suppliers when something breaks.</p>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We develop, host and care for websites and digital services as one accountable partner. Clear scope, clear pricing, no surprises. From build to deployment to keeping it running.</p>
-          <a class="svc-more" href="digital-services.html">Read more &#8594;</a>
+          <a class="svc-more" href="digital-services.html">What's included <span class="arr" aria-hidden="true">&#8594;</span></a>
         </div>
       </article>
 
       <!-- Ventures & products -->
       <article data-reveal="1" class="svc-row">
         <div style="display:flex; flex-direction:column; gap:14px">
+          <span class="svc-num" aria-hidden="true">05</span>
           <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="handshake" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
           <p class="kick">Ventures</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink)">Ventures &amp; products</h3>
+          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-ventures">Ventures &amp; products</h3>
           <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Part&#8209;ownership and product collaborations where operating experience is the capital. We invest time, commercial leadership and skin in the game alongside founders and product owners.</p>
           <p style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-size:22px; font-style:italic; line-height:1.4; color:var(--ink)">We build with founders, not for them.</p>
-          <a class="svc-more" href="ventures-products.html">Read more &#8594;</a>
+          <a class="svc-more" href="ventures-products.html">How partnerships work <span class="arr" aria-hidden="true">&#8594;</span></a>
         </div>
       </article>
     </div>
@@ -288,8 +321,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;motion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Animation&quot; },
-  &quot;descriptorSeconds&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4.5, &quot;min&quot;: 3, &quot;max&quot;: 8, &quot;step&quot;: 0.5, &quot;unit&quot;: &quot;s&quot;, &quot;section&quot;: &quot;Animation&quot; },
-  &quot;signatureBand&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot; }
+  &quot;descriptorSeconds&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4.5, &quot;min&quot;: 3, &quot;max&quot;: 8, &quot;step&quot;: 0.5, &quot;unit&quot;: &quot;s&quot;, &quot;section&quot;: &quot;Animation&quot; }
 }">
 class Component extends DCLogic {
   state = {
@@ -300,7 +332,6 @@ class Component extends DCLogic {
   };
 
   heroCanvasRef = React.createRef();
-  sigCanvasRef = React.createRef();
   wordIdx = 0;
   rafIds = [];
   cleanups = [];
@@ -316,7 +347,6 @@ class Component extends DCLogic {
     }
     this.startDescriptorCycle();
     this.initHeroShader();
-    this.initSignature();
     this.setupReveals();
   }
 
@@ -371,196 +401,6 @@ class Component extends DCLogic {
       static: !this.motionOn
     });
     if (handle && handle.teardown) this.cleanups.push(handle.teardown);
-  }
-
-  // ---------- signature animation ----------
-  initSignature() {
-    const canvas = this.sigCanvasRef.current;
-    if (!canvas) return;
-    let env = this.fitCanvas(canvas);
-    const PAPER = "242,243,241", LINE = "216,220,218", BRASS = "168,118,62", SLATE = "126,148,162";
-    const N = 72, T = 10; // node count, loop seconds (snappier: fast to globe->mark, ~2s hold, quick burst back)
-    const rand = [];
-    for (let i = 0; i < N * 6; i++) rand.push(Math.random());
-
-    const onResize = () => { env = this.fitCanvas(canvas); };
-    window.addEventListener("resize", onResize);
-    this.cleanups.push(() => window.removeEventListener("resize", onResize));
-
-    const ss = (u, a, b) => { const x = Math.min(1, Math.max(0, (u - a) / (b - a))); return x * x * (3 - 2 * x); };
-    const orbits = [
-      { r: 1.28, fl: 0.36, tilt: -0.45, sp: 0.10 },
-      { r: 1.58, fl: 0.30, tilt: 0.25, sp: -0.07 },
-      { r: 1.92, fl: 0.42, tilt: 0.85, sp: 0.055 }
-    ];
-    const orbitXY = (o, ang, cx, cy, R) => {
-      const x0 = R * o.r * Math.cos(ang), y0 = R * o.r * o.fl * Math.sin(ang);
-      const c = Math.cos(o.tilt), s = Math.sin(o.tilt);
-      return [cx + x0 * c - y0 * s, cy + x0 * s + y0 * c];
-    };
-    // target point on the Akenius mark outline (in mark/SVG coords), per node index.
-    // legs L(72,88)->apex(97,32) & R(128,88)->apex(103,32), crossbar 84..116 @66, crown circle c(100,22) r7.5
-    const markPt = (i) => {
-      if (i < 24) { const p = i / 23; return [72 + 25 * p, 88 - 56 * p]; }        // left leg
-      if (i < 48) { const p = (i - 24) / 23; return [128 - 25 * p, 88 - 56 * p]; } // right leg
-      if (i < 60) { const p = (i - 48) / 11; return [84 + 32 * p, 66]; }           // crossbar
-      const p = (i - 60) / 12, a = -1.5708 + p * 6.283;                            // crown circle
-      return [100 + 7.5 * Math.cos(a), 22 + 7.5 * Math.sin(a)];
-    };
-
-    const draw = (t) => {
-      const { ctx, w, h } = env;
-      const cx = w / 2, cy = h / 2, R = Math.min(h * 0.32, w * 0.30, 120);
-      // mark space -> canvas: mark is ~100 wide, centered vertically on row 51
-      const sM = R / 34, MX = (mx) => cx + (mx - 100) * sM, MY = (my) => cy + (my - 51) * sM;
-      const u = (t % T) / T;
-      // timeline: scatter -> gather/globe (fast) -> flow -> resolve to mark -> HOLD ~2s -> burst back
-      const gatherW = ss(u, 0.04, 0.18) * (1 - ss(u, 0.84, 0.95));
-      const resolveW = ss(u, 0.42, 0.56) * (1 - ss(u, 0.86, 0.95));
-      const flowW = ss(u, 0.22, 0.32) * (1 - ss(u, 0.44, 0.54));
-      const scatterW = (1 - gatherW) * (1 - resolveW);
-      const globeW = ss(u, 0.10, 0.24) * (1 - ss(u, 0.42, 0.56));
-      ctx.clearRect(0, 0, w, h);
-
-      // node positions: scatter -> orbit -> ordered ring
-      const pos = [];
-      for (let i = 0; i < N; i++) {
-        const r0 = rand[i * 6], r1 = rand[i * 6 + 1], r2 = rand[i * 6 + 2], r3 = rand[i * 6 + 3];
-        const sx = w * (0.04 + 0.92 * r0) + Math.sin(t * (0.15 + r2 * 0.2) + r3 * 9) * 26;
-        const sy = h * (0.08 + 0.84 * r1) + Math.cos(t * (0.12 + r3 * 0.2) + r2 * 7) * 20;
-        const o = orbits[i % 3];
-        const [ox, oy] = orbitXY(o, r2 * 6.283 + t * o.sp * 6, cx, cy, R);
-        const [mmx, mmy] = markPt(i);
-        const rx = MX(mmx), ry = MY(mmy);
-        let x = sx + (ox - sx) * gatherW, y = sy + (oy - sy) * gatherW;
-        x = x + (rx - x) * resolveW; y = y + (ry - y) * resolveW;
-        pos.push([x, y, r1]);
-      }
-
-      // scatter: jagged tangled lines
-      if (scatterW > 0.02) {
-        ctx.lineWidth = 1.3;
-        for (let i = 0; i < 14; i++) {
-          const a = pos[i], b = pos[(i * 7 + 11) % N], m = pos[(i * 13 + 5) % N];
-          ctx.strokeStyle = `rgba(${SLATE},${scatterW * 0.20})`;
-          ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(m[0], m[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
-        }
-      }
-
-      // wireframe globe
-      if (globeW > 0.02) {
-        const pulse = 1 + flowW * 0.025 * Math.sin(t * 2.1);
-        const Rg = R * pulse;
-        ctx.lineWidth = 1.3;
-        ctx.strokeStyle = `rgba(${LINE},${globeW * 0.55})`;
-        ctx.beginPath(); ctx.arc(cx, cy, Rg, 0, 7); ctx.stroke();
-        for (const la of [-0.55, 0, 0.55]) {
-          const yy = cy + Rg * Math.sin(la) * 0.9, rr = Rg * Math.cos(la);
-          ctx.beginPath(); ctx.ellipse(cx, yy, rr, rr * 0.26, 0, 0, 7); ctx.stroke();
-        }
-        for (const f of [0.72, 0.38, 0.08]) {
-          ctx.beginPath(); ctx.ellipse(cx, cy, Rg * f, Rg, 0, 0, 7); ctx.stroke();
-        }
-      }
-
-      // orbital paths
-      if (gatherW > 0.02) {
-        ctx.lineWidth = 1.3;
-        ctx.strokeStyle = `rgba(${LINE},${gatherW * (1 - resolveW) * 0.34})`;
-        for (const o of orbits) {
-          ctx.beginPath();
-          for (let k = 0; k <= 90; k++) {
-            const [x, y] = orbitXY(o, k / 90 * 6.283, cx, cy, R);
-            k ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
-          }
-          ctx.stroke();
-        }
-      }
-
-      // flow: connections + brass pulses + node flashes
-      if (flowW > 0.02) {
-        const md = R * 0.95;
-        for (let i = 0; i < N; i += 2) {
-          for (let j = i + 2; j < N; j += 3) {
-            const d = Math.hypot(pos[i][0] - pos[j][0], pos[i][1] - pos[j][1]);
-            if (d < md) {
-              const flicker = 0.5 + 0.5 * Math.sin(t * 1.7 + i + j);
-              ctx.strokeStyle = `rgba(${LINE},${flowW * (1 - d / md) * 0.30 * flicker})`;
-              ctx.lineWidth = 1.3;
-              ctx.beginPath(); ctx.moveTo(pos[i][0], pos[i][1]); ctx.lineTo(pos[j][0], pos[j][1]); ctx.stroke();
-            }
-          }
-        }
-        orbits.forEach((o, oi) => {
-          for (let k = 0; k < 2; k++) {
-            const ang = t * (0.5 + oi * 0.13) * (o.sp > 0 ? 1 : -1) + k * 3.14 + oi;
-            const [x, y] = orbitXY(o, ang, cx, cy, R);
-            ctx.fillStyle = `rgba(${BRASS},${flowW * 0.4})`;
-            ctx.beginPath(); ctx.arc(x, y, 5.5, 0, 7); ctx.fill();
-            ctx.fillStyle = `rgba(${BRASS},${flowW * 0.9})`;
-            ctx.beginPath(); ctx.arc(x, y, 2, 0, 7); ctx.fill();
-          }
-        });
-      }
-
-      // resolution: the Akenius mark draws itself out of the settled nodes
-      if (resolveW > 0.02) {
-        const legP = this.motionOn ? ss(u, 0.44, 0.56) : 1;   // legs grow base -> apex
-        const barP = this.motionOn ? ss(u, 0.50, 0.60) : 1;   // crossbar grows left -> right
-        const crP = this.motionOn ? ss(u, 0.54, 0.64) : 1;    // crown circle draws in from top
-        const wS = Math.max(2, R * 0.05);
-        ctx.lineCap = "round"; ctx.lineJoin = "round";
-        // legs (paper)
-        if (legP > 0.01) {
-          ctx.strokeStyle = `rgba(${PAPER},${resolveW})`;
-          ctx.lineWidth = wS;
-          ctx.beginPath();
-          ctx.moveTo(MX(72), MY(88)); ctx.lineTo(MX(72 + 25 * legP), MY(88 - 56 * legP));
-          ctx.moveTo(MX(128), MY(88)); ctx.lineTo(MX(128 - 25 * legP), MY(88 - 56 * legP));
-          ctx.stroke();
-        }
-        // crossbar (paper)
-        if (barP > 0.01) {
-          ctx.strokeStyle = `rgba(${PAPER},${resolveW})`;
-          ctx.lineWidth = wS;
-          ctx.beginPath();
-          ctx.moveTo(MX(84), MY(66)); ctx.lineTo(MX(84 + 32 * barP), MY(66));
-          ctx.stroke();
-        }
-        // crown circle (brass)
-        if (crP > 0.01) {
-          ctx.strokeStyle = `rgba(${BRASS},${resolveW})`;
-          ctx.lineWidth = Math.max(1.6, R * 0.045);
-          ctx.beginPath();
-          ctx.arc(MX(100), MY(22), 7.5 * sM, -1.5708, -1.5708 + 6.283 * crP);
-          ctx.stroke();
-        }
-        ctx.lineCap = "butt"; ctx.lineJoin = "miter";
-      }
-
-      // nodes
-      for (let i = 0; i < N; i++) {
-        const flash = flowW * Math.pow(Math.max(0, Math.sin(t * 1.3 + i * 0.9)), 14);
-        const a = 0.34 + 0.26 * gatherW + 0.30 * resolveW + pos[i][2] * 0.14;
-        if (flash > 0.05) {
-          ctx.fillStyle = `rgba(${BRASS},${flash * 0.9})`;
-          ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 3.6, 0, 7); ctx.fill();
-        }
-        ctx.fillStyle = `rgba(${PAPER},${a})`;
-        ctx.beginPath(); ctx.arc(pos[i][0], pos[i][1], 1.9, 0, 7); ctx.fill();
-      }
-    };
-
-    if (!this.motionOn) { draw(0.75 * T); return; } // static "resolved" frame — fully-formed mark
-    let visible = true, raf;
-    const start = performance.now();
-    const loop = (now) => {
-      if (visible) draw((now - start) / 1000 + T * 0.05);
-      raf = requestAnimationFrame(loop);
-      this.rafIds[1] = raf;
-    };
-    this.observeVisible(canvas, v => { visible = v; });
-    raf = requestAnimationFrame(loop);
   }
 
   // ---------- scroll reveals ----------
@@ -621,10 +461,8 @@ class Component extends DCLogic {
     return {
       // hero refs + descriptor
       heroCanvasRef: this.heroCanvasRef,
-      sigCanvasRef: this.sigCanvasRef,
       descA: s.descA, descB: s.descB,
       descAO: s.showA ? 1 : 0, descBO: s.showA ? 0 : 1,
-      showSignature: this.props.signatureBand ?? true,
       scrollToContact: this.scrollToContactFn,
       // form
       five: 5,
