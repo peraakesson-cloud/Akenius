@@ -235,34 +235,106 @@
         <h2>How an engagement runs</h2>
         <p class="lead-in">Every assignment is different; the discipline is the same. One mandate, four phases.</p>
       </div>
-
-      <figure class="figure">
-        <img src="assets/interim-engagement-arc.svg" alt="The Akenius interim model: one mandate in four phases — diagnose, stabilise, deliver, hand over — with full operational responsibility throughout.">
-      </figure>
-
-      <div class="phase-list">
-        <div class="phase">
-          <span class="n">01</span>
-          <h3>Diagnose</h3>
-          <p>Weeks 1–4. Understand the business faster than the business expects. Numbers, customers, people, cash. Agree the mandate and the measurable objectives with the board.</p>
-        </div>
-        <div class="phase">
-          <span class="n">02</span>
-          <h3>Stabilise</h3>
-          <p>Secure what can't wait — cash flow, key customers, key people, decision-making rhythm. Restore confidence inside and outside the company.</p>
-        </div>
-        <div class="phase">
-          <span class="n">03</span>
-          <h3>Deliver</h3>
-          <p>Execute the agreed agenda: turnaround, transformation, growth initiative or bridge-to-recruitment. Report progress against the objectives set at the start — transparently, every month.</p>
-        </div>
-        <div class="phase">
-          <span class="n">04</span>
-          <h3>Hand over</h3>
-          <p>Transfer ownership, knowledge and momentum to the permanent organisation. Document what was changed and why. Leave the company stronger than we found it — the only definition of success that matters.</p>
-        </div>
-      </div>
     </div>
+
+    <!-- Animated four-phase timeline: self-contained embed, draws once when scrolled into view -->
+    <figure class="ak-tl" style="margin:44px auto 0; max-width:1160px; padding:0 24px; box-sizing:border-box;">
+      <style>
+        .ak-tl svg { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+        @keyframes ak-tl-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        @keyframes ak-tl-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+        .ak-tl [class*="ak-tl-a"] { animation-play-state: paused; }
+        .ak-tl.is-visible [class*="ak-tl-a"] { animation-play-state: running; }
+        .ak-tl-a-title  { animation: ak-tl-fade .5s ease-out 0s both; }
+        .ak-tl-a-line   { stroke-dasharray: 1; stroke-dashoffset: 1;
+                          animation: ak-tl-draw 1.4s ease-out .3s both; }
+        .ak-tl-a-phase  { animation: ak-tl-fade .5s ease-out both; }
+        .ak-tl-a-p1     { animation-delay: .5s; }
+        .ak-tl-a-p2     { animation-delay: 1s; }
+        .ak-tl-a-p3     { animation-delay: 1.5s; }
+        .ak-tl-a-p4     { animation-delay: 2s; }
+        .ak-tl-a-foot   { animation: ak-tl-fade .5s ease-out 2.7s both; }
+        @media (prefers-reduced-motion: reduce) {
+          .ak-tl [class*="ak-tl-a"] { animation-duration: 0s; animation-delay: 0s; }
+        }
+      </style>
+
+      <svg viewBox="0 0 1700 800" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif" role="img" aria-label="Timeline: the Akenius interim model in four phases — Diagnose (weeks 1–4), Stabilise (first months), Deliver (core of the assignment), Hand over (planned from day one).">
+        <rect width="1700" height="800" fill="#F7F5F1"></rect>
+
+        <g class="ak-tl-a-title">
+          <text x="105" y="95" font-size="21" letter-spacing="6" fill="#B08D57">THE AKENIUS INTERIM MODEL</text>
+          <text x="103" y="160" font-size="46" fill="#23303D">One mandate, four phases</text>
+        </g>
+
+        <path class="ak-tl-a-line" d="M 105 577 L 1595 577" pathLength="1" fill="none" stroke="#B08D57" stroke-width="4"></path>
+
+        <g class="ak-tl-a-phase ak-tl-a-p1">
+          <text x="230" y="295" font-size="21" letter-spacing="4" fill="#B08D57" text-anchor="middle">01</text>
+          <text x="230" y="344" font-size="32" fill="#23303D" text-anchor="middle">Diagnose</text>
+          <text x="230" y="388" font-size="20" fill="#5B6672" text-anchor="middle">Numbers, customers,</text>
+          <text x="230" y="420" font-size="20" fill="#5B6672" text-anchor="middle">people, cash. Agree the</text>
+          <text x="230" y="452" font-size="20" fill="#5B6672" text-anchor="middle">mandate and objectives</text>
+          <text x="230" y="484" font-size="20" fill="#5B6672" text-anchor="middle">with the board.</text>
+          <circle cx="230" cy="577" r="13" fill="#23303D"></circle>
+          <text x="230" y="634" font-size="20" fill="#5B6672" text-anchor="middle" font-style="italic">Weeks 1–4</text>
+        </g>
+
+        <g class="ak-tl-a-phase ak-tl-a-p2">
+          <text x="628" y="295" font-size="21" letter-spacing="4" fill="#B08D57" text-anchor="middle">02</text>
+          <text x="628" y="344" font-size="32" fill="#23303D" text-anchor="middle">Stabilise</text>
+          <text x="628" y="388" font-size="20" fill="#5B6672" text-anchor="middle">Secure cash flow, key</text>
+          <text x="628" y="420" font-size="20" fill="#5B6672" text-anchor="middle">customers and key people.</text>
+          <text x="628" y="452" font-size="20" fill="#5B6672" text-anchor="middle">Restore decision rhythm</text>
+          <text x="628" y="484" font-size="20" fill="#5B6672" text-anchor="middle">and confidence.</text>
+          <circle cx="628" cy="577" r="13" fill="#23303D"></circle>
+          <text x="628" y="634" font-size="20" fill="#5B6672" text-anchor="middle" font-style="italic">First months</text>
+        </g>
+
+        <g class="ak-tl-a-phase ak-tl-a-p3">
+          <text x="1028" y="295" font-size="21" letter-spacing="4" fill="#B08D57" text-anchor="middle">03</text>
+          <text x="1028" y="344" font-size="32" fill="#23303D" text-anchor="middle">Deliver</text>
+          <text x="1028" y="388" font-size="20" fill="#5B6672" text-anchor="middle">Execute the agreed agenda:</text>
+          <text x="1028" y="420" font-size="20" fill="#5B6672" text-anchor="middle">turnaround, transformation</text>
+          <text x="1028" y="452" font-size="20" fill="#5B6672" text-anchor="middle">or growth. Transparent</text>
+          <text x="1028" y="484" font-size="20" fill="#5B6672" text-anchor="middle">monthly reporting.</text>
+          <circle cx="1028" cy="577" r="13" fill="#23303D"></circle>
+          <text x="1028" y="634" font-size="20" fill="#5B6672" text-anchor="middle" font-style="italic">Core of the assignment</text>
+        </g>
+
+        <g class="ak-tl-a-phase ak-tl-a-p4">
+          <text x="1448" y="295" font-size="21" letter-spacing="4" fill="#B08D57" text-anchor="middle">04</text>
+          <text x="1448" y="344" font-size="32" fill="#23303D" text-anchor="middle">Hand over</text>
+          <text x="1448" y="388" font-size="20" fill="#5B6672" text-anchor="middle">Transfer ownership,</text>
+          <text x="1448" y="420" font-size="20" fill="#5B6672" text-anchor="middle">knowledge and momentum.</text>
+          <text x="1448" y="452" font-size="20" fill="#5B6672" text-anchor="middle">Leave the company</text>
+          <text x="1448" y="484" font-size="20" fill="#5B6672" text-anchor="middle">stronger than we found it.</text>
+          <circle cx="1448" cy="577" r="19" fill="#F7F5F1" stroke="#B08D57" stroke-width="3"></circle>
+          <circle cx="1448" cy="577" r="11" fill="#B08D57"></circle>
+          <text x="1448" y="634" font-size="20" fill="#5B6672" text-anchor="middle" font-style="italic">Planned from day one</text>
+        </g>
+
+        <g class="ak-tl-a-foot">
+          <line x1="105" y1="716" x2="1595" y2="716" stroke="#D8D3C8" stroke-width="1"></line>
+          <text x="105" y="765" font-size="22" fill="#5B6672" font-style="italic">Full operational responsibility throughout — accountable for the P&amp;L, measured on outcomes.</text>
+          <text x="1595" y="765" font-size="21" fill="#B08D57" text-anchor="end" letter-spacing="3">AKENIUS · INTERIM</text>
+        </g>
+      </svg>
+
+      <script>
+        (function () {
+          var fig = document.currentScript.closest('.ak-tl');
+          if (!('IntersectionObserver' in window)) { fig.classList.add('is-visible'); return; }
+          var io = new IntersectionObserver(function (entries) {
+            if (entries.some(function (e) { return e.isIntersecting; })) {
+              fig.classList.add('is-visible');
+              io.disconnect();
+            }
+          }, { threshold: 0.3 });
+          io.observe(fig);
+        })();
+      </script>
+    </figure>
   </section>
 
   <!-- Why Akenius -->
