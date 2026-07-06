@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Akenius">
+  <rect width="32" height="32" rx="5" fill="#182B36"/>
+  <g transform="translate(16 16.4) scale(0.3) translate(-100 -51)">
+    <circle cx="100" cy="22" r="7.5" fill="none" stroke="#A8763E" stroke-width="4.2"/>
+    <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="#F2F3F1" stroke-width="6.5" stroke-linecap="round"/>
+    <line x1="84" y1="66" x2="116" y2="66" stroke="#F2F3F1" stroke-width="6.5" stroke-linecap="round"/>
+  </g>
+</svg>

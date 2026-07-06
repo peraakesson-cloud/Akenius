@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,16 @@
 <meta property="og:title" content="Akenius AB — Senior commercial leadership, sized to your company">
 <meta property="og:description" content="Operator-led consulting: interim leadership, commercial advisory, pricing, board work and digital services across the Nordics.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://peraakesson-cloud.github.io/Akenius/og-image.png">
+<meta property="og:url" content="https://peraakesson-cloud.github.io/Akenius/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Akenius AB — Senior commercial leadership, sized to your company">
+<meta name="twitter:description" content="Operator-led consulting: interim leadership, commercial advisory, pricing, board work and digital services across the Nordics.">
+<meta name="twitter:image" content="https://peraakesson-cloud.github.io/Akenius/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <script src="./support.js"></script>
+<script src="js/akenius-shader.js"></script>
 </head>
 <body>
 <x-dc>
@@ -31,6 +40,17 @@
     .svc-row { display: grid; grid-template-columns: 190px 1fr; gap: 44px; align-items: start; padding: 52px 0; border-top: 1px solid var(--line); }
     .svc-row:first-child { border-top: 0; padding-top: 8px; }
     @media (max-width: 760px) { .svc-row { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; } }
+    /* Hero headline reveal choreography (Part A3). Gated by no-preference AND the
+       .akenius-motion flag added in componentDidMount before first paint. */
+    .hero-line { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+    .hero-line-inner { display: block; }
+    @keyframes heroRise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+    @keyframes heroFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: no-preference) {
+      html.akenius-motion .hero-line-inner { animation: heroRise 900ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+      html.akenius-motion .hero-line:nth-child(2) .hero-line-inner { animation-delay: 120ms; }
+      html.akenius-motion .hero-reveal { animation: heroFade 700ms cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 1350ms; }
+    }
   </style>
 </helmet>
 
@@ -54,6 +74,7 @@
   <!-- ============ HERO ============ -->
   <section data-screen-label="Hero" style="position:relative; min-height:100dvh; background:var(--ink); display:flex; align-items:center; justify-content:center; overflow:hidden">
     <canvas ref="{{ heroCanvasRef }}" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%"></canvas>
+    <div class="hero-grain" aria-hidden="true"></div>
 
     <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:36px; padding:96px 24px; max-width:760px">
 
@@ -70,12 +91,12 @@
         </svg>
       </div>
 
-      <!-- Hero headline (v2): problem-first framing, "operator-led consulting" philosophy -->
-      <h1 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(40px, 5.6vw, 66px); line-height:1.06; color:var(--paper); text-wrap:balance">Senior commercial leadership, sized to your company.</h1>
+      <!-- Hero headline (v2): problem-first framing; lines reveal on load (see .hero-* keyframes) -->
+      <h1 class="hero-h1" style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(40px, 5.6vw, 66px); line-height:1.06; color:var(--paper)"><span class="hero-line"><span class="hero-line-inner">Senior commercial leadership,</span></span><span class="hero-line"><span class="hero-line-inner">sized to your company.</span></span></h1>
 
-      <p style="margin:0; font-family:var(--font-sans, 'IBM Plex Sans', sans-serif); font-size:17px; line-height:1.6; color:var(--line); max-width:58ch">Most strategies don't fail on paper. They fail in the organisation — in pricing that leaks margin, in sales that plateau, in changes that never stick. Akenius exists for that gap: between what a company decides and what it actually delivers.</p>
+      <p class="hero-reveal" style="margin:0; font-family:var(--font-sans, 'IBM Plex Sans', sans-serif); font-size:17px; line-height:1.6; color:var(--line); max-width:58ch">Most strategies don't fail on paper. They fail in the organisation — in pricing that leaks margin, in sales that plateau, in changes that never stick. Akenius exists for that gap: between what a company decides and what it actually delivers.</p>
 
-      <a href="#contact" onClick="{{ scrollToContact }}" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 34px; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; text-decoration:none; border:1px solid var(--paper); transition:background 150ms ease-out, color 150ms ease-out" style-hover="background:#FFFFFF" style-active="background:var(--paper-deep)">Get in touch</a>
+      <a class="hero-reveal" href="#contact" onClick="{{ scrollToContact }}" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 34px; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; text-decoration:none; border:1px solid var(--paper); transition:background 150ms ease-out, color 150ms ease-out" style-hover="background:#FFFFFF" style-active="background:var(--paper-deep)">Get in touch</a>
     </div>
   </section>
 
@@ -288,8 +309,13 @@ class Component extends DCLogic {
   componentDidMount() {
     this.reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     this.motionOn = (this.props.motion ?? true) && !this.reduced;
+    // Motion flag class gates the CSS headline-reveal choreography (added before first paint).
+    if (this.motionOn) {
+      document.documentElement.classList.add("akenius-motion");
+      this.cleanups.push(() => document.documentElement.classList.remove("akenius-motion"));
+    }
     this.startDescriptorCycle();
-    this.initHeroField();
+    this.initHeroShader();
     this.initSignature();
     this.setupReveals();
   }
@@ -333,74 +359,18 @@ class Component extends DCLogic {
     this.cleanups.push(() => io.disconnect());
   }
 
-  // ---------- hero particle field ----------
-  initHeroField() {
+  // ---------- hero WebGL ink shader ----------
+  initHeroShader() {
     const canvas = this.heroCanvasRef.current;
-    if (!canvas) return;
-    let env = this.fitCanvas(canvas);
-    // canvas pixels can't use CSS vars — these are the token values (paper, line, brass)
-    const PAPER = "242,243,241", LINE = "216,220,218", BRASS = "168,118,62";
-    const count = Math.min(90, Math.floor(env.w * env.h / 16000));
-    const ps = [];
-    for (let i = 0; i < count; i++) {
-      ps.push({
-        x: Math.random() * env.w, y: Math.random() * env.h,
-        vx: (Math.random() - 0.5) * 0.45, vy: (Math.random() - 0.5) * 0.45,
-        brass: Math.random() < 0.12
-      });
-    }
-    const mouse = { x: -9999, y: -9999 };
-    const onMove = e => {
-      const r = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
-    };
-    const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
-    const host = canvas.parentElement;
-    host.addEventListener("mousemove", onMove);
-    host.addEventListener("mouseleave", onLeave);
-    this.cleanups.push(() => { host.removeEventListener("mousemove", onMove); host.removeEventListener("mouseleave", onLeave); });
-
-    const onResize = () => { env = this.fitCanvas(canvas); };
-    window.addEventListener("resize", onResize);
-    this.cleanups.push(() => window.removeEventListener("resize", onResize));
-
-    const maxDist = 130;
-    const draw = (step) => {
-      const { ctx, w, h } = env;
-      ctx.clearRect(0, 0, w, h);
-      for (const p of ps) {
-        if (step) {
-          const dx = mouse.x - p.x, dy = mouse.y - p.y, d2 = dx * dx + dy * dy;
-          if (d2 < 40000 && d2 > 1) { const d = Math.sqrt(d2); p.vx += dx / d * 0.006; p.vy += dy / d * 0.006; }
-          const sp = Math.hypot(p.vx, p.vy);
-          if (sp > 0.4) { p.vx *= 0.4 / sp; p.vy *= 0.4 / sp; }
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < -10) p.x = w + 10; if (p.x > w + 10) p.x = -10;
-          if (p.y < -10) p.y = h + 10; if (p.y > h + 10) p.y = -10;
-        }
-      }
-      for (let i = 0; i < ps.length; i++) {
-        for (let j = i + 1; j < ps.length; j++) {
-          const a = ps[i], b = ps[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < maxDist) {
-            ctx.strokeStyle = `rgba(${LINE},${(1 - d / maxDist) * 0.22})`;
-            ctx.lineWidth = 1.3;
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          }
-        }
-      }
-      for (const p of ps) {
-        ctx.fillStyle = p.brass ? `rgba(${BRASS},0.85)` : `rgba(${PAPER},0.55)`;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.brass ? 2.0 : 1.6, 0, 7); ctx.fill();
-      }
-    };
-
-    if (!this.motionOn) { draw(false); return; }
-    let visible = true, raf;
-    const loop = () => { if (visible) draw(true); raf = requestAnimationFrame(loop); this.rafIds[0] = raf; };
-    this.observeVisible(canvas, v => { visible = v; });
-    loop();
+    if (!canvas || !window.AkeniusShader) return;
+    // Shared module owns sizing (WebGL-safe, not fitCanvas), the fps-capped loop,
+    // visibility pausing, resize and context teardown. Falls back to a CSS gradient.
+    const handle = window.AkeniusShader.mount(canvas, {
+      intensity: 1.0,
+      fps: 30,
+      static: !this.motionOn
+    });
+    if (handle && handle.teardown) this.cleanups.push(handle.teardown);
   }
 
   // ---------- signature animation ----------
