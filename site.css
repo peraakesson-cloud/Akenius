@@ -96,6 +96,16 @@ body.svc-page { margin: 0; background: var(--paper); color: var(--ink); font-fam
 .site-footer .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; max-width: 1100px; }
 .site-footer p { margin: 0; font-family: var(--font-sans); font-size: 13px; line-height: 1.6; color: var(--line); }
 
+/* Footer contact details (email + phone). Shared by index.html and every sub-page.
+   Link text stays paper-light for contrast on the ink footer; brass lives in the rule. */
+.foot-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; font-family: var(--font-sans); font-size: 13px; line-height: 1.6; color: var(--line); }
+.foot-contact a { color: var(--paper); text-decoration: none; border-bottom: 1px solid rgba(168, 118, 62, 0.55); padding-bottom: 1px; }
+.foot-contact a:hover, .foot-contact a:focus-visible { border-bottom-color: var(--brass); }
+.foot-contact .sep { color: var(--slate); }
+@media (prefers-reduced-motion: no-preference) {
+  .foot-contact a { transition: border-color 150ms ease-out; }
+}
+
 /* "Read more" link on the home-page service rows */
 .svc-more { align-self: flex-start; margin-top: 6px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--brass-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
 .svc-more:hover { color: var(--ink); }

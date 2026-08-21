@@ -35,7 +35,6 @@
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { margin: 0; background: var(--paper); }
-    textarea::placeholder, input::placeholder { color: var(--slate); opacity: 0.55; }
     .kick { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin: 0; }
     .svc-row { display: grid; grid-template-columns: 190px 1fr; gap: 44px; align-items: start; padding: 52px 0; border-top: 1px solid var(--line); }
     .svc-row:first-child { border-top: 0; padding-top: 8px; }
@@ -77,7 +76,7 @@
   </style>
 </helmet>
 
-<a href="#contact" style="position:absolute; left:-9999px; top:0; z-index:100; background:var(--paper); color:var(--ink); padding:14px 22px; font-family:var(--font-sans); font-size:14px; text-decoration:none; border:1px solid var(--line)" style-focus="left:0">Skip to contact form</a>
+<a href="#services" style="position:absolute; left:-9999px; top:0; z-index:100; background:var(--paper); color:var(--ink); padding:14px 22px; font-family:var(--font-sans); font-size:14px; text-decoration:none; border:1px solid var(--line)" style-focus="left:0">Skip to main content</a>
 
 <main style="background:var(--paper)">
 
@@ -124,7 +123,7 @@
 
       <p class="hero-reveal" style="margin:0; font-family:var(--font-sans, 'IBM Plex Sans', sans-serif); font-size:17px; line-height:1.6; color:var(--line); max-width:58ch">Most strategies don't fail on paper. They fail in the organisation — in pricing that leaks margin, in sales that plateau, in changes that never stick. Akenius exists for that gap: between what a company decides and what it actually delivers.</p>
 
-      <a class="hero-reveal" href="#contact" onClick="{{ scrollToContact }}" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 34px; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; text-decoration:none; border:1px solid var(--paper); transition:background 150ms ease-out, color 150ms ease-out" style-hover="background:#FFFFFF" style-active="background:var(--paper-deep)">Get in touch</a>
+      <a class="hero-reveal" href="mailto:info@akenius.eu" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 34px; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; text-decoration:none; border:1px solid var(--paper); transition:background 150ms ease-out, color 150ms ease-out" style-hover="background:#FFFFFF" style-active="background:var(--paper-deep)">Get in touch</a>
     </div>
   </section>
 
@@ -279,39 +278,15 @@
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section data-screen-label="Contact" id="contact" style="background:var(--paper); border-top:1px solid var(--line); padding:112px 24px">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:56px; align-items:start">
-      <div data-reveal="1" style="display:flex; flex-direction:column; gap:16px">
-        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Eyebrow" hint-size="auto,14px">Contact</x-import>
-        <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--ink)">Start with a conversation</h2>
-        <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate); max-width:44ch">Write a few lines about your situation. You will hear back from the person who would do the work — usually within a day.</p>
-      </div>
-
-      <form data-reveal="1" onSubmit="{{ submit }}" noValidate="{{ true }}" style="background:var(--card); border:1px solid var(--line); padding:40px 36px; display:flex; flex-direction:column; gap:22px">
-        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Input" label="Name" name="name" value="{{ name }}" onChange="{{ onNameChange }}" onBlur="{{ onNameBlur }}" error="{{ nameErr }}" autoComplete="name" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Input" label="Email" name="email" type="email" value="{{ email }}" onChange="{{ onEmailChange }}" onBlur="{{ onEmailBlur }}" error="{{ emailErr }}" autoComplete="email" hint-size="100%,72px"></x-import>
-
-        <label style="display:block">
-          <span style="display:block; font-family:var(--font-sans); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--slate); margin-bottom:8px">Message</span>
-          <textarea name="message" rows="{{ five }}" value="{{ message }}" onChange="{{ onMessageChange }}" onBlur="{{ onMessageBlur }}" style="display:block; width:100%; box-sizing:border-box; font-family:var(--font-sans); font-size:15px; line-height:1.6; color:var(--ink); background:var(--card); border:1px solid {{ messageBorder }}; border-radius:0; padding:12px 14px; resize:vertical; min-height:120px; transition:border-color 150ms ease-out"></textarea>
-          <sc-if value="{{ msgErr }}" hint-placeholder-val="{{ false }}"><span style="display:block; font-family:var(--font-sans); font-size:12px; color:var(--error); margin-top:6px">{{ msgErr }}</span></sc-if>
-        </label>
-
-        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap">
-          <button type="submit" disabled="{{ sending }}" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; min-width:160px; padding:12px 32px; background:var(--ink); color:var(--paper); font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.02em; border:1px solid var(--ink); border-radius:0; cursor:pointer; transition:background 150ms ease-out" style-hover="background:var(--ink-soft)">{{ submitLabel }}</button>
-          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-            <span role="status" style="font-family:var(--font-sans); font-size:14px; color:var(--brass-deep)">Thank you — your message is on its way.</span>
-          </sc-if>
-        </div>
-      </form>
-    </div>
-  </section>
-
   <!-- ============ FOOTER ============ -->
   <footer data-screen-label="Footer" style="background:var(--ink); border-top:1px solid var(--brass); padding:56px 24px">
     <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px">
       <img src="assets/akenius-wordmark-inverse.svg" alt="Akenius" style="height:20px; display:block">
+      <p class="foot-contact">
+        <a href="mailto:info@akenius.eu">info@akenius.eu</a>
+        <span class="sep" aria-hidden="true">&middot;</span>
+        <a href="tel:+46761104200">+46&nbsp;76&nbsp;110&nbsp;42&nbsp;00</a>
+      </p>
       <p style="margin:0; font-family:var(--font-sans); font-size:13px; line-height:1.6; color:var(--line)">Akenius AB · Helsingborg, Sweden · Org. nr 559594&#8209;8380</p>
       <p style="margin:0; font-family:var(--font-sans); font-size:13px; color:var(--line)">© Akenius AB 2026</p>
     </div>
@@ -325,10 +300,7 @@
 }">
 class Component extends DCLogic {
   state = {
-    descA: "INTERIM", descB: "ADVISORY", showA: true,
-    name: "", email: "", message: "",
-    nameErr: "", emailErr: "", msgErr: "",
-    sending: false, sent: false
+    descA: "INTERIM", descB: "ADVISORY", showA: true
   };
 
   heroCanvasRef = React.createRef();
@@ -428,56 +400,13 @@ class Component extends DCLogic {
     this.cleanups.push(() => io.disconnect());
   }
 
-  // ---------- form ----------
-  vName(v) { return v.trim() ? "" : "Please tell us your name."; }
-  vEmail(v) {
-    if (!v.trim()) return "Please add an email so we can reply.";
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "That email address doesn't look right.";
-  }
-  vMsg(v) { return v.trim().length >= 10 ? "" : "A few lines about your situation helps — ten characters or more."; }
-
-  scrollToContactFn = (e) => {
-    e.preventDefault();
-    const el = document.getElementById("contact");
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top, behavior: this.motionOn ? "smooth" : "auto" });
-  };
-
-  submitFn = (e) => {
-    e.preventDefault();
-    const { name, email, message } = this.state;
-    const errs = { nameErr: this.vName(name), emailErr: this.vEmail(email), msgErr: this.vMsg(message) };
-    this.setState(errs);
-    if (errs.nameErr || errs.emailErr || errs.msgErr) return;
-    this.setState({ sending: true, sent: false });
-    setTimeout(() => {
-      this.setState({ sending: false, sent: true, name: "", email: "", message: "" });
-    }, 1200);
-  };
-
   renderVals() {
     const s = this.state;
     return {
       // hero refs + descriptor
       heroCanvasRef: this.heroCanvasRef,
       descA: s.descA, descB: s.descB,
-      descAO: s.showA ? 1 : 0, descBO: s.showA ? 0 : 1,
-      scrollToContact: this.scrollToContactFn,
-      // form
-      five: 5,
-      name: s.name, email: s.email, message: s.message,
-      nameErr: s.nameErr, emailErr: s.emailErr, msgErr: s.msgErr,
-      messageBorder: s.msgErr ? "var(--error)" : "var(--line)",
-      onNameChange: e => this.setState({ name: e.target.value, nameErr: "" }),
-      onEmailChange: e => this.setState({ email: e.target.value, emailErr: "" }),
-      onMessageChange: e => this.setState({ message: e.target.value, msgErr: "" }),
-      onNameBlur: e => this.setState({ nameErr: this.vName(e.target.value) }),
-      onEmailBlur: e => this.setState({ emailErr: this.vEmail(e.target.value) }),
-      onMessageBlur: e => this.setState({ msgErr: this.vMsg(e.target.value) }),
-      sending: s.sending, sent: s.sent,
-      submitLabel: s.sending ? "Sending…" : "Send message",
-      submit: this.submitFn
+      descAO: s.showA ? 1 : 0, descBO: s.showA ? 0 : 1
     };
   }
 }
