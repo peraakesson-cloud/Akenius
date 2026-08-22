@@ -200,8 +200,228 @@
         <article class="detail">
           <h3>Sales and marketing effectiveness</h3>
           <p>Most commercial organisations don't need more activity. They need the same energy pointed at fewer, better things: the right customers, the right channels, the right conversations — and marketing that pulls its weight in pipeline rather than in impressions.</p>
-          <p>We accelerate what already works and fix what doesn't. That means an honest read of pipeline quality, win rates, channel economics and the pricing conversations your sellers are actually having — followed by changes that show up in the order book, not in a slide deck.</p>
-          <p class="typical"><strong>Typical results:</strong> a sharper ideal-customer focus; pipeline discipline the sales team keeps because it helps them; marketing spend reweighted toward what demonstrably converts.</p>
+          <p>The problem is rarely effort. It is that marketing and sales are measured on different numbers. Marketing is judged on what enters the funnel, sales on what leaves it, and nobody owns the handover in between — which is where most of the value is quietly lost. A lead that marketing counts as qualified and sales never calls is not a disagreement about definitions. It is money leaving the building every week, invisibly.</p>
+
+          <!-- Animated "one funnel, two owners" flow: self-contained embed, builds once when scrolled into view -->
+          <figure class="ak-fn" style="margin:24px 0 0; width:100%; max-width:960px;">
+            <style>
+              .ak-fn svg { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+              @keyframes ak-fn-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+              @keyframes ak-fn-flat { from { opacity: 0; } to { opacity: 1; } }
+              @keyframes ak-fn-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+              .ak-fn [class*="ak-fn-a"] { animation-play-state: paused; }
+              .ak-fn.is-visible [class*="ak-fn-a"] { animation-play-state: running; }
+              .ak-fn-a-line { stroke-dasharray: 1; stroke-dashoffset: 1;
+                              animation: ak-fn-draw .3s ease-out both; }
+              .ak-fn-a-tip  { animation: ak-fn-flat .18s ease-out both; }
+              .ak-fn-a-title  { animation: ak-fn-fade .5s  ease-out 0s    both; }
+              .ak-fn-a-band   { animation: ak-fn-fade .45s ease-out .25s  both; }
+              .ak-fn-a-box    { animation: ak-fn-fade .45s ease-out both; }
+              .ak-fn-a-box1   { animation-delay: .45s; }
+              .ak-fn-a-box2   { animation-delay: .6s;  }
+              .ak-fn-a-box3   { animation-delay: .75s; }
+              .ak-fn-a-box4   { animation-delay: .9s;  }
+              .ak-fn-a-box5   { animation-delay: 1.05s; }
+              .ak-fn-a-line1  { animation-delay: .9s;  }
+              .ak-fn-a-line2  { animation-delay: 1.05s; }
+              .ak-fn-a-line3  { animation-delay: 1.2s; }
+              .ak-fn-a-line4  { animation-delay: 1.35s; }
+              .ak-fn-a-tip1   { animation-delay: 1.2s; }
+              .ak-fn-a-tip2   { animation-delay: 1.35s; }
+              .ak-fn-a-tip3   { animation-delay: 1.5s; }
+              .ak-fn-a-tip4   { animation-delay: 1.65s; }
+              .ak-fn-a-focus  { animation: ak-fn-fade .45s ease-out 1.5s  both; }
+              .ak-fn-a-return { animation-duration: .45s; animation-delay: 1.65s; }
+              .ak-fn-a-rtip   { animation-delay: 2.1s; }
+              .ak-fn-a-foot   { animation: ak-fn-fade .38s ease-out 2.1s  both; }
+              @media (prefers-reduced-motion: reduce) {
+                .ak-fn [class*="ak-fn-a"] { animation-duration: 0s; animation-delay: 0s; }
+              }
+            </style>
+
+            <svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif" role="img" aria-labelledby="ak-fn-t ak-fn-d">
+              <title id="ak-fn-t">One funnel, two owners: where the handover decides how much converts</title>
+              <desc id="ak-fn-d">A five-stage funnel running left to right: Reach, Lead, Qualified, Proposal, Won. Marketing owns the first two stages and sales owns the last two. The middle stage, Qualified, is the handover between them and is highlighted in brass because it belongs to neither. A return path runs from Won back to Reach, showing that won and lost deals should inform the next campaign. Marketing is measured on what enters the funnel and sales on what leaves it, so nobody owns the middle.</desc>
+              <rect width="960" height="500" fill="#F7F5F1"></rect>
+
+              <defs>
+                <marker id="ak-fn-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A939E"></path>
+                </marker>
+                <marker id="ak-fn-arrow-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#B08D57"></path>
+                </marker>
+              </defs>
+
+              <g class="ak-fn-a-title">
+                <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">ONE FUNNEL, TWO OWNERS</text>
+                <text x="60" y="92" font-size="27" fill="#23303D">Where the handover decides how much converts</text>
+                <text x="900" y="140" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · ADVISORY</text>
+              </g>
+
+              <g class="ak-fn-a-band">
+                <text x="216" y="184" font-size="11.5" letter-spacing="2" fill="#8A939E" text-anchor="middle">MARKETING OWNS</text>
+                <text x="480" y="184" font-size="11.5" letter-spacing="2" fill="#B08D57" text-anchor="middle">THE HANDOVER</text>
+                <text x="744" y="184" font-size="11.5" letter-spacing="2" fill="#8A939E" text-anchor="middle">SALES OWNS</text>
+                <path d="M 60 200 L 60 194 L 372 194 L 372 200" fill="none" stroke="#D8D3C8" stroke-width="1"></path>
+                <path d="M 412 200 L 412 194 L 548 194 L 548 200" fill="none" stroke="#B08D57" stroke-width="1.3"></path>
+                <path d="M 588 200 L 588 194 L 900 194 L 900 200" fill="none" stroke="#D8D3C8" stroke-width="1"></path>
+              </g>
+
+              <g class="ak-fn-a-box ak-fn-a-box1">
+                <rect x="60" y="212" width="136" height="62" fill="#FFFFFF" stroke="#5B6672" stroke-width="1.3"></rect>
+                <text x="128" y="249" font-size="18" fill="#23303D" text-anchor="middle">Reach</text>
+              </g>
+              <g class="ak-fn-a-box ak-fn-a-box2">
+                <rect x="236" y="212" width="136" height="62" fill="#FFFFFF" stroke="#5B6672" stroke-width="1.3"></rect>
+                <text x="304" y="249" font-size="18" fill="#23303D" text-anchor="middle">Lead</text>
+              </g>
+              <g class="ak-fn-a-box ak-fn-a-box3">
+                <rect x="412" y="212" width="136" height="62" fill="#FFFFFF" stroke="#5B6672" stroke-width="1.3"></rect>
+                <text x="480" y="249" font-size="18" fill="#23303D" text-anchor="middle">Qualified</text>
+              </g>
+              <g class="ak-fn-a-box ak-fn-a-box4">
+                <rect x="588" y="212" width="136" height="62" fill="#B9BEC5" fill-opacity="0.32" stroke="#5B6672" stroke-width="1.3"></rect>
+                <text x="656" y="249" font-size="18" fill="#23303D" text-anchor="middle">Proposal</text>
+              </g>
+              <g class="ak-fn-a-box ak-fn-a-box5">
+                <rect x="764" y="212" width="136" height="62" fill="#B9BEC5" fill-opacity="0.32" stroke="#5B6672" stroke-width="1.3"></rect>
+                <text x="832" y="249" font-size="18" fill="#23303D" text-anchor="middle">Won</text>
+              </g>
+
+              <rect class="ak-fn-a-focus" x="412" y="212" width="136" height="62" fill="none" stroke="#B08D57" stroke-width="2.5"></rect>
+
+              <path class="ak-fn-a-line ak-fn-a-line1" d="M 200 243 L 226 243" pathLength="1" fill="none" stroke="#8A939E" stroke-width="2"></path>
+              <path class="ak-fn-a-tip ak-fn-a-tip1" d="M 218 243 L 226 243" fill="none" stroke="#8A939E" stroke-width="2" marker-end="url(#ak-fn-arrow)"></path>
+              <path class="ak-fn-a-line ak-fn-a-line2" d="M 376 243 L 402 243" pathLength="1" fill="none" stroke="#8A939E" stroke-width="2"></path>
+              <path class="ak-fn-a-tip ak-fn-a-tip2" d="M 394 243 L 402 243" fill="none" stroke="#8A939E" stroke-width="2" marker-end="url(#ak-fn-arrow)"></path>
+              <path class="ak-fn-a-line ak-fn-a-line3" d="M 552 243 L 578 243" pathLength="1" fill="none" stroke="#8A939E" stroke-width="2"></path>
+              <path class="ak-fn-a-tip ak-fn-a-tip3" d="M 570 243 L 578 243" fill="none" stroke="#8A939E" stroke-width="2" marker-end="url(#ak-fn-arrow)"></path>
+              <path class="ak-fn-a-line ak-fn-a-line4" d="M 728 243 L 754 243" pathLength="1" fill="none" stroke="#8A939E" stroke-width="2"></path>
+              <path class="ak-fn-a-tip ak-fn-a-tip4" d="M 746 243 L 754 243" fill="none" stroke="#8A939E" stroke-width="2" marker-end="url(#ak-fn-arrow)"></path>
+
+              <path class="ak-fn-a-line ak-fn-a-return" d="M 832 274 L 832 334 L 128 334 L 128 286" pathLength="1" fill="none" stroke="#B08D57" stroke-width="2"></path>
+              <path class="ak-fn-a-tip ak-fn-a-rtip" d="M 128 296 L 128 286" fill="none" stroke="#B08D57" stroke-width="2" marker-end="url(#ak-fn-arrow-b)"></path>
+              <text class="ak-fn-a-tip ak-fn-a-rtip" x="480" y="360" font-size="12.5" fill="#8A939E" text-anchor="middle" font-style="italic">Won and lost deals inform the next campaign</text>
+
+              <g class="ak-fn-a-foot">
+                <line x1="60" y1="424" x2="900" y2="424" stroke="#D8D3C8" stroke-width="1"></line>
+                <text x="60" y="452" font-size="13" fill="#5B6672">Marketing is measured on what enters. Sales on what leaves.</text>
+                <text x="60" y="472" font-size="13" fill="#5B6672">Nobody owns the middle.</text>
+              </g>
+            </svg>
+
+            <script>
+              (function () {
+                var fig = document.currentScript.closest('.ak-fn');
+                if (!('IntersectionObserver' in window)) { fig.classList.add('is-visible'); return; }
+                var io = new IntersectionObserver(function (entries) {
+                  if (entries.some(function (e) { return e.isIntersecting; })) {
+                    fig.classList.add('is-visible');
+                    io.disconnect();
+                  }
+                }, { threshold: 0.3 });
+                io.observe(fig);
+              })();
+            </script>
+          </figure>
+
+          <p>We start with an honest read: pipeline quality stage by stage, conversion between stages, win rates by segment and channel, and the pricing conversations your sellers are actually having. That arithmetic almost always points to one weak joint rather than a general malaise — and fixing a joint is a far smaller project than fixing a culture. Then we put in the disciplines that hold it: one shared definition of a qualified lead, one pipeline both sides look at, a rhythm where won and lost deals travel back to marketing, and a forecast the leadership team can act on rather than argue with.</p>
+          <p>Pipeline management only survives if the sales team keeps it after we leave. That means it has to help them sell — fewer fields, clearer stages, and a review cadence that removes dead deals as willingly as it adds new ones.</p>
+          <p class="typical"><strong>Typical results:</strong> a sharper ideal-customer focus; one funnel with shared definitions and a real handover; pipeline discipline the sales team keeps because it helps them; marketing spend reweighted toward what demonstrably converts; a forecast the board can rely on.</p>
+
+          <!--
+            STAGED, NOT RENDERED: "Where the pipeline leaks" bar chart.
+
+            Built to house convention and ready to drop in, but deliberately
+            commented out: it is staged for a future dedicated sales
+            effectiveness page rather than this overview block, which already
+            carries one diagram. To activate, delete this comment wrapper and
+            move the figure to its destination page.
+
+            One deliberate deviation while commented: the figure border below is
+            written as #D8DCDA, the literal value of the line token, because a
+            CSS custom property contains a double hyphen and an HTML comment may
+            not. Restore it to the var() form when the block is uncommented.
+
+          <figure class="ak-lk" style="margin:24px 0 0; width:100%; max-width:960px;">
+            <style>
+              .ak-lk svg { width: 100%; height: auto; display: block; border: 1px solid #D8DCDA; }
+              @keyframes ak-lk-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+              @keyframes ak-lk-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+              .ak-lk [class*="ak-lk-a"] { animation-play-state: paused; }
+              .ak-lk.is-visible [class*="ak-lk-a"] { animation-play-state: running; }
+              .ak-lk-a-title { animation: ak-lk-fade .5s ease-out 0s   both; }
+              .ak-lk-a-axis  { animation: ak-lk-fade .5s ease-out .2s  both; }
+              .ak-lk-a-bar   { transform-box: fill-box; transform-origin: left center;
+                               animation: ak-lk-grow .6s ease-out both; }
+              .ak-lk-a-bar1  { animation-delay: .4s; }
+              .ak-lk-a-bar2  { animation-delay: .8s; }
+              .ak-lk-a-bar3  { animation-delay: 1.2s; }
+              .ak-lk-a-val1  { animation: ak-lk-fade .4s ease-out 1s   both; }
+              .ak-lk-a-val2  { animation: ak-lk-fade .4s ease-out 1.4s both; }
+              .ak-lk-a-val3  { animation: ak-lk-fade .4s ease-out 1.8s both; }
+              .ak-lk-a-note  { animation: ak-lk-fade .45s ease-out 2s  both; }
+              .ak-lk-a-foot  { animation: ak-lk-fade .5s ease-out 2.3s both; }
+              @media (prefers-reduced-motion: reduce) {
+                .ak-lk [class*="ak-lk-a"] { animation-duration: 0s; animation-delay: 0s; }
+              }
+            </style>
+
+            <svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif" role="img" aria-labelledby="ak-lk-t ak-lk-d">
+              <title id="ak-lk-t">Where the pipeline leaks: stage-to-stage conversion in a typical pipeline</title>
+              <desc id="ak-lk-d">A horizontal bar chart on a nought to one hundred per cent scale showing three conversion joints in a sales pipeline. Lead to qualified converts at forty-two per cent and qualified to proposal at sixty per cent, both drawn in muted slate. Proposal to won converts at thirty-eight per cent and is highlighted in brass as the weakest joint. Lifting that one joint from thirty-eight to fifty-five per cent wins about forty-five per cent more deals, whereas achieving the same result from the top of the funnel would need forty-five per cent more leads. Figures are illustrative.</desc>
+              <rect width="960" height="520" fill="#F7F5F1"></rect>
+
+              <g class="ak-lk-a-title">
+                <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">WHERE THE PIPELINE LEAKS</text>
+                <text x="60" y="92" font-size="27" fill="#23303D">Stage-to-stage conversion in a typical pipeline</text>
+                <text x="900" y="140" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · ADVISORY</text>
+              </g>
+
+              <g class="ak-lk-a-axis">
+                <line x1="550" y1="175" x2="550" y2="390" stroke="#D8D3C8" stroke-width="1"></line>
+                <line x1="820" y1="175" x2="820" y2="390" stroke="#D8D3C8" stroke-width="1"></line>
+                <line x1="280" y1="175" x2="280" y2="390" stroke="#8A939E" stroke-width="1.2"></line>
+                <text x="260" y="218" font-size="15" fill="#23303D" text-anchor="end">Lead &#8594; qualified</text>
+                <text x="260" y="288" font-size="15" fill="#23303D" text-anchor="end">Qualified &#8594; proposal</text>
+                <text x="260" y="358" font-size="15" fill="#23303D" text-anchor="end">Proposal &#8594; won</text>
+                <text x="280" y="412" font-size="12" fill="#8A939E" text-anchor="middle">0%</text>
+                <text x="550" y="412" font-size="12" fill="#8A939E" text-anchor="middle">50%</text>
+                <text x="820" y="412" font-size="12" fill="#8A939E" text-anchor="middle">100%</text>
+              </g>
+
+              <rect class="ak-lk-a-bar ak-lk-a-bar1" x="282" y="190" width="227" height="44" fill="#5B6672"></rect>
+              <rect class="ak-lk-a-bar ak-lk-a-bar2" x="282" y="260" width="324" height="44" fill="#5B6672"></rect>
+              <rect class="ak-lk-a-bar ak-lk-a-bar3" x="282" y="330" width="205" height="44" fill="#B08D57"></rect>
+
+              <text class="ak-lk-a-val1" x="521" y="218" font-size="15" fill="#23303D">42%</text>
+              <text class="ak-lk-a-val2" x="618" y="288" font-size="15" fill="#23303D">60%</text>
+              <text class="ak-lk-a-val3" x="499" y="358" font-size="15" fill="#23303D">38%</text>
+              <text class="ak-lk-a-note" x="545" y="358" font-size="12.5" fill="#B08D57" font-style="italic">weakest joint</text>
+
+              <g class="ak-lk-a-foot">
+                <line x1="60" y1="444" x2="900" y2="444" stroke="#D8D3C8" stroke-width="1"></line>
+                <text x="60" y="472" font-size="13" fill="#5B6672">Lifting one joint from 38% to 55% wins ~45% more deals.</text>
+                <text x="60" y="492" font-size="13" fill="#5B6672">The same result from the top of the funnel needs 45% more leads. (Illustrative.)</text>
+              </g>
+            </svg>
+
+            <script>
+              (function () {
+                var fig = document.currentScript.closest('.ak-lk');
+                if (!('IntersectionObserver' in window)) { fig.classList.add('is-visible'); return; }
+                var io = new IntersectionObserver(function (entries) {
+                  if (entries.some(function (e) { return e.isIntersecting; })) {
+                    fig.classList.add('is-visible');
+                    io.disconnect();
+                  }
+                }, { threshold: 0.3 });
+                io.observe(fig);
+              })();
+            </script>
+          </figure>
+          -->
         </article>
 
         <article class="detail">
