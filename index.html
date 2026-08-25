@@ -3,411 +3,111 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Akenius AB — Interim Leadership, Commercial Advisory &amp; Digital Services</title>
-<meta name="description" content="Operator-led consulting from Per Åkesson: interim leadership, commercial advisory, pricing strategy, board work and digital services. 25+ years of Nordic P&amp;L ownership. Based in Helsingborg.">
-<meta property="og:title" content="Akenius AB — Senior commercial leadership, sized to your company">
-<meta property="og:description" content="Operator-led consulting: interim leadership, commercial advisory, pricing, board work and digital services across the Nordics.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://akenius.eu/og-image.png">
-<meta property="og:url" content="https://akenius.eu/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Akenius AB — Senior commercial leadership, sized to your company">
-<meta name="twitter:description" content="Operator-led consulting: interim leadership, commercial advisory, pricing, board work and digital services across the Nordics.">
-<meta name="twitter:image" content="https://akenius.eu/og-image.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<script src="./support.js"></script>
-<script src="js/akenius-shader.js"></script>
+<title>Akenius AB</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 48px 24px; position: relative; overflow: hidden;
+    color: #F2F3F1; font-family: Georgia, 'Times New Roman', serif;
+    background:
+      radial-gradient(55% 50% at 72% 28%, rgba(168,118,62,0.10), rgba(168,118,62,0) 60%),
+      radial-gradient(125% 125% at 50% 42%, #1e3646 0%, #182B36 46%, #0c151b 100%);
+  }
+  .grain {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0.04; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+  .wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; max-width: 460px; width: 100%; }
+  .lockup { display: flex; flex-direction: column; align-items: center; margin-bottom: 36px; }
+  .lockup svg { display: block; }
+  .wm { font-size: 22px; letter-spacing: 7.5px; font-weight: 500; padding-left: 7.5px; margin-top: 10px; }
+  .divider { width: 96px; height: 1px; background: #8A939E; margin-top: 12px; }
+  .desc { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: 4.4px; font-weight: 600; color: #A8763E; margin-top: 12px; }
+  h1 { font-weight: 600; font-size: clamp(26px, 4.6vw, 36px); line-height: 1.14; margin: 0 0 14px; text-wrap: balance; }
+  p.sub { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #D8DCDA; margin: 0 0 30px; max-width: 40ch; }
+  form { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; width: 100%; }
+  label { position: absolute; left: -9999px; }
+  input {
+    flex: 1 1 220px; min-width: 0; min-height: 46px; padding: 11px 16px;
+    font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 15px;
+    color: #F2F3F1; background: rgba(242,243,241,0.06);
+    border: 1px solid #8A939E; border-radius: 0; text-align: center; letter-spacing: 0.08em;
+  }
+  input::placeholder { color: #8A939E; letter-spacing: 0.02em; }
+  input:focus { outline: none; border-color: #A8763E; background: rgba(242,243,241,0.10); }
+  button {
+    min-height: 46px; padding: 11px 30px; background: #F2F3F1; color: #182B36;
+    font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.02em; border: 1px solid #F2F3F1; border-radius: 0; cursor: pointer;
+  }
+  button:hover { background: #FFFFFF; }
+  p.msg { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 13.5px; line-height: 1.5; color: #C98F53; margin: 18px 0 0; min-height: 20px; }
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/fonts.css">
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/colors.css">
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/typography.css">
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/spacing.css">
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/components.css">
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/interactions.css">
-  <link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/styles.css">
-  <link rel="stylesheet" href="site.css">
-  <script src="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/ds_bundle.js"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    body { margin: 0; background: var(--paper); }
-    .kick { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin: 0; }
-    .svc-row { display: grid; grid-template-columns: 190px 1fr; gap: 44px; align-items: start; padding: 52px 0; border-top: 1px solid var(--line); }
-    .svc-row:first-child { border-top: 0; padding-top: 8px; }
-    @media (max-width: 760px) { .svc-row { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; } }
-    /* Hero headline reveal choreography (Part A3). Gated by no-preference AND the
-       .akenius-motion flag added in componentDidMount before first paint. */
-    .hero-line { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
-    .hero-line-inner { display: block; }
-    @keyframes heroRise { from { transform: translateY(110%); } to { transform: translateY(0); } }
-    @keyframes heroFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-    @media (prefers-reduced-motion: no-preference) {
-      html.akenius-motion .hero-line-inner { animation: heroRise 900ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-      html.akenius-motion .hero-line:nth-child(2) .hero-line-inner { animation-delay: 120ms; }
-      html.akenius-motion .hero-reveal { animation: heroFade 700ms cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 1350ms; }
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="lockup">
+      <svg width="60" height="52" viewBox="60 6 80 90" role="img" aria-label="Akenius">
+        <circle cx="100" cy="22" r="7.5" fill="none" stroke="#A8763E" stroke-width="2.8"></circle>
+        <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="#F2F3F1" stroke-width="3.4" stroke-linecap="round"></path>
+        <line x1="84" y1="66" x2="116" y2="66" stroke="#F2F3F1" stroke-width="3.4" stroke-linecap="round"></line>
+      </svg>
+      <div class="wm">AKENIUS</div>
+      <div class="divider"></div>
+      <div class="desc">OPERATOR-LED CONSULTING</div>
+    </div>
+    <h1>Not open to the public yet.</h1>
+    <p class="sub">The site is finished but still in preparation. Enter the access phrase to look around.</p>
+    <form id="gate" autocomplete="off">
+      <label for="pw">Access phrase</label>
+      <input id="pw" name="pw" type="password" placeholder="Access phrase" autocomplete="current-password" autofocus>
+      <button type="submit">Enter</button>
+    </form>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </div>
+
+<script>
+(function () {
+  var HOME = '/home.html';
+  var TOKEN = 'YmxvY2tlZDEyMzQ=';
+  var msg = document.getElementById('msg');
+
+  function storage() {
+    try { sessionStorage.setItem('ak-probe', '1'); sessionStorage.removeItem('ak-probe'); return sessionStorage; }
+    catch (e) { return null; }
+  }
+  var store = storage();
+
+  /* Already unlocked in this session - go straight through. */
+  if (store && store.getItem('ak-unlocked') === '1') { location.replace(HOME); return; }
+
+  if (!store) {
+    msg.textContent = 'Your browser is blocking site storage, so the site cannot be unlocked. Enable cookies and site data for this address, then reload.';
+  }
+
+  document.getElementById('gate').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var field = document.getElementById('pw');
+    var ok;
+    try { ok = btoa(field.value) === TOKEN; } catch (err) { ok = false; }
+    if (!ok) {
+      msg.textContent = 'That phrase is not right.';
+      field.value = '';
+      field.focus();
+      return;
     }
-    /* Logo "A" mark draw-on (Part 2A): legs -> crossbar -> crown, ~1.6s, once then static.
-       Default is fully drawn (reduced-motion / no-JS); only the motion path starts from zero. */
-    .mark-stroke { stroke-dasharray: 1; stroke-dashoffset: 0; }
-    @keyframes markDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-    @media (prefers-reduced-motion: no-preference) {
-      html.akenius-motion .mark-leg   { animation: markDraw 700ms cubic-bezier(0.33, 1, 0.68, 1) 0ms   both; }
-      html.akenius-motion .mark-bar   { animation: markDraw 450ms cubic-bezier(0.33, 1, 0.68, 1) 550ms both; }
-      html.akenius-motion .mark-crown { animation: markDraw 700ms cubic-bezier(0.33, 1, 0.68, 1) 900ms both; }
-    }
-    /* Service rows (Part 2C): numbered index, whole-row link, hover affordance. */
-    .svc-num { font-family: var(--font-sans); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; color: var(--brass); }
-    .svc-row { position: relative; cursor: pointer; }
-    .svc-more .arr { display: inline-block; }
-    .svc-more::after { content: ""; position: absolute; inset: 0; }
-    .svc-row::before { content: ""; position: absolute; left: -18px; top: 0; bottom: 0; width: 2px; background: var(--brass); transform: scaleY(0); transform-origin: top; }
-    @media (prefers-reduced-motion: no-preference) {
-      .svc-row { transition: background-color 250ms ease-out; }
-      .svc-row::before { transition: transform 250ms cubic-bezier(0.33, 1, 0.68, 1); }
-      .svc-more .arr { transition: transform 250ms cubic-bezier(0.33, 1, 0.68, 1); }
-      .svc-row:hover, .svc-row:focus-within { background-color: rgba(24, 43, 54, 0.03); }
-      .svc-row:hover::before, .svc-row:focus-within::before { transform: scaleY(1); }
-      .svc-row:hover .arr, .svc-row:focus-within .arr { transform: translateX(4px); }
-    }
-  </style>
-</helmet>
-
-<a href="#services" style="position:absolute; left:-9999px; top:0; z-index:100; background:var(--paper); color:var(--ink); padding:14px 22px; font-family:var(--font-sans); font-size:14px; text-decoration:none; border:1px solid var(--line)" style-focus="left:0">Skip to main content</a>
-
-<main style="background:var(--paper)">
-
-  <!-- ============ TOP-RIGHT NAVIGATION DROPDOWN ============ -->
-  <details class="nav-menu">
-    <summary>Menu <span class="car" aria-hidden="true"></span></summary>
-    <nav class="nav-panel" aria-label="Pages">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="interim-leadership.html">Interim leadership</a>
-      <a href="commercial-consultancy.html">Commercial consultancy</a>
-      <a href="board-advisory.html">Board work &amp; senior advisory</a>
-      <a href="digital-services.html">Digital services</a>
-      <a href="ventures-products.html">Ventures &amp; products</a>
-    </nav>
-  </details>
-
-  <!-- ============ HERO ============ -->
-  <section data-screen-label="Hero" style="position:relative; min-height:100dvh; background:var(--ink); display:flex; align-items:center; justify-content:center; overflow:hidden">
-    <canvas ref="{{ heroCanvasRef }}" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%"></canvas>
-    <div class="hero-grain" aria-hidden="true"></div>
-
-    <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:36px; padding:96px 24px; max-width:760px">
-
-      <!-- Logo lockup: line-drawn "A" mark (draws once on load, then static) above the wordmark + crossfading descriptor -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:4px">
-        <div style="width:184px; max-width:64vw; height:150px; position:relative">
-          <svg width="100%" height="100%" viewBox="35 -2 130 106" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke="var(--paper)" stroke-width="2.25" stroke-linecap="round" style="display:block">
-            <path class="mark-stroke mark-leg" pathLength="1" d="M 72 88 L 97 32"></path>
-            <path class="mark-stroke mark-leg" pathLength="1" d="M 128 88 L 103 32"></path>
-            <path class="mark-stroke mark-bar" pathLength="1" d="M 84 66 L 116 66"></path>
-            <path class="mark-stroke mark-crown" pathLength="1" stroke="var(--brass)" d="M 100 14.5 A 7.5 7.5 0 0 1 100 29.5 A 7.5 7.5 0 0 1 100 14.5"></path>
-          </svg>
-        </div>
-        <svg width="216" height="63" viewBox="0 106 200 58" role="img" aria-label="Akenius" style="display:block">
-          <text x="100" y="122" text-anchor="middle" font-size="21" letter-spacing="7.5" fill="var(--paper)" font-weight="500" font-family="Georgia, serif">AKENIUS</text>
-          <line x1="52" y1="138" x2="148" y2="138" stroke="var(--slate)" stroke-width="1"></line>
-          <text x="100" y="157" text-anchor="middle" font-size="11" letter-spacing="4.4" font-weight="600" fill="var(--brass)" font-family="IBM Plex Sans, sans-serif" style="opacity:{{ descAO }}; transition:opacity 1.5s ease-in-out">{{ descA }}</text>
-          <text x="100" y="157" text-anchor="middle" font-size="11" letter-spacing="4.4" font-weight="600" fill="var(--brass)" font-family="IBM Plex Sans, sans-serif" style="opacity:{{ descBO }}; transition:opacity 1.5s ease-in-out">{{ descB }}</text>
-        </svg>
-      </div>
-
-      <!-- Hero headline (v2): problem-first framing; lines reveal on load (see .hero-* keyframes) -->
-      <h1 class="hero-h1" style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(40px, 5.6vw, 66px); line-height:1.06; color:var(--paper)"><span class="hero-line"><span class="hero-line-inner">Senior commercial leadership,</span></span><span class="hero-line"><span class="hero-line-inner">sized to your company.</span></span></h1>
-
-      <p class="hero-reveal" style="margin:0; font-family:var(--font-sans, 'IBM Plex Sans', sans-serif); font-size:17px; line-height:1.6; color:var(--line); max-width:58ch">Most strategies don't fail on paper. They fail in the organisation — in pricing that leaks margin, in sales that plateau, in changes that never stick. Akenius exists for that gap: between what a company decides and what it actually delivers.</p>
-    </div>
-  </section>
-
-  <!-- ============ OUR WAY OF WORKING ============ -->
-  <section data-screen-label="Way of working" id="approach" style="background:var(--paper); border-top:1px solid var(--line); padding:112px 24px">
-    <div data-reveal="1" style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px">
-      <x-import component-from-global-scope="AkeniusDesignSystem_579401.Eyebrow" hint-size="auto,14px">Our way of working</x-import>
-      <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--ink)">Operator&#8209;led consulting</h2>
-      <p style="margin:0; font-family:var(--font-sans); font-size:17px; line-height:1.65; color:var(--slate); max-width:60ch">We call it operator&#8209;led consulting. Every recommendation comes from someone who has owned the P&amp;L, set the prices, led the teams and carried the result — across Nordic markets, for more than 25 years.</p>
-      <p style="margin:0; font-family:var(--font-sans); font-size:17px; line-height:1.65; color:var(--slate); max-width:60ch">That changes what advice looks like. We don't hand over a report and wish you luck. We stay until it works — as your interim leader, your advisor, or your partner with skin in the game.</p>
-      <p style="margin:20px 0 0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-size:clamp(21px, 2.4vw, 27px); font-style:italic; line-height:1.4; color:var(--ink); max-width:52ch">Strategy and execution. Advice and accountability. Big&#8209;company discipline at small&#8209;company pace.</p>
-    </div>
-  </section>
-
-  <!-- ============ WHAT WE DO ============ -->
-  <section data-screen-label="Services" id="services" style="background:var(--paper); border-top:1px solid var(--line); padding:112px 24px">
-    <div style="max-width:1000px; margin:0 auto; display:flex; flex-direction:column; gap:8px">
-      <div data-reveal="1" style="display:flex; flex-direction:column; gap:16px; max-width:560px; margin-bottom:40px">
-        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Eyebrow" hint-size="auto,14px">What we do</x-import>
-        <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--ink)">Five ways we help</h2>
-      </div>
-
-      <!-- Interim leadership -->
-      <article data-reveal="1" class="svc-row">
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <span class="svc-num" aria-hidden="true">01</span>
-          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="briefcase" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
-          <p class="kick">Interim</p>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-interim">Interim leadership</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Sometimes a company can't wait for the perfect recruitment. A departure, a transition, a turnaround, an ownership change — the P&amp;L doesn't pause while you search.</p>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We step into the role — CEO or senior commercial leadership — take full ownership from day one, and hand over a stronger, more capable business when the permanent solution is in place. Not a caretaker. An operator with a mandate.</p>
-          <a class="svc-more" href="interim-leadership.html">How interim works <span class="arr" aria-hidden="true">&#8594;</span></a>
-        </div>
-      </article>
-
-      <!-- Commercial consultancy -->
-      <article data-reveal="1" class="svc-row">
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <span class="svc-num" aria-hidden="true">02</span>
-          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="chart-line" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
-          <p class="kick">Advisory</p>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-consultancy">Commercial consultancy</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Growth rarely stalls for lack of ideas. It stalls because strategy, processes and commercial execution stop reinforcing each other.</p>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We take on focused engagements where the result is measurable:</p>
-          <ul style="margin:4px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:16px">
-            <li style="display:flex; gap:14px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:var(--brass)"></span><span style="font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate)"><strong style="color:var(--ink); font-weight:600">Strategic planning and implementation.</strong> Most strategies fail in execution, not design. We help you make the real choices — and then make them happen in the organisation, with the discipline of someone who has had to live with the outcome.</span></li>
-            <li style="display:flex; gap:14px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:var(--brass)"></span><span style="font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate)"><strong style="color:var(--ink); font-weight:600">Process and system mapping.</strong> Digital transformation built on unclear processes automates the confusion. We map how the work actually flows before deciding what technology should carry it.</span></li>
-            <li style="display:flex; gap:14px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:var(--brass)"></span><span style="font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate)"><strong style="color:var(--ink); font-weight:600">Sales and marketing effectiveness.</strong> We accelerate what already works and fix what doesn't — pipeline, pricing conversations, channel focus, marketing that pulls its weight.</span></li>
-            <li style="display:flex; gap:14px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:var(--brass)"></span><span style="font-family:var(--font-sans); font-size:16px; line-height:1.6; color:var(--slate)"><strong style="color:var(--ink); font-weight:600">Pricing and profit optimization.</strong> Pricing is the fastest profit lever a company has, and the most neglected. We find the margin hiding in your price structure, discounting behaviour and product mix.</span></li>
-          </ul>
-          <a class="svc-more" href="commercial-consultancy.html">Inside the practice <span class="arr" aria-hidden="true">&#8594;</span></a>
-        </div>
-      </article>
-
-      <!-- Board work & senior advisory -->
-      <article data-reveal="1" class="svc-row">
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <span class="svc-num" aria-hidden="true">03</span>
-          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="landmark" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
-          <p class="kick">Board</p>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-board">Board work &amp; senior advisory</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Owners and CEOs rarely lack information. What's scarce is an experienced counterpart — someone to test the difficult decisions against before they're made.</p>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We serve as board member, chair support or standing sparring partner, bringing governance experience from Nordic boards and the perspective of someone who has sat on the operating side of the table.</p>
-          <a class="svc-more" href="board-advisory.html">How we support boards <span class="arr" aria-hidden="true">&#8594;</span></a>
-        </div>
-      </article>
-
-      <!-- Digital services -->
-      <article data-reveal="1" class="svc-row">
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <span class="svc-num" aria-hidden="true">04</span>
-          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="cloud" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
-          <p class="kick">Digital</p>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-digital">Digital services</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Smaller businesses and associations need a web presence that simply works — without an agency retainer, without chasing three different suppliers when something breaks.</p>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">We develop, host and care for websites and digital services as one accountable partner. Clear scope, clear pricing, no surprises. From build to deployment to keeping it running.</p>
-          <a class="svc-more" href="digital-services.html">What's included <span class="arr" aria-hidden="true">&#8594;</span></a>
-        </div>
-      </article>
-
-      <!-- Ventures & products -->
-      <article data-reveal="1" class="svc-row">
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <span class="svc-num" aria-hidden="true">05</span>
-          <x-import component-from-global-scope="AkeniusDesignSystem_579401.Icon" name="handshake" size="30" color="var(--brass)" hint-size="30px,30px"></x-import>
-          <p class="kick">Ventures</p>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:28px; line-height:1.15; color:var(--ink); view-transition-name:svc-ventures">Ventures &amp; products</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Part&#8209;ownership and product collaborations where operating experience is the capital. We invest time, commercial leadership and skin in the game alongside founders and product owners.</p>
-          <p style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-size:22px; font-style:italic; line-height:1.4; color:var(--ink)">We build with founders, not for them.</p>
-          <a class="svc-more" href="ventures-products.html">How partnerships work <span class="arr" aria-hidden="true">&#8594;</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============ WHO WE WORK WITH ============ -->
-  <section data-screen-label="Who we work with" style="background:var(--ink); padding:104px 24px">
-    <div style="max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:48px">
-      <div data-reveal="1" style="display:flex; flex-direction:column; gap:16px; max-width:560px">
-        <p class="kick">Who we work with</p>
-        <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--paper)">Three moments we're built for</h2>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px">
-        <article data-reveal="1" style="border-top:2px solid var(--brass); padding:28px 0 0; display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:23px; line-height:1.2; color:var(--paper)">A leadership gap that can't wait</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:15.5px; line-height:1.6; color:var(--line)">Owners, boards and private equity who need a proven leader in the chair now.</p>
-          <p class="kick" style="margin-top:2px">Interim</p>
-        </article>
-        <article data-reveal="1" style="border-top:2px solid var(--brass); padding:28px 0 0; display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:23px; line-height:1.2; color:var(--paper)">Growth that has stalled</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:15.5px; line-height:1.6; color:var(--line)">Mid&#8209;size companies whose strategy, pricing or commercial engine needs senior attention.</p>
-          <p class="kick" style="margin-top:2px">Advisory</p>
-        </article>
-        <article data-reveal="1" style="border-top:2px solid var(--brass); padding:28px 0 0; display:flex; flex-direction:column; gap:14px">
-          <h3 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:23px; line-height:1.2; color:var(--paper)">Too much to do, too few hands</h3>
-          <p style="margin:0; font-family:var(--font-sans); font-size:15.5px; line-height:1.6; color:var(--line)">Smaller and family&#8209;owned firms that need experienced, hands&#8209;on support without hiring for it.</p>
-          <p class="kick" style="margin-top:2px">Hands&#8209;on support</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section data-screen-label="About" id="about" style="background:var(--paper); padding:112px 24px">
-    <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:56px; align-items:start">
-      <div data-reveal="1" style="display:flex; flex-direction:column; gap:16px">
-        <x-import component-from-global-scope="AkeniusDesignSystem_579401.Eyebrow" hint-size="auto,14px">About</x-import>
-        <h2 style="margin:0; font-family:var(--font-serif, 'Cormorant Garamond', serif); font-weight:600; font-size:clamp(32px, 3.6vw, 46px); line-height:1.1; color:var(--ink)">One principal, no bench.</h2>
-      </div>
-      <div data-reveal="1" style="display:flex; flex-direction:column; gap:20px">
-        <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">Akenius AB was founded by Per Åkesson, formerly Director at VELUX with Nordic P&amp;L responsibility, global pricing leadership and board experience including Kemp &amp; Lauritzen A/S (Denmark). EMBA from Lund University; executive education at INSEAD.</p>
-        <p style="margin:0; font-family:var(--font-sans); font-size:16px; line-height:1.65; color:var(--slate)">The name carries a family history. Åkesson means son of Åke — and Åke was the founder's grandfather, an entrepreneur who ran his own businesses, as his father did before him. Akenius is the Latin form of that name, carried into a third generation of building companies.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:6px">
-          <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:0.02em; color:var(--ink); border:1px solid var(--line); padding:7px 14px">25+ years commercial leadership</span>
-          <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:0.02em; color:var(--ink); border:1px solid var(--line); padding:7px 14px">Nordic P&amp;L ownership</span>
-          <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:0.02em; color:var(--ink); border:1px solid var(--line); padding:7px 14px">Global pricing leadership</span>
-          <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:0.02em; color:var(--ink); border:1px solid var(--line); padding:7px 14px">Board experience</span>
-          <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:0.02em; color:var(--ink); border:1px solid var(--line); padding:7px 14px">EMBA, Lund · INSEAD</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer data-screen-label="Footer" style="background:var(--ink); border-top:1px solid var(--brass); padding:56px 24px">
-    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px">
-      <img src="assets/akenius-wordmark-inverse.svg" alt="Akenius" style="height:20px; display:block">
-      <p class="foot-contact">
-        <a href="mailto:info@akenius.eu">info@akenius.eu</a>
-        <span class="sep" aria-hidden="true">&middot;</span>
-        <a href="tel:+46761104200">+46&nbsp;76&nbsp;110&nbsp;42&nbsp;00</a>
-      </p>
-      <p style="margin:0; font-family:var(--font-sans); font-size:13px; line-height:1.6; color:var(--line)">Akenius AB · Helsingborg, Sweden · Org. nr 559594&#8209;8380</p>
-      <p style="margin:0; font-family:var(--font-sans); font-size:13px; color:var(--line)">© Akenius AB 2026</p>
-    </div>
-  </footer>
-
-</main>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;motion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Animation&quot; },
-  &quot;descriptorSeconds&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4.5, &quot;min&quot;: 3, &quot;max&quot;: 8, &quot;step&quot;: 0.5, &quot;unit&quot;: &quot;s&quot;, &quot;section&quot;: &quot;Animation&quot; }
-}">
-class Component extends DCLogic {
-  state = {
-    descA: "INTERIM", descB: "ADVISORY", showA: true
-  };
-
-  heroCanvasRef = React.createRef();
-  wordIdx = 0;
-  rafIds = [];
-  cleanups = [];
-
-  // ---------- lifecycle ----------
-  componentDidMount() {
-    this.reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    this.motionOn = (this.props.motion ?? true) && !this.reduced;
-    // Motion flag class gates the CSS headline-reveal choreography (added before first paint).
-    if (this.motionOn) {
-      document.documentElement.classList.add("akenius-motion");
-      this.cleanups.push(() => document.documentElement.classList.remove("akenius-motion"));
-    }
-    this.startDescriptorCycle();
-    this.initHeroShader();
-    this.setupReveals();
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.descTimer);
-    this.rafIds.forEach(id => cancelAnimationFrame(id));
-    this.cleanups.forEach(fn => fn());
-  }
-
-  // ---------- descriptor crossfade ----------
-  startDescriptorCycle() {
-    if (!this.motionOn) return;
-    const words = ["INTERIM", "ADVISORY", "BOARD", "DIGITAL", "VENTURES"];
-    const tick = () => {
-      const secs = Math.max(2, this.props.descriptorSeconds ?? 4.5);
-      this.descTimer = setTimeout(() => {
-        this.wordIdx = (this.wordIdx + 1) % words.length;
-        const next = words[this.wordIdx];
-        this.setState(s => (s.showA ? { descB: next, showA: false } : { descA: next, showA: true }));
-        tick();
-      }, secs * 1000);
-    };
-    tick();
-  }
-
-  // ---------- shared canvas helpers ----------
-  fitCanvas(canvas) {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const r = canvas.parentElement.getBoundingClientRect();
-    canvas.width = Math.max(1, Math.round(r.width * dpr));
-    canvas.height = Math.max(1, Math.round(r.height * dpr));
-    const ctx = canvas.getContext("2d");
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    return { ctx, w: r.width, h: r.height };
-  }
-
-  observeVisible(canvas, onChange) {
-    const io = new IntersectionObserver(es => onChange(es[0].isIntersecting), { threshold: 0.02 });
-    io.observe(canvas);
-    this.cleanups.push(() => io.disconnect());
-  }
-
-  // ---------- hero WebGL ink shader ----------
-  initHeroShader() {
-    const canvas = this.heroCanvasRef.current;
-    if (!canvas || !window.AkeniusShader) return;
-    // Shared module owns sizing (WebGL-safe, not fitCanvas), the fps-capped loop,
-    // visibility pausing, resize and context teardown. Falls back to a CSS gradient.
-    const handle = window.AkeniusShader.mount(canvas, {
-      intensity: 1.0,
-      fps: 30,
-      static: !this.motionOn
-    });
-    if (handle && handle.teardown) this.cleanups.push(handle.teardown);
-  }
-
-  // ---------- scroll reveals ----------
-  setupReveals() {
-    const els = Array.from(document.querySelectorAll("[data-reveal]"));
-    if (!this.motionOn || !els.length) return;
-    els.forEach(el => {
-      el.style.opacity = "0";
-      el.style.transform = "translateY(18px)";
-      el.style.transition = "opacity 420ms ease-out, transform 420ms ease-out";
-    });
-    let batch = 0, lastTime = 0;
-    const io = new IntersectionObserver(entries => {
-      const now = performance.now();
-      if (now - lastTime > 200) batch = 0;
-      lastTime = now;
-      entries.forEach(en => {
-        if (!en.isIntersecting) return;
-        const el = en.target, d = batch++ * 45;
-        setTimeout(() => { el.style.opacity = "1"; el.style.transform = "none"; }, d);
-        io.unobserve(el);
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    els.forEach(el => io.observe(el));
-    this.cleanups.push(() => io.disconnect());
-  }
-
-  renderVals() {
-    const s = this.state;
-    return {
-      // hero refs + descriptor
-      heroCanvasRef: this.heroCanvasRef,
-      descA: s.descA, descB: s.descB,
-      descAO: s.showA ? 1 : 0, descBO: s.showA ? 0 : 1
-    };
-  }
-}
+    if (!store) { msg.textContent = 'Correct, but this browser is blocking site storage, so the unlock cannot be saved.'; return; }
+    store.setItem('ak-unlocked', '1');
+    location.replace(HOME);
+  });
+}());
 </script>
 </body>
 </html>

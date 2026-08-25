@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+/* Pre-launch access gate. Runs before anything paints: without the session
+   unlock flag set by index.html, replace this page with the gate. Remove this
+   block (and the one in index.html) to open the site to the public. */
+(function () {
+  try { if (sessionStorage.getItem('ak-unlocked') === '1') return; } catch (e) {}
+  location.replace('/index.html');
+}());
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found — Akenius AB</title>
 <meta name="robots" content="noindex">
@@ -54,7 +63,7 @@
     <h1>This page doesn't exist. The work does.</h1>
     <p class="sub">The link may be broken, or the page may have moved. Let's get you back to something useful.</p>
     <div class="links">
-      <a class="btn" href="/index.html">Back to start</a>
+      <a class="btn" href="/home.html">Back to start</a>
       <a class="link" href="mailto:info@akenius.eu">Get in touch &#8594;</a>
     </div>
   </div>

@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+/* Pre-launch access gate. Runs before anything paints: without the session
+   unlock flag set by index.html, replace this page with the gate. Remove this
+   block (and the one in index.html) to open the site to the public. */
+(function () {
+  try { if (sessionStorage.getItem('ak-unlocked') === '1') return; } catch (e) {}
+  location.replace('/index.html');
+}());
+</script>
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Websites, Hosting &amp; Care for Small Businesses — Akenius AB</title>
 <meta name="description" content="One accountable partner for your website: development, hosting and ongoing care. Fixed annual pricing, clear scope. For smaller businesses and associations.">
@@ -33,7 +43,7 @@
 <details class="nav-menu">
   <summary>Menu <span class="car" aria-hidden="true"></span></summary>
   <nav class="nav-panel" aria-label="Pages">
-      <a href="index.html">Home</a>
+      <a href="home.html">Home</a>
       <a href="interim-leadership.html">Interim leadership</a>
       <a href="commercial-consultancy.html">Commercial consultancy</a>
       <a href="board-advisory.html">Board work &amp; senior advisory</a>
@@ -45,7 +55,7 @@
   <canvas class="hero-shader" data-akenius-shader data-intensity="0.5" data-fps="20" data-halfres="1" aria-hidden="true"></canvas>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="container">
-    <a class="home" href="index.html" aria-label="Akenius — home">
+    <a class="home" href="home.html" aria-label="Akenius — home">
       <svg width="26" height="30" viewBox="64 6 72 88" aria-hidden="true">
         <circle cx="100" cy="22" r="7.5" fill="none" stroke="var(--brass)" stroke-width="2.8"></circle>
         <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="var(--paper)" stroke-width="3.2" stroke-linecap="round"></path>
@@ -205,7 +215,7 @@
   <section class="cta">
     <div class="container">
       <a class="btn" href="mailto:info@akenius.eu">Start a conversation</a>
-      <a class="back" href="index.html">&#8592; Back to overview</a>
+      <a class="back" href="home.html">&#8592; Back to overview</a>
     </div>
   </section>
 </main>
