@@ -134,7 +134,14 @@
       }, { rootMargin: "-45% 0px -50% 0px" });
       map.forEach(function (x) { io.observe(x.sec); });
     }
-    return { isOpen: function () { return open; }, el: nav };
+    // Jumping to an anchor is navigation, not reading: keep the nav visible while it scrolls.
+    var holdUntil = 0;
+    d.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="#"]');
+      if (a && a.hash) holdUntil = Date.now() + 1500;
+    });
+    if (w.location.hash) holdUntil = Date.now() + 1500;
+    return { isOpen: function () { return open; }, held: function () { return Date.now() < holdUntil; }, el: nav };
   }
 
   /* ---------- scroll handling (nav hide/show, rotating squares) ---------- */
@@ -145,7 +152,8 @@
       ticking = false;
       var y = w.scrollY;
       if (navApi) {
-        if (y > 240 && y > lastY + 4 && !navApi.isOpen()) navApi.el.classList.add("is-hidden");
+        if (navApi.held()) navApi.el.classList.remove("is-hidden");
+        else if (y > 240 && y > lastY + 4 && !navApi.isOpen()) navApi.el.classList.add("is-hidden");
         else if (y < lastY - 4 || y <= 240) navApi.el.classList.remove("is-hidden");
       }
       lastY = y;
