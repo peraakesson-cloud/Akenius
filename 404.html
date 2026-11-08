@@ -2,70 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>
-/* Pre-launch access gate. Runs before anything paints: without the session
-   unlock flag set by index.html, replace this page with the gate. Remove this
-   block (and the one in index.html) to open the site to the public. */
-(function () {
-  try { if (sessionStorage.getItem('ak-unlocked') === '1') return; } catch (e) {}
-  location.replace('/index.html');
-}());
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(d,w){var h=d.documentElement,m=function(q){try{return w.matchMedia(q).matches}catch(e){return false}};
+h.classList.add('js',m('(min-width: 1024px) and (hover: hover) and (pointer: fine)')?'xp-desktop':'xp-mobile');
+if(h.hasAttribute('data-home')){var seen=false;try{seen=sessionStorage.getItem('ak-loaded')==='1'}catch(e){}
+if(!/[?&]loader=0/.test(w.location.search)&&!seen)h.classList.add('loader-on')}
+setTimeout(function(){if(!w.__akReady){h.classList.remove('loader-on');h.classList.add('hero-in','reveal-all')}},4000);
+})(document,window);
+</script>
 <title>Page not found — Akenius AB</title>
+<meta name="description" content="This page has moved on.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-<style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; }
-  body {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 48px 24px; position: relative; overflow: hidden;
-    color: #F2F3F1; font-family: Georgia, 'Times New Roman', serif;
-    background:
-      radial-gradient(55% 50% at 72% 28%, rgba(168,118,62,0.10), rgba(168,118,62,0) 60%),
-      radial-gradient(125% 125% at 50% 42%, #1e3646 0%, #182B36 46%, #0c151b 100%);
-  }
-  .grain {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0.04; mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 180px 180px;
-  }
-  .wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; max-width: 560px; }
-  .lockup { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
-  .lockup svg { display: block; }
-  .wm { font-size: 22px; letter-spacing: 7.5px; font-weight: 500; padding-left: 7.5px; margin-top: 10px; }
-  .divider { width: 96px; height: 1px; background: #8A939E; margin-top: 12px; }
-  .desc { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: 4.4px; font-weight: 600; color: #A8763E; margin-top: 12px; }
-  h1 { font-weight: 600; font-size: clamp(28px, 5vw, 40px); line-height: 1.14; margin: 0 0 14px; text-wrap: balance; }
-  p.sub { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #D8DCDA; margin: 0 0 34px; max-width: 42ch; }
-  .links { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; }
-  a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 11px 30px; background: #F2F3F1; color: #182B36; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; border: 1px solid #F2F3F1; }
-  a.link { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; color: #D8DCDA; text-decoration: none; }
-  a.btn:hover { background: #FFFFFF; }
-  a.link:hover { color: #F2F3F1; }
-</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akenius AB">
+<meta property="og:title" content="Page not found — Akenius AB">
+<meta property="og:description" content="This page has moved on.">
+<meta property="og:url" content="https://akenius.eu/404.html">
+<meta property="og:image" content="https://akenius.eu/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page not found — Akenius AB">
+<meta name="twitter:description" content="This page has moved on.">
+<meta name="twitter:image" content="https://akenius.eu/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=IBM+Plex+Sans:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="/tokens/colors.css">
+<link rel="stylesheet" href="/tokens/typography.css">
+<link rel="stylesheet" href="/tokens/spacing.css">
+<link rel="stylesheet" href="/tokens/components.css">
+<link rel="stylesheet" href="/tokens/interactions.css">
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
   <div class="wrap">
-    <div class="lockup">
-      <svg width="60" height="52" viewBox="60 6 80 90" role="img" aria-label="Akenius">
-        <circle cx="100" cy="22" r="7.5" fill="none" stroke="#A8763E" stroke-width="2.8"></circle>
-        <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="#F2F3F1" stroke-width="3.4" stroke-linecap="round"></path>
-        <line x1="84" y1="66" x2="116" y2="66" stroke="#F2F3F1" stroke-width="3.4" stroke-linecap="round"></line>
-      </svg>
-      <div class="wm">AKENIUS</div>
-      <div class="divider"></div>
-      <div class="desc">OPERATOR-LED CONSULTING</div>
-    </div>
-    <h1>This page doesn't exist. The work does.</h1>
-    <p class="sub">The link may be broken, or the page may have moved. Let's get you back to something useful.</p>
-    <div class="links">
-      <a class="btn" href="/home.html">Back to start</a>
-      <a class="link" href="mailto:info@akenius.eu">Get in touch &#8594;</a>
+    <a class="brand" href="/" aria-label="Akenius — home"><img src="/assets/akenius-mark-inverse.svg" alt="" width="28" height="34"><span>AKENIUS</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/ventures-products.html">Ventures</a>
+      <a href="/board-advisory.html">Board &amp; Advisory</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
     </div>
   </div>
+</nav>
+<main id="main">
+<section class="hero full" aria-labelledby="h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-content"><div class="hero-scroll">
+    <p class="eyebrow">404</p>
+    <h1 class="display sub" id="h1" style="margin-top:1.5rem">This page has moved on.</h1>
+    <p class="lede">Akenius has changed shape — the page you were looking for is no longer here.</p>
+    <div class="cta-row"><a class="btn" href="/">Go to Akenius</a></div>
+  </div></div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="big" aria-hidden="true">AKENIUS</div>
+    <div class="foot">
+      <p><strong>AKENIUS</strong> · Ventures &amp; Advisory</p>
+      <p>Akenius AB · Helsingborg, Sweden · Org. nr 559594&#8209;8380</p>
+      <p><a href="mailto:info@akenius.eu">info@akenius.eu</a></p>
+      <p>© Akenius AB 2026</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>

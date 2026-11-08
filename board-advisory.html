@@ -2,206 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>
-/* Pre-launch access gate. Runs before anything paints: without the session
-   unlock flag set by index.html, replace this page with the gate. Remove this
-   block (and the one in index.html) to open the site to the public. */
-(function () {
-  try { if (sessionStorage.getItem('ak-unlocked') === '1') return; } catch (e) {}
-  location.replace('/index.html');
-}());
-</script>
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Board Member, Chair Support &amp; Executive Sparring — Akenius AB</title>
-<meta name="description" content="An experienced counterpart for owners and CEOs: external board member, chair support and confidential sparring. Nordic governance experience, operator's perspective.">
-<meta property="og:title" content="Board Member, Chair Support &amp; Executive Sparring — Akenius AB">
-<meta property="og:description" content="The counterpart every difficult decision deserves. External board member, chair support and confidential sparring, from the operating side of the table.">
+<script>
+(function(d,w){var h=d.documentElement,m=function(q){try{return w.matchMedia(q).matches}catch(e){return false}};
+h.classList.add('js',m('(min-width: 1024px) and (hover: hover) and (pointer: fine)')?'xp-desktop':'xp-mobile');
+if(h.hasAttribute('data-home')){var seen=false;try{seen=sessionStorage.getItem('ak-loaded')==='1'}catch(e){}
+if(!/[?&]loader=0/.test(w.location.search)&&!seen)h.classList.add('loader-on')}
+setTimeout(function(){if(!w.__akReady){h.classList.remove('loader-on');h.classList.add('hero-in','reveal-all')}},4000);
+})(document,window);
+</script>
+<title>Board &amp; Advisory — Akenius AB</title>
+<meta name="description" content="A small number of board seats and advisory roles, by invitation and agreed in writing — Nordic commercial leadership applied where it changes the outcome.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://akenius.eu/board-advisory.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://akenius.eu/og-image.png">
+<meta property="og:site_name" content="Akenius AB">
+<meta property="og:title" content="Board &amp; Advisory — Akenius AB">
+<meta property="og:description" content="A small number of board seats and advisory roles, by invitation and agreed in writing — Nordic commercial leadership applied where it changes the outcome.">
 <meta property="og:url" content="https://akenius.eu/board-advisory.html">
+<meta property="og:image" content="https://akenius.eu/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Board Member, Chair Support &amp; Executive Sparring — Akenius AB">
-<meta name="twitter:description" content="The counterpart every difficult decision deserves. External board member, chair support and confidential sparring, from the operating side of the table.">
+<meta name="twitter:title" content="Board &amp; Advisory — Akenius AB">
+<meta name="twitter:description" content="A small number of board seats and advisory roles, by invitation and agreed in writing — Nordic commercial leadership applied where it changes the outcome.">
 <meta name="twitter:image" content="https://akenius.eu/og-image.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/fonts.css">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/colors.css">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/typography.css">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/spacing.css">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/components.css">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/tokens/interactions.css">
-<link rel="stylesheet" href="ds/akenius-design-system-5794010d-f1c4-4c43-8dc2-49d15d3ee313/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=IBM+Plex+Sans:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="tokens/colors.css">
+<link rel="stylesheet" href="tokens/typography.css">
+<link rel="stylesheet" href="tokens/spacing.css">
+<link rel="stylesheet" href="tokens/components.css">
+<link rel="stylesheet" href="tokens/interactions.css">
 <link rel="stylesheet" href="site.css">
-<script src="js/akenius-shader.js"></script>
 </head>
-<body class="svc-page">
-
+<body>
 <a class="skip" href="#main">Skip to content</a>
-
-<details class="nav-menu">
-  <summary>Menu <span class="car" aria-hidden="true"></span></summary>
-  <nav class="nav-panel" aria-label="Pages">
-      <a href="home.html">Home</a>
-      <a href="interim-leadership.html">Interim leadership</a>
-      <a href="commercial-consultancy.html">Commercial consultancy</a>
-      <a href="board-advisory.html" aria-current="page">Board work &amp; senior advisory</a>
-      <a href="digital-services.html">Digital services</a>
-      <a href="ventures-products.html">Ventures &amp; products</a>    </nav>
-</details>
-
-<header class="svc-hero">
-  <canvas class="hero-shader" data-akenius-shader data-intensity="0.5" data-fps="20" data-halfres="1" aria-hidden="true"></canvas>
-  <div class="hero-grain" aria-hidden="true"></div>
-  <div class="container">
-    <a class="home" href="home.html" aria-label="Akenius — home">
-      <svg width="26" height="30" viewBox="64 6 72 88" aria-hidden="true">
-        <circle cx="100" cy="22" r="7.5" fill="none" stroke="var(--brass)" stroke-width="2.8"></circle>
-        <path d="M 72 88 L 97 32 M 103 32 L 128 88" fill="none" stroke="var(--paper)" stroke-width="3.2" stroke-linecap="round"></path>
-        <line x1="84" y1="66" x2="116" y2="66" stroke="var(--paper)" stroke-width="3.2" stroke-linecap="round"></line>
-      </svg>
-      <span class="wm">AKENIUS</span>
-    </a>
-    <p class="kick"><span aria-hidden="true">03 · </span>Akenius · Advisory</p>
-    <h1 style="view-transition-name:svc-board">The counterpart every difficult decision deserves.</h1>
-    <p class="lead">Owners and CEOs rarely lack information. What's scarce is an experienced counterpart — someone to test the difficult decisions against before they're made.</p>
-    <p class="lead">We serve as board member, chair support or standing sparring partner, bringing governance experience from Nordic boards and the perspective of someone who has sat on the operating side of the table.</p>
+<nav class="site-nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Akenius — home"><img src="assets/akenius-mark-inverse.svg" alt="" width="28" height="34"><span>AKENIUS</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="ventures-products.html">Ventures</a>
+      <a href="board-advisory.html" aria-current="page">Board &amp; Advisory</a>
+      <a href="./#about">About</a>
+      <a href="./#contact">Contact</a>
+    </div>
   </div>
-</header>
-
+</nav>
 <main id="main">
+<section class="hero short" aria-labelledby="h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-content"><div class="hero-scroll">
+    <p class="eyebrow">Board &amp; Advisory</p>
+    <h1 class="display sub" id="h1" style="margin-top:1.5rem">The counterpart every difficult decision deserves.</h1>
+    <p class="lede">Owners and CEOs rarely lack information. What’s scarce is an experienced counterpart — someone to test the difficult decisions against before they are made.</p>
+  </div></div>
+</section>
 
-  <!-- Where we deliver value -->
-  <section class="section">
-    <div class="container">
-      <div class="sec-head">
-        <p class="kick">Where we deliver value</p>
-        <h2>One counterpart, three places at the table</h2>
-        <p class="lead-in">The same experience plugs in wherever it's most useful — a formal seat, quiet support behind the chair, or a confidential counterpart beside the CEO.</p>
-      </div>
-
-      <figure class="figure">
-        <img src="assets/board-governance-map.svg" alt="Governance map: the owners–board–management chain, with three Akenius roles plugging in — board member (a formal seat), chair support (behind the chair), and sparring partner (beside the CEO or owner).">
-      </figure>
-
-      <div class="detail-list">
-        <article class="detail">
-          <h3>As board member</h3>
-          <p>Many owner-led companies run for years with a paper board — the legal minimum, no outside voice. It works until it doesn't: a major investment, a succession question, a bank that wants to see real governance, a market shift nobody in the room has lived through before.</p>
-          <p>An external board member changes the nature of the board meeting. Questions get asked that insiders have stopped asking. Decisions get documented, followed up and owned. And the owner gains something rare: a fiduciary counterpart whose only agenda is the company's long-term value.</p>
-          <p>We take board seats where we can contribute beyond attendance — in companies whose commercial challenges we recognise from having run them. Governance experience from Nordic boards, including Kemp &amp; Lauritzen A/S in Denmark, with the working discipline that experience taught.</p>
-        </article>
-
-        <article class="detail">
-          <h3>As chair support</h3>
-          <p>The chair carries the board — agenda, preparation, the balance between owners and management, the quality of the decisions that leave the room. In smaller companies the chair is often an owner doing it alongside everything else, with no one to calibrate against.</p>
-          <p>We work behind the chair: shaping the annual board cycle, sharpening the material before meetings, preparing the difficult items — and being the person the chair can think out loud with before taking a position. Quiet work, visible results: shorter meetings, better decisions, fewer surprises.</p>
-        </article>
-
-        <article class="detail">
-          <h3>As standing sparring partner</h3>
-          <p>The top job has a structural flaw: the more consequential the decision, the fewer people you can discuss it with. Leadership changes, ownership questions, a strategy you're no longer sure of — these can't be tested on your management team, and often not on your board either.</p>
-          <p>A standing sparring relationship gives you a confidential counterpart with no stake in the outcome except your judgement improving. A fixed monthly rhythm for the running agenda; available between sessions when something can't wait. We ask the questions a subordinate won't and a consultant with a follow-on sale in mind can't afford to.</p>
-          <figure class="figure">
-            <img src="assets/board-lonely-decisions.svg" alt="The lonely decisions: ownership and succession, major commitments, leadership changes, and changing course — the higher the stakes, the fewer people you can ask.">
-          </figure>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why companies choose an experienced counterpart -->
-  <section class="section" style="background:var(--card); border-top:1px solid var(--line)">
-    <div class="container">
-      <div class="sec-head">
-        <p class="kick">Why an experienced counterpart</p>
-        <h2>Why companies choose it</h2>
-      </div>
-      <div class="reasons">
-        <div class="reason">
-          <h3>Decisions improve before they're made</h3>
-          <p>The cheapest place to catch a mistake is before it's committed. A counterpart who has carried P&amp;L responsibility stress-tests a decision differently than an adviser who has only analysed one.</p>
-        </div>
-        <div class="reason">
-          <h3>The operating perspective at the governance table</h3>
-          <p>Board experience is common; board members who have recently run businesses are less so. We know what a management team can actually absorb, what a forecast is worth, and which board requests create work without creating value.</p>
-        </div>
-        <div class="reason">
-          <h3>Governance that adds credibility</h3>
-          <p>Banks, investors, acquirers and key recruits all read the board. A functioning board with an external member signals a company run for the long term — often at exactly the moment that signal matters most.</p>
-        </div>
-        <div class="reason">
-          <h3>A rhythm that creates discipline</h3>
-          <p>A standing counterpart — board seat or sparring — creates a cadence of accountability: decisions revisited, commitments followed up, drift caught early. Most owners underestimate how much this alone is worth.</p>
-        </div>
-        <div class="reason">
-          <h3>Continuity across situations</h3>
-          <p>The same counterpart who knows your business in calm weather is far more valuable in a storm. Advisory relationships compound; their value grows with every quarter of shared context.</p>
-        </div>
-        <div class="reason">
-          <h3>Independence you can trust</h3>
-          <p>We hold few positions at a time, take no seat where we can't contribute, and have no services bench waiting behind the advice. When we recommend bringing in help — ours or anyone's — you'll know it's the judgement talking.</p>
-        </div>
+<section class="section">
+  <div class="wrap two flip">
+    <div style="max-width:28rem;margin-inline:auto;width:100%"><figure class="fig" data-reveal>
+<svg viewBox="0 0 460 440" role="img" aria-labelledby="b3-t b3-d" data-draw>
+<title id="b3-t">Three places at the table</title>
+<desc id="b3-d">Three roles around a central decision: board seat, advisory board and confidential counterpart. The decision at the centre is marked in brass.</desc>
+<path class="g-line draw" d="M230 62 V164" pathLength="1" style="--s:0"/>
+<path class="g-line draw" d="M80 323 L193 238" pathLength="1" style="--s:1"/>
+<path class="g-line draw" d="M380 323 L267 238" pathLength="1" style="--s:2"/>
+<circle class="g-node node" cx="230" cy="50" r="12" style="--s:0"/>
+<circle class="g-node node" cx="70" cy="330" r="12" style="--s:1"/>
+<circle class="g-node node" cx="390" cy="330" r="12" style="--s:2"/>
+<circle class="g-line b draw" cx="230" cy="210" r="46" pathLength="1" style="--s:4;--dur:700ms;stroke-width:3"/>
+<text class="g-text c label g-big" x="230" y="217" style="--s:6">Decision</text>
+<text class="g-text c label" x="230" y="24" style="--s:5">Board seat</text>
+<text class="g-text c label" x="70" y="374" style="--s:5">Advisory board</text>
+<text class="g-text c label" x="390" y="374" style="--s:5">Confidential</text>
+<text class="g-text c label" x="390" y="398" style="--s:5">counterpart</text>
+</svg>
+</figure></div>
+    <div>
+      <p class="eyebrow" data-reveal><span class="n">01</span><span>Where we contribute</span></p>
+      <h2 data-reveal style="margin-top:1.5rem">One counterpart, three places at the table</h2>
+      <div class="rows" data-stagger>
+        <div class="row" data-reveal><h3>Board seat</h3><p>Many owner-led companies run for years with a paper board — the legal minimum, no outside voice. An external member changes the meeting: questions get asked that insiders have stopped asking, and decisions are documented, followed up and owned.</p></div>
+        <div class="row" data-reveal><h3>Advisory board</h3><p>A small group of outside voices around the owner or chair, without a formal board mandate: sharper material, difficult items prepared, someone to think out loud with before a position is taken.</p></div>
+        <div class="row" data-reveal><h3>Confidential counterpart</h3><p>The more consequential the decision, the fewer people you can discuss it with. A standing sparring relationship gives you a counterpart whose only stake is your judgement improving — on a fixed rhythm, and in between when something can’t wait.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- How it works -->
-  <section class="section">
-    <div class="container">
-      <div class="sec-head">
-        <p class="kick">Choosing the form</p>
-        <h2>From formal seat to confidential counterpart</h2>
-      </div>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal><span class="n">02</span><span>Why companies choose it</span></p>
+    <h2 data-reveal class="head" style="max-width:20ch">Why companies choose it</h2>
+    <div class="cols3" data-stagger>
+      <div class="col" data-reveal><h3>Decisions improve before they’re made</h3><p>The cheapest place to catch a mistake is before it’s committed. A counterpart who has carried P&amp;L responsibility stress-tests differently.</p></div>
+      <div class="col" data-reveal><h3>The operating view at the table</h3><p>We know what a management team can absorb, what a forecast is worth, and which requests create work without creating value.</p></div>
+      <div class="col" data-reveal><h3>Governance that adds credibility</h3><p>Banks, investors, acquirers and key recruits all read the board. A working board signals a company run for the long term.</p></div>
+      <div class="col" data-reveal><h3>A rhythm that creates discipline</h3><p>A standing counterpart creates a cadence of accountability: decisions revisited, commitments followed up, drift caught early.</p></div>
+      <div class="col" data-reveal><h3>Independence you can trust</h3><p>Few positions at a time, no seat where we can’t contribute, and no services bench behind the advice.</p></div>
+    </div>
+  </div>
+</section>
 
-      <figure class="figure">
-        <img src="assets/board-engagement-forms.svg" alt="Three engagement forms across a spectrum from formal to informal: board member (formal seat, board year), chair support (behind the chair), and sparring partner (confidential, monthly). All share one rule: what is said in the room stays in the room.">
-      </figure>
-
-      <div class="detail-list" style="margin-top:52px">
-        <article class="detail">
-          <p><strong>Board assignments</strong> follow the company's formal cycle: the annual board plan, scheduled meetings, committee work where relevant, and availability between meetings for matters that can't wait for the next one.</p>
-          <p><strong>Chair support and sparring</strong> run on a standing monthly rhythm — a fixed session with a running agenda you control — plus direct access when a decision won't keep. Engagements are annual, reviewed openly each year: if the value isn't obvious, neither of us should continue.</p>
-          <p><strong>Everything discussed stays in the room.</strong> That's not a policy; it's the precondition for the whole arrangement working.</p>
-        </article>
+<section class="section" style="padding-top:0">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow" data-reveal><span class="n">03</span><span>The board year</span></p>
+      <h2 data-reveal style="margin-top:1.5rem">From formal seat to confidential counterpart</h2>
+      <div class="prose" data-reveal style="margin-top:1.5rem">
+        <p>Board assignments follow the company’s formal cycle: the annual board plan, scheduled meetings, committee work where relevant, and availability between meetings for matters that can’t wait.</p>
+        <p>Advisory and sparring roles run on a standing monthly rhythm, with an agenda you control. Every role is agreed in writing, time-boxed and reviewed openly each year: if the value isn’t obvious, neither of us should continue.</p>
+        <p>Everything discussed stays in the room. That is the precondition for the whole arrangement working.</p>
       </div>
     </div>
-  </section>
+    <div style="max-width:28rem;margin-inline:auto;width:100%"><figure class="fig" data-reveal>
+<svg viewBox="0 0 460 460" role="img" aria-labelledby="yr-t yr-d" data-draw>
+<title id="yr-t">The board year</title>
+<desc id="yr-d">A circular annual timeline in four quarters. Four board meetings, one at the start of each quarter, are marked in brass. Between them sit the annual report, the AGM and a strategy session.</desc>
+<circle class="g-line draw" cx="230" cy="230" r="130" pathLength="1" transform="rotate(-90 230 230)" style="--s:0;--dur:1100ms;--sw:60%"/>
+<path class="g-line b draw" d="M230 88 V112" pathLength="1" style="--s:1;stroke-width:3.5"/>
+<path class="g-line b draw" d="M348 230 H372" pathLength="1" style="--s:3;stroke-width:3.5"/>
+<path class="g-line b draw" d="M230 348 V372" pathLength="1" style="--s:5;stroke-width:3.5"/>
+<path class="g-line b draw" d="M88 230 H112" pathLength="1" style="--s:7;stroke-width:3.5"/>
+<circle class="g-node node" cx="322" cy="138" r="9" style="--s:2"/>
+<circle class="g-node node" cx="322" cy="322" r="9" style="--s:4"/>
+<circle class="g-node node" cx="138" cy="322" r="9" style="--s:6"/>
+<text class="g-text c m s label" x="290" y="176" style="--s:3">Q1</text>
+<text class="g-text c m s label" x="290" y="296" style="--s:4">Q2</text>
+<text class="g-text c m s label" x="170" y="296" style="--s:6">Q3</text>
+<text class="g-text c m s label" x="170" y="176" style="--s:8">Q4</text>
+<text class="g-text b c s label" x="230" y="224" style="--s:8">4 board</text>
+<text class="g-text b c s label" x="230" y="246" style="--s:8">meetings</text>
+<text class="g-text label" x="342" y="132" style="--s:3">Annual</text>
+<text class="g-text label" x="342" y="154" style="--s:3">report</text>
+<text class="g-text label" x="342" y="334" style="--s:5">AGM</text>
+<text class="g-text e label" x="118" y="330" style="--s:7">Strategy</text>
+<text class="g-text e label" x="118" y="352" style="--s:7">session</text>
+</svg>
+</figure></div>
+  </div>
+</section>
 
-  <!-- Why Akenius -->
-  <section class="section ink why">
-    <div class="container">
-      <div class="sec-head">
-        <p class="kick">Why Akenius</p>
-        <h2>The governance side, without forgetting the other side</h2>
-      </div>
-      <p>25+ years of Nordic industry leadership, P&amp;L ownership across Nordic markets, and board experience including Kemp &amp; Lauritzen A/S (Denmark) — combined with current, active operating work. We sit on the governance side of the table without forgetting what the other side feels like.</p>
-      <p class="closer">The best decision you'll make this year might be the one you tested first.</p>
+<section class="section on-ink" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="grid"><div class="span-8">
+      <p class="eyebrow" data-reveal><span class="n">04</span><span>Why Akenius</span></p>
+      <h2 id="why-h" data-reveal style="margin-top:1.5rem">Few seats, real attention.</h2>
+      <div class="prose" data-reveal style="margin-top:1.5rem"><p>Per Åkesson brings 25+ years of Nordic commercial leadership — P&amp;L ownership, global pricing, digital customer journeys — and current board experience in Denmark. Akenius accepts only a small number of board and advisory roles at any time, so each gets genuine preparation and attention. Roles are agreed in writing, time-boxed, and never involve interim or operational management.</p></div>
+    </div></div>
+    <div class="stats" data-stagger>
+      <div class="stat" data-reveal><b data-count="25" data-suffix="+">25+</b><span>years of Nordic commercial leadership</span></div>
+      <div class="stat" data-reveal><b data-count="1">1</b><span>principal — every role handled personally</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <a class="btn" href="mailto:info@akenius.eu">Start a conversation</a>
-      <a class="back" href="home.html">&#8592; Back to overview</a>
-    </div>
-  </section>
+<section class="section cta-sec"><div class="wrap">
+  <h2 data-reveal>The best decision you’ll make this year might be the one you tested first.</h2>
+  <div class="cta-row" data-reveal><a class="btn" href="./#contact">Board &amp; advisory enquiries</a><a class="tlink" href="./"><span aria-hidden="true">←</span> Back to Akenius</a></div>
+</div></section>
 </main>
-
 <footer class="site-footer">
-  <div class="container foot">
-    <img src="assets/akenius-wordmark-inverse.svg" alt="Akenius" style="height:20px; display:block">
-    <p class="foot-contact">
-      <a href="mailto:info@akenius.eu">info@akenius.eu</a>
-      <span class="sep" aria-hidden="true">&middot;</span>
-      <a href="tel:+46761104200">+46&nbsp;76&nbsp;110&nbsp;42&nbsp;00</a>
-    </p>
-    <p>Akenius AB &middot; Helsingborg, Sweden &middot; Org. nr 559594&#8209;8380</p>
-    <p>&copy; Akenius AB 2026</p>
+  <div class="wrap">
+    <div class="big" aria-hidden="true">AKENIUS</div>
+    <div class="foot">
+      <p><strong>AKENIUS</strong> · Ventures &amp; Advisory</p>
+      <p>Akenius AB · Helsingborg, Sweden · Org. nr 559594&#8209;8380</p>
+      <p><a href="mailto:info@akenius.eu">info@akenius.eu</a></p>
+      <p>© Akenius AB 2026</p>
+    </div>
   </div>
 </footer>
-
+<script src="js/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+/* Akenius AB — component-layer tokens. */
+:root {
+  --card-border: var(--hairline);
+  --card-border-hover: var(--accent);
+  --card-pad: clamp(1.5rem, 1rem + 2vw, 3rem);
+  --btn-pad: 0.75rem 1.75rem;
+  --btn-min-h: 3rem;
+}

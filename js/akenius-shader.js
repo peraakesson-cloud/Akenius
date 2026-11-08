@@ -44,7 +44,7 @@
     "  vec2 uv = gl_FragCoord.xy / u_resolution.xy;",
     "  float aspect = u_resolution.x / max(u_resolution.y, 1.0);",
     "  vec2 p = uv; p.x *= aspect;",
-    "  float t = u_time * 0.03;",             // very slow drift (~45-60s to read)
+    "  float t = u_time * 0.02;",             // very slow drift (~45-60s to read)
     "  vec2 q = vec2(fbm(p*1.5 + vec2(0.0, t)), fbm(p*1.5 + vec2(5.2, -t)));",
     "  vec2 r = vec2(fbm(p*1.5 + 2.0*q + vec2(1.7, 9.2) + 0.15*t), fbm(p*1.5 + 2.0*q + vec2(8.3, 2.8) - 0.12*t));",
     "  float n = fbm(p*1.5 + 2.0*r); n = n*0.5 + 0.5;",
@@ -67,14 +67,7 @@
   ].join("\n");
 
   function fallbackGradient(canvas) {
-    // Static CSS gradient in the same palette: ink centre, near-black edges,
-    // a whisper of brass off-centre. Applied to the hero (canvas parent).
-    var host = canvas && canvas.parentElement;
-    if (host) {
-      host.style.background =
-        "radial-gradient(60% 55% at 72% 28%, rgba(168,118,62,0.10), rgba(168,118,62,0) 60%)," +
-        "radial-gradient(125% 125% at 50% 42%, #1e3646 0%, #182B36 46%, #0c151b 100%)";
-    }
+    // The hero already has a static CSS gradient behind the canvas.
     if (canvas) canvas.style.display = "none";
   }
 
@@ -124,7 +117,7 @@
     var uInt = gl.getUniformLocation(prog, "u_intensity");
 
     function size() {
-      var scale = Math.min(window.devicePixelRatio || 1, 2) * (halfRes ? 0.5 : 1);
+      var scale = Math.min(window.devicePixelRatio || 1, 1.5) * (halfRes ? 0.5 : 1);
       var host = canvas.parentElement || canvas;
       var rect = host.getBoundingClientRect();
       var w = Math.max(1, Math.round((rect.width || 1) * scale));
@@ -163,7 +156,7 @@
       // Absorb it as a single frame so the ink doesn't visibly snap on refocus.
       if (dt > 100) dt = frameInterval;
       elapsed += dt;                        // advances continuously (off-screen scroll included)
-      if (!visible) return;                 // scrolled away: keep time, skip painting
+      if (!visible || document.hidden) return;                 // scrolled away: keep time, skip painting
       if (now - last < frameInterval) return;
       last = now;
       render(elapsed / 1000);
@@ -182,29 +175,6 @@
       var ext = gl.getExtension("WEBGL_lose_context"); if (ext) ext.loseContext();
     }
     return { teardown: teardown };
-  }
-
-  // Declarative auto-mount for static pages: any <canvas data-akenius-shader>
-  // mounts on DOMContentLoaded. opts read from data-* attributes.
-  // (index.html mounts manually through its React lifecycle instead.)
-  function autoInit() {
-    var reduce = false;
-    try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
-    var nodes = document.querySelectorAll("canvas[data-akenius-shader]");
-    for (var i = 0; i < nodes.length; i++) {
-      var el = nodes[i];
-      mount(el, {
-        intensity: parseFloat(el.getAttribute("data-intensity")) || 1.0,
-        fps: parseFloat(el.getAttribute("data-fps")) || 30,
-        halfRes: el.getAttribute("data-halfres") === "1",
-        "static": reduce
-      });
-    }
-  }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", autoInit);
-  } else {
-    autoInit();
   }
 
   window.AkeniusShader = { mount: mount };

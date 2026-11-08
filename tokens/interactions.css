@@ -1,0 +1,11 @@
+/* Akenius AB — interaction states.
+   hover = darker shade, press = same (no shrink), focus = 2px brass-deep ring. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+::selection {
+  background: var(--brass);
+  color: var(--paper);
+}
+[disabled], [aria-disabled="true"] { cursor: not-allowed; }

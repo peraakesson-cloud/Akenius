@@ -1,0 +1,74 @@
+/* Akenius AB — color tokens. The only file in the project that holds hex values. */
+:root {
+  /* Base palette */
+  --paper: #F2F3F1;
+  --card: #FFFFFF;
+  --ink: #182B36;
+  --slate: #3E5462;
+  --brass: #A8763E;
+  --line: #D8DCDA;
+
+  /* Derived shades */
+  --brass-deep: #8A5F30;    /* brass for small text on paper (AA) */
+  --brass-light: #C99A62;   /* brass for small text on ink (AA) */
+  --ink-soft: #243B49;
+  --ink-deep: #101D25;      /* page ground in dark mode */
+  --ink-muted: #B7C3CA;     /* muted text on ink */
+  --paper-deep: #E8EAE6;
+  --error: #8C3B2E;
+
+  /* Semantic aliases (components read only these) */
+  --bg: var(--paper);
+  --bg-alt: var(--paper-deep);
+  --bg-card: var(--card);
+  --fg: var(--ink);
+  --fg-muted: var(--slate);
+  --accent: var(--brass);          /* large type, rules, marks */
+  --accent-text: var(--brass-deep);/* small brass text */
+  --hairline: var(--line);
+  --btn-bg: var(--ink);
+  --btn-fg: var(--paper);
+  --btn-bg-hover: var(--ink-soft);
+  --focus-ring: var(--brass-deep);
+
+  --surface-ink: var(--ink);
+  --on-ink: var(--paper);
+  --on-ink-muted: var(--ink-muted);
+  --on-ink-accent: var(--brass-light);
+  --on-ink-line: rgb(242 243 241 / 0.16);
+  color-scheme: light;
+}
+
+/* Ink sections re-point the semantic tokens */
+.on-ink {
+  --bg: var(--ink);
+  --fg: var(--paper);
+  --fg-muted: var(--ink-muted);
+  --accent-text: var(--brass-light);
+  --hairline: var(--on-ink-line);
+  --btn-bg: var(--paper);
+  --btn-fg: var(--ink);
+  --btn-bg-hover: var(--card);
+  --focus-ring: var(--brass-light);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Dark mode — tokens only */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--ink-deep);
+    --bg-alt: var(--ink);
+    --bg-card: var(--ink);
+    --fg: var(--paper);
+    --fg-muted: var(--ink-muted);
+    --accent-text: var(--brass-light);
+    --hairline: var(--on-ink-line);
+    --btn-bg: var(--paper);
+    --btn-fg: var(--ink);
+    --btn-bg-hover: var(--card);
+    --focus-ring: var(--brass-light);
+    --surface-ink: var(--ink-soft);
+    color-scheme: dark;
+  }
+}
