@@ -23,7 +23,7 @@
           var c = d.createElement("canvas");
           c.setAttribute("aria-hidden", "true");
           bg.insertBefore(c, bg.firstChild);
-          if (w.AkeniusShader) w.AkeniusShader.mount(c, { intensity: 0.55, fps: 24 });
+          if (w.AkeniusShader) w.AkeniusShader.mount(c, { intensity: 1.0, fps: 30, halfRes: true });
         } catch (e) {}
         resolve();
       };

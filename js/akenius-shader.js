@@ -37,31 +37,33 @@
     "float fbm(vec2 p){",
     "  float v = 0.0; float amp = 0.5;",
     "  mat2 m = mat2(1.6, 1.2, -1.2, 1.6);",
-    "  for(int i=0;i<3;i++){ v += amp * vnoise(p); p = m * p; amp *= 0.5; }",
+    "  for(int i=0;i<5;i++){ v += amp * vnoise(p); p = m * p; amp *= 0.5; }",
     "  return v;",
     "}",
     "void main(){",
     "  vec2 uv = gl_FragCoord.xy / u_resolution.xy;",
     "  float aspect = u_resolution.x / max(u_resolution.y, 1.0);",
     "  vec2 p = uv; p.x *= aspect;",
-    "  float t = u_time * 0.02;",             // very slow drift (~45-60s to read)
-    "  vec2 q = vec2(fbm(p*1.5 + vec2(0.0, t)), fbm(p*1.5 + vec2(5.2, -t)));",
-    "  vec2 r = vec2(fbm(p*1.5 + 2.0*q + vec2(1.7, 9.2) + 0.15*t), fbm(p*1.5 + 2.0*q + vec2(8.3, 2.8) - 0.12*t));",
-    "  float n = fbm(p*1.5 + 2.0*r); n = n*0.5 + 0.5;",
+    "  float t = u_time * 0.035;",
+    "  vec2 q = vec2(fbm(p*1.1 + vec2(t, 0.0)), fbm(p*1.1 + vec2(5.2, 1.3) - vec2(0.0, t*0.6)));",
+    "  float n1 = fbm(p*1.1 + 2.2*q + vec2(t*1.4, 0.0)); n1 = n1*0.5 + 0.5;",
+    "  vec2 r = vec2(fbm(p*2.1 + vec2(-t*1.8, 3.1)), fbm(p*2.1 + vec2(7.7, -t)));",
+    "  float n2 = fbm(p*2.1 + 1.6*r + vec2(-t*2.2, t*0.5)); n2 = n2*0.5 + 0.5;",
     "  vec3 ink = vec3(24.0, 43.0, 54.0)/255.0;",
-    "  vec3 midv = mix(ink, vec3(242.0,243.0,241.0)/255.0, 0.09);",  // ink lifted ~9% toward paper
+    "  vec3 deep = vec3(12.0, 21.0, 27.0)/255.0;",
+    "  vec3 mist = vec3(70.0, 96.0, 112.0)/255.0;",
     "  vec3 brass = vec3(168.0, 118.0, 62.0)/255.0;",
-    "  float tonal = smoothstep(0.35, 0.75, n) * (0.65 + 0.35*u_intensity);",
-    "  vec3 col = mix(ink, midv, tonal);",
+    "  float d1 = smoothstep(0.32, 0.72, n1);",
+    "  float d2 = smoothstep(0.45, 0.85, n2) * 0.55;",
+    "  float dens = clamp(d1*0.8 + d2*0.5, 0.0, 1.0) * u_intensity;",
+    "  vec3 col = mix(deep, ink, 0.6 + 0.4*uv.y);",
+    "  col = mix(col, mist, dens * 0.85);",
+    "  col = mix(col, brass, smoothstep(0.78, 0.98, n1) * 0.05 * u_intensity);",
     "  vec2 c = uv - 0.5; c.x *= aspect;",
     "  float cd = length(c);",
-    "  float centre = smoothstep(0.0, 0.55, cd);",  // 0 centre -> 1 outer
-    "  float ridge = smoothstep(0.72, 0.95, n);",
-    "  float brassAmt = ridge * 0.07 * u_intensity * centre;",  // max ~7%, never in centre
-    "  col = mix(col, brass, brassAmt);",
-    "  float vig = smoothstep(1.15, 0.2, cd);",     // 1 centre -> 0 edge
-    "  col *= mix(0.5, 1.0, vig);",                 // darken edges
-    "  col = mix(ink, col, mix(0.32, 1.0, centre));", // pull centre toward clean ink (text contrast)
+    "  float vig = smoothstep(1.2, 0.15, cd);",
+    "  col *= mix(0.55, 1.0, vig);",
+    "  col = mix(col, ink, 0.18 * (1.0 - smoothstep(0.0, 0.5, cd)));",
     "  gl_FragColor = vec4(col, 1.0);",
     "}"
   ].join("\n");

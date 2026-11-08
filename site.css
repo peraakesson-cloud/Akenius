@@ -113,7 +113,7 @@ html:not(.js) .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end
   radial-gradient(60% 55% at 72% 28%, rgb(168 118 62 / 0.14), transparent 60%),
   radial-gradient(125% 125% at 50% 42%, var(--ink-soft) 0%, var(--ink) 46%, var(--ink-deep) 100%); }
 .hero-bg canvas { position: absolute; inset: -40px 0; width: 100%; height: calc(100% + 80px); display: block; }
-.hero-bg::after { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: 0.35; pointer-events: none; }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: 0.08; pointer-events: none; }
 .xp-mobile .hero-bg::before {
   content: ""; position: absolute; inset: -20%; background: radial-gradient(40% 40% at 30% 30%, rgb(168 118 62 / 0.16), transparent 70%);
   animation: drift 40s ease-in-out infinite alternate;
