@@ -149,11 +149,6 @@ html:not(.js) .desc .d:first-child::after { content: " & "; }
 /* ---------- intro, band, statement ---------- */
 .intro { padding-block: clamp(3rem, 6vw, 5rem); border-bottom: 1px solid var(--hairline); }
 .intro p { font-family: var(--font-serif); font-size: var(--fs-h3); line-height: 1.25; max-width: 36ch; color: var(--fg); }
-.band { background: var(--ink); color: var(--paper); padding-block: clamp(1.75rem, 3vw, 2.5rem); }
-.band ul { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 1.5rem; font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.16em; text-transform: uppercase; }
-.band li { white-space: nowrap; }
-.band li + li::before { content: "·"; color: var(--brass-light); margin-right: 1.5rem; }
-@media (max-width: 767px) { .band ul { justify-content: flex-start; } .band li + li::before { display: none; } .band li { margin-right: 1rem; } }
 .statement p { font-family: var(--font-serif); font-weight: 500; font-size: var(--fs-statement); line-height: 1.14; letter-spacing: -0.01em; max-width: 26ch; text-wrap: balance; }
 .statement { padding-block: var(--space-section); }
 
