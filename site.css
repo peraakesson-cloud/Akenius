@@ -294,3 +294,10 @@ html.xp-mobile.loader-on .loader.is-leaving { transform: none; opacity: 0; trans
 
 /* ---------- 404 ---------- */
 .nf { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+
+/* ---------- mist behind dark sections and footer (desktop shader; plain ink elsewhere) ---------- */
+.mist { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.mist canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.mist::after { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: 0.12; }
+.on-ink, .site-footer { position: relative; isolation: isolate; }
+.on-ink > .wrap, .site-footer > .wrap { position: relative; z-index: 1; }
