@@ -163,7 +163,9 @@ html:not(.js) .desc .d:first-child::after { content: " & "; }
 
 /* ---------- bento ---------- */
 .bento { display: grid; gap: clamp(1rem, 2vw, 1.5rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
-@media (min-width: 900px) { .bento { grid-template-columns: 1.45fr 1fr; } }
+@media (min-width: 900px) { .bento { grid-template-columns: 1.45fr 1fr; } .bento.single { grid-template-columns: 1fr; } }
+.bento.single .card { min-height: 0; }
+.bento.single .card p { max-width: 62ch; }
 .card {
   background: var(--bg-card); border: 1px solid var(--card-border); padding: var(--card-pad); display: flex; flex-direction: column; gap: var(--space-4);
   transition: border-color 300ms var(--ease), transform 300ms var(--ease);
@@ -254,7 +256,7 @@ html:not(.js) .desc .d:first-child::after { content: " & "; }
 .js [data-reveal].is-in { opacity: 1; transform: none; transition: opacity 600ms var(--ease) var(--d, 0ms), transform 600ms var(--ease) var(--d, 0ms); }
 .js.reveal-all [data-reveal] { opacity: 1; transform: none; }
 
-/* ---------- ventures / board specifics ---------- */
+/* ---------- ventures page specifics ---------- */
 .two { display: grid; gap: var(--space-7) clamp(2rem, 5vw, 6rem); align-items: center; }
 @media (min-width: 900px) { .two { grid-template-columns: 7fr 5fr; } .two.flip { grid-template-columns: 5fr 7fr; } }
 .steps { display: grid; gap: var(--space-5); margin-top: clamp(2rem, 4vw, 3.5rem); }
