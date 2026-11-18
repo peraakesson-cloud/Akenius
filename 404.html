@@ -6,7 +6,9 @@
 <script>
 (function(d,w){var h=d.documentElement,m=function(q){try{return w.matchMedia(q).matches}catch(e){return false}};
 h.classList.add('js',m('(min-width: 1024px) and (hover: hover) and (pointer: fine)')?'xp-desktop':'xp-mobile');
-setTimeout(function(){if(!w.__akReady)h.classList.add('hero-in','reveal-all')},4000);
+if(h.hasAttribute('data-home')){var seen=false;try{seen=sessionStorage.getItem('ak-loaded')==='1'}catch(e){}
+if(!/[?&]loader=0/.test(w.location.search)&&!seen)h.classList.add('loader-on')}
+setTimeout(function(){if(!w.__akReady){h.classList.remove('loader-on');h.classList.add('hero-in','reveal-all')}},4000);
 })(document,window);
 </script>
 <title>Page not found — Akenius AB</title>
@@ -26,29 +28,49 @@ setTimeout(function(){if(!w.__akReady)h.classList.add('hero-in','reveal-all')},4
 <meta name="twitter:image" content="https://akenius.eu/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=IBM+Plex+Sans:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=IBM+Plex+Sans:wght@400;600&amp;display=swap">
 <link rel="stylesheet" href="/tokens/colors.css">
 <link rel="stylesheet" href="/tokens/typography.css">
 <link rel="stylesheet" href="/tokens/spacing.css">
+<link rel="stylesheet" href="/tokens/components.css">
 <link rel="stylesheet" href="/tokens/interactions.css">
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Akenius — home"><img src="/assets/akenius-mark-inverse.svg" alt="" width="28" height="34"><span>AKENIUS</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/ventures-products.html">Ventures</a>
+      <a href="/board-advisory.html">Board &amp; Advisory</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 <main id="main">
 <section class="hero full" aria-labelledby="h1">
   <div class="hero-bg" data-shader aria-hidden="true"></div>
   <div class="wrap hero-content"><div class="hero-scroll">
-    <img class="mark" src="/assets/akenius-mark-inverse.svg" alt="" width="72" height="88">
-    <h1 class="display sub" id="h1">This page has moved on.</h1>
-    <p class="cta"><a class="tlink" href="/">Go to Akenius <span class="arr" aria-hidden="true">→</span></a></p>
+    <p class="eyebrow">404</p>
+    <h1 class="display sub" id="h1" style="margin-top:1.5rem">This page has moved on.</h1>
+    <p class="lede">Akenius has changed shape — the page you were looking for is no longer here.</p>
+    <div class="cta-row"><a class="btn" href="/">Go to Akenius</a></div>
   </div></div>
 </section>
 </main>
 <footer class="site-footer">
+  <div class="mist" data-shader aria-hidden="true"></div>
   <div class="wrap">
     <div class="big" aria-hidden="true">AKENIUS</div>
-    <p class="foot">Akenius AB · Helsingborg, Sweden · Org.&nbsp;nr&nbsp;559594&#8209;8380</p>
+    <div class="foot">
+      <p><strong>AKENIUS</strong> · Ventures &amp; Advisory</p>
+      <p>Akenius AB · Helsingborg, Sweden · Org. nr 559594&#8209;8380</p>
+      <p><a href="mailto:info@akenius.eu">info@akenius.eu</a></p>
+      <p>© Akenius AB 2026</p>
+    </div>
   </div>
 </footer>
 <script src="/js/site.js" defer></script>

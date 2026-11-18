@@ -1,0 +1,62 @@
+<svg viewBox="0 0 960 460" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="460" fill="#F7F5F1"/>
+
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">FROM BUILD TO KEEPING IT RUNNING</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">A project that becomes a partnership</text>
+
+  <defs>
+    <marker id="arrowDig" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A939E"/>
+    </marker>
+    <marker id="arrowDigBrass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B08D57"/>
+    </marker>
+  </defs>
+
+  <!-- Step 1 -->
+  <rect x="60" y="150" width="186" height="150" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="80" y="188" font-size="14" letter-spacing="2" fill="#B08D57">01</text>
+  <text x="80" y="216" font-size="18" fill="#23303D">Scope</text>
+  <text x="80" y="244" font-size="12" fill="#5B6672">What you need — and</text>
+  <text x="80" y="261" font-size="12" fill="#5B6672">what you don't. Fixed</text>
+  <text x="80" y="278" font-size="12" fill="#5B6672">quote, no fine print.</text>
+
+  <line x1="252" y1="225" x2="278" y2="225" stroke="#8A939E" stroke-width="1.5" marker-end="url(#arrowDig)"/>
+
+  <!-- Step 2 -->
+  <rect x="284" y="150" width="186" height="150" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="304" y="188" font-size="14" letter-spacing="2" fill="#B08D57">02</text>
+  <text x="304" y="216" font-size="18" fill="#23303D">Build</text>
+  <text x="304" y="244" font-size="12" fill="#5B6672">Design and development,</text>
+  <text x="304" y="261" font-size="12" fill="#5B6672">with your feedback as it</text>
+  <text x="304" y="278" font-size="12" fill="#5B6672">takes shape.</text>
+
+  <line x1="476" y1="225" x2="502" y2="225" stroke="#8A939E" stroke-width="1.5" marker-end="url(#arrowDig)"/>
+
+  <!-- Step 3 -->
+  <rect x="508" y="150" width="186" height="150" fill="#FFFFFF" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="528" y="188" font-size="14" letter-spacing="2" fill="#B08D57">03</text>
+  <text x="528" y="216" font-size="18" fill="#23303D">Launch</text>
+  <text x="528" y="244" font-size="12" fill="#5B6672">Domain, hosting, email,</text>
+  <text x="528" y="261" font-size="12" fill="#5B6672">search visibility — the</text>
+  <text x="528" y="278" font-size="12" fill="#5B6672">unglamorous details, done.</text>
+
+  <line x1="700" y1="225" x2="726" y2="225" stroke="#8A939E" stroke-width="1.5" marker-end="url(#arrowDig)"/>
+
+  <!-- Step 4: Care, highlighted, with loop -->
+  <rect x="732" y="150" width="186" height="150" fill="#FFFFFF" stroke="#B08D57" stroke-width="1.5"/>
+  <text x="752" y="188" font-size="14" letter-spacing="2" fill="#B08D57">04</text>
+  <text x="752" y="216" font-size="18" fill="#23303D">Care</text>
+  <text x="752" y="244" font-size="12" fill="#5B6672">Hosting, updates, backups,</text>
+  <text x="752" y="261" font-size="12" fill="#5B6672">monitoring and changes —</text>
+  <text x="752" y="278" font-size="12" fill="#5B6672">year after year.</text>
+
+  <!-- Ongoing loop under Care -->
+  <path d="M 900 300 C 900 350, 838 356, 825 330" fill="none" stroke="#B08D57" stroke-width="1.8" marker-end="url(#arrowDigBrass)"/>
+  <text x="918" y="376" font-size="11.5" fill="#B08D57" font-style="italic" text-anchor="end">ongoing, annually renewed</text>
+
+  <!-- Footer -->
+  <line x1="60" y1="404" x2="900" y2="404" stroke="#D8D3C8" stroke-width="1"/>
+  <text x="60" y="432" font-size="13" fill="#8A939E" font-style="italic">Steps 1–3 take weeks. Step 4 is where most of the value lives.</text>
+  <text x="900" y="432" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · DIGITAL</text>
+</svg>

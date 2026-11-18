@@ -1,0 +1,47 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="960" height="560" fill="#F7F5F1"/>
+
+  <text x="60" y="58" font-size="13" letter-spacing="3" fill="#B08D57">WHERE WE PARTNER</text>
+  <text x="60" y="92" font-size="27" fill="#23303D">Good product, missing commercial engine</text>
+
+  <defs>
+    <marker id="arrowVen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A939E"/>
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="200" y1="470" x2="200" y2="140" stroke="#8A939E" stroke-width="1.2" marker-end="url(#arrowVen)"/>
+  <line x1="200" y1="470" x2="820" y2="470" stroke="#8A939E" stroke-width="1.2" marker-end="url(#arrowVen)"/>
+  <text x="188" y="300" font-size="12.5" fill="#8A939E" transform="rotate(-90 188 300)" text-anchor="middle">Product proof</text>
+  <text x="510" y="500" font-size="12.5" fill="#8A939E" text-anchor="middle">Commercial strength</text>
+
+  <!-- Quadrant grid lines -->
+  <line x1="200" y1="300" x2="810" y2="300" stroke="#D8D3C8" stroke-width="1"/>
+  <line x1="505" y1="470" x2="505" y2="150" stroke="#D8D3C8" stroke-width="1"/>
+
+  <!-- Q top-left: sweet spot -->
+  <rect x="212" y="162" width="281" height="126" fill="#B08D57" opacity="0.12"/>
+  <rect x="212" y="162" width="281" height="126" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+  <text x="352" y="204" font-size="16" fill="#23303D" text-anchor="middle">Proven product,</text>
+  <text x="352" y="226" font-size="16" fill="#23303D" text-anchor="middle">undercommercialised</text>
+  <text x="352" y="256" font-size="12" fill="#B08D57" text-anchor="middle" font-style="italic">This is where we partner —</text>
+  <text x="352" y="273" font-size="12" fill="#B08D57" text-anchor="middle" font-style="italic">the gap is the thing we're good at.</text>
+
+  <!-- Q top-right -->
+  <text x="660" y="210" font-size="14" fill="#5B6672" text-anchor="middle">Proven product, strong sales</text>
+  <text x="660" y="234" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">You don't need us —</text>
+  <text x="660" y="250" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">keep going.</text>
+
+  <!-- Q bottom-left -->
+  <text x="352" y="370" font-size="14" fill="#5B6672" text-anchor="middle">Unproven idea, no engine</text>
+  <text x="352" y="394" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">Too early — prove the product</text>
+  <text x="352" y="410" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">first, then let's talk.</text>
+
+  <!-- Q bottom-right -->
+  <text x="660" y="370" font-size="14" fill="#5B6672" text-anchor="middle">Strong sales, weak product</text>
+  <text x="660" y="394" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">A product problem —</text>
+  <text x="660" y="410" font-size="11.5" fill="#8A939E" text-anchor="middle" font-style="italic">not a commercial one.</text>
+
+  <text x="900" y="548" font-size="13" fill="#B08D57" text-anchor="end" letter-spacing="2">AKENIUS · VENTURES</text>
+</svg>

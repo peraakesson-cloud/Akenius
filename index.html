@@ -1,74 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-home>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function(d,w){var h=d.documentElement,m=function(q){try{return w.matchMedia(q).matches}catch(e){return false}};
 h.classList.add('js',m('(min-width: 1024px) and (hover: hover) and (pointer: fine)')?'xp-desktop':'xp-mobile');
-setTimeout(function(){if(!w.__akReady)h.classList.add('hero-in','reveal-all')},4000);
+if(h.hasAttribute('data-home')){var seen=false;try{seen=sessionStorage.getItem('ak-loaded')==='1'}catch(e){}
+if(!/[?&]loader=0/.test(w.location.search)&&!seen)h.classList.add('loader-on')}
+setTimeout(function(){if(!w.__akReady){h.classList.remove('loader-on');h.classList.add('hero-in','reveal-all')}},4000);
 })(document,window);
 </script>
-<title>Akenius AB</title>
-<meta name="description" content="Akenius AB is a privately held holding and investment company based in Helsingborg, Sweden.">
+<title>Akenius AB — Ventures &amp; Advisory</title>
+<meta name="description" content="Akenius AB develops and co-owns product businesses for European markets, and holds a small number of board and advisory roles.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://akenius.eu/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Akenius AB">
-<meta property="og:title" content="Akenius AB">
-<meta property="og:description" content="Akenius AB is a privately held holding and investment company based in Helsingborg, Sweden.">
+<meta property="og:title" content="Akenius AB — Ventures &amp; Advisory">
+<meta property="og:description" content="Akenius AB develops and co-owns product businesses for European markets, and holds a small number of board and advisory roles.">
 <meta property="og:url" content="https://akenius.eu/">
 <meta property="og:image" content="https://akenius.eu/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Akenius AB">
-<meta name="twitter:description" content="Akenius AB is a privately held holding and investment company based in Helsingborg, Sweden.">
+<meta name="twitter:title" content="Akenius AB — Ventures &amp; Advisory">
+<meta name="twitter:description" content="Akenius AB develops and co-owns product businesses for European markets, and holds a small number of board and advisory roles.">
 <meta name="twitter:image" content="https://akenius.eu/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=IBM+Plex+Sans:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=IBM+Plex+Sans:wght@400;600&amp;display=swap">
 <link rel="stylesheet" href="tokens/colors.css">
 <link rel="stylesheet" href="tokens/typography.css">
 <link rel="stylesheet" href="tokens/spacing.css">
+<link rel="stylesheet" href="tokens/components.css">
 <link rel="stylesheet" href="tokens/interactions.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
+<div class="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <svg viewBox="0 0 100 100" focusable="false"><circle class="ring-bg" cx="50" cy="50" r="49"/><circle class="ring" cx="50" cy="50" r="49" pathLength="1"/></svg>
+    <svg class="mk" viewBox="64 6 72 88" focusable="false">
+      <circle class="m o" cx="100" cy="22" r="7.5" pathLength="1"/>
+      <path class="m" d="M 72 88 L 97 32 M 103 32 L 128 88" pathLength="1"/>
+      <line class="m" x1="84" y1="66" x2="116" y2="66" pathLength="1"/>
+    </svg>
+  </div>
+  <div class="loader-count">0%</div>
+  <div class="wm">AKENIUS</div>
+  <div class="ld">Ventures &amp; Advisory</div>
+</div>
+<span class="sr-only" id="loader-status" role="status"></span>
 <a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Akenius — home"><img src="assets/akenius-mark-inverse.svg" alt="" width="28" height="34"><span>AKENIUS</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="ventures-products.html">Ventures</a>
+      <a href="board-advisory.html">Board &amp; Advisory</a>
+      <a href="./#about">About</a>
+      <a href="./#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 <main id="main">
 <section class="hero full" aria-labelledby="h1">
   <div class="hero-bg" data-shader aria-hidden="true"></div>
   <div class="wrap hero-content"><div class="hero-scroll">
-    <img class="mark" src="assets/akenius-mark-inverse.svg" alt="" width="72" height="88">
-    <h1 class="display" id="h1">Akenius AB</h1>
-    <p class="lede">A privately held holding and investment company based in Helsingborg, Sweden.</p>
+    <div class="lockup"><span class="wm">AKENIUS</span><span class="rule"></span><span class="desc" data-descriptor><span class="d">Ventures</span><span class="d">Advisory</span></span></div>
+    <p class="eyebrow">Akenius AB · Helsingborg</p>
+    <h1 class="display" id="h1" style="margin-top:1.5rem">Operating experience, invested in products.</h1>
+    <p class="lede">Akenius is a privately held company that develops and co-owns product businesses for European markets — and holds a small number of board and advisory roles where long commercial experience changes the outcome.</p>
+    <div class="cta-row"><a class="btn" href="ventures-products.html">Our ventures</a><a class="btn ghost" href="#contact">Get in touch</a></div>
   </div></div>
+  <p class="scroll-hint" aria-hidden="true">Scroll ↓</p>
 </section>
 
-<section class="section about" id="about" aria-labelledby="about-h">
+<section class="intro"><div class="wrap"><p data-reveal>A Swedish holding company building product businesses for Europe — patiently, and with our own capital at stake.</p></div></section>
+
+<section class="statement"><div class="wrap"><p data-reveal>Most good products don’t fail on the shelf. They fail on <em class="b">pricing</em>, on <em class="b">sourcing</em>, on <em class="b">channels</em> — and on the patience to get them right. Akenius brings <em class="b">operating experience</em> to that gap, and stays long enough for it to matter.</p></div></section>
+
+<section class="section" id="principles" style="padding-top:0">
   <div class="wrap">
-    <h2 class="eyebrow" id="about-h" data-reveal>About</h2>
-    <p class="statement" data-reveal>Akenius AB is owned by Per Åkesson. The company is named after his grandfather, Åke.</p>
+    <p class="eyebrow" data-reveal><span class="n">01</span><span>How Akenius works</span></p>
+    <div class="cols3" data-stagger>
+      <div class="col" data-reveal><span class="num">i</span><h3>Few, and for the long run.</h3><p>We commit to a handful of ventures and stay for years, not quarters.</p></div>
+      <div class="col" data-reveal><span class="num">ii</span><h3>Proof before capital.</h3><p>Every venture passes a validation gate — verified costs and real customer pull — before serious money is committed.</p></div>
+      <div class="col" data-reveal><span class="num">iii</span><h3>Ownership, not fees.</h3><p>We earn through equity and results, alongside the partners we build with.</p></div>
+    </div>
   </div>
 </section>
 
-</main>
-<div class="dark-end on-ink">
-  <div class="mist" data-shader aria-hidden="true"></div>
-  <section class="section contact" id="contact" aria-labelledby="contact-h">
-    <div class="wrap">
-      <h2 class="eyebrow" id="contact-h" data-reveal>Contact</h2>
-      <p data-reveal><a class="mail" href="mailto:info@akenius.eu">info@akenius.eu</a></p>
+<section class="section" id="what" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal><span class="n">02</span><span>What we do</span></p>
+    <div class="bento" data-stagger>
+      <article class="card lg" data-reveal>
+        <span class="num">i</span>
+        <h3>Ventures &amp; Products</h3>
+        <p>We develop, launch and co-own consumer products — made by vetted European manufacturers and sold direct online and through marketplaces. Akenius holds the brands and IP; each venture runs in its own company, owned together with a partner.</p>
+        <a class="tlink" href="ventures-products.html">How we build ventures <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="card" data-reveal>
+        <span class="num">ii</span>
+        <h3>Board &amp; Advisory</h3>
+        <p>A limited number of board seats and advisory roles, chosen for fit and agreed in writing. Pricing, commercial strategy and go-to-market across the Nordic markets.</p>
+        <p class="fine">Capacity is deliberately small. Akenius does not take interim or operational mandates.</p>
+        <a class="tlink" href="board-advisory.html">Board &amp; advisory <span class="arr" aria-hidden="true">→</span></a>
+      </article>
     </div>
-  </section>
-  <footer class="site-footer">
+  </div>
+</section>
+
+<section class="section" id="look" style="padding-top:0">
+  <div class="wrap">
+    <div class="grid">
+      <div class="span-7">
+        <p class="eyebrow" data-reveal><span class="n">03</span><span>What we look for</span></p>
+        <div class="rows" data-stagger>
+          <div class="row" data-reveal><h3>A product with proof</h3><p>Built, tested and wanted by real customers, not a slide.</p></div>
+          <div class="row" data-reveal><h3>Margin that survives scale</h3><p>Landed cost, price and acquisition cost that still work at volume.</p></div>
+          <div class="row" data-reveal><h3>Reach across borders</h3><p>Something that travels across European markets without being rebuilt for each one.</p></div>
+        </div>
+      </div>
+      <div class="span-5"><figure class="fig" data-reveal>
+<svg viewBox="0 0 400 380" role="img" aria-labelledby="fit-t fit-d" data-draw>
+<title id="fit-t">Where Akenius invests</title>
+<desc id="fit-d">Three overlapping circles labelled Proof, Margin and Reach. Akenius invests where all three overlap.</desc>
+<defs><clipPath id="fit-a"><circle cx="135" cy="140" r="110"/></clipPath><clipPath id="fit-b"><circle cx="265" cy="140" r="110"/></clipPath></defs>
+<g clip-path="url(#fit-a)"><g clip-path="url(#fit-b)"><circle class="g-fill-b node" cx="200" cy="252" r="110" style="--s:4"/></g></g>
+<circle class="g-line draw" cx="135" cy="140" r="110" pathLength="1" style="--s:0;--dur:900ms;--sw:40%"/>
+<circle class="g-line draw" cx="265" cy="140" r="110" pathLength="1" style="--s:1;--dur:900ms;--sw:40%"/>
+<circle class="g-line draw" cx="200" cy="252" r="110" pathLength="1" style="--s:2;--dur:900ms;--sw:40%"/>
+<path class="g-line b draw" d="M200 176 V34" pathLength="1" style="--s:5"/>
+<text class="g-text c label" x="92" y="134" style="--s:6">Proof</text>
+<text class="g-text c label" x="308" y="134" style="--s:6">Margin</text>
+<text class="g-text c label" x="200" y="322" style="--s:6">Reach</text>
+<text class="g-text b c label" x="200" y="20" style="--s:7">Where Akenius invests</text>
+</svg>
+</figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="section about on-ink" id="about" aria-labelledby="about-h">
+  <div class="mist" data-shader aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="grid">
+      <div class="span-7">
+        <p class="eyebrow" data-reveal><span class="n">04</span><span>About</span></p>
+        <h2 id="about-h" data-reveal>One owner. A long horizon.</h2>
+        <div class="prose" data-reveal><p>Akenius AB was founded in 2026 by Per Åkesson. Over 25 years at an international manufacturer he led the Nordic business with full P&amp;L responsibility, ran global pricing, and took a digital B2C customer journey from concept to operation across several markets. He has held five board positions, currently serves on two boards, one of them in Denmark, and holds an EMBA from Lund University, with executive education at INSEAD.</p></div>
+        <p class="pull" data-reveal>The name comes from his grandfather Åke — an entrepreneur, as was his father before him. Akenius is the third generation.</p>
+      </div>
+      <div class="span-5"><div class="sq-wrap" aria-hidden="true"><svg viewBox="0 0 300 300" focusable="false">
+<rect class="sq" x="40" y="40" width="220" height="220" style="--k:1"/>
+<rect class="sq" x="75" y="75" width="150" height="150" style="--k:-0.6"/>
+<rect class="sq" x="110" y="110" width="80" height="80" style="--k:0.35"/>
+</svg></div></div>
+      <div class="stats" style="grid-column:1/-1" data-stagger>
+        <div class="stat" data-reveal><b data-count="25" data-suffix="+">25+</b><span>years of Nordic commercial leadership</span></div>
+        <div class="stat" data-reveal><b data-count="3" data-suffix="rd">3rd</b><span>generation entrepreneur</span></div>
+        <div class="stat" data-reveal><b data-count="2026" data-from="2000">2026</b><span>founded</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal><span class="n">05</span><span>Contact</span></p>
+    <h2 id="contact-h" data-reveal>Get in touch</h2>
+    <p class="lede" data-reveal>For venture partnerships, manufacturing and supplier conversations, or board enquiries.</p>
+    <div class="cta-row" data-reveal><a class="mail" href="mailto:info@akenius.eu">info@akenius.eu</a><button class="btn ghost" type="button" data-copy="info@akenius.eu">Copy email</button></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="mist" data-shader aria-hidden="true"></div>
   <div class="wrap">
     <div class="big" aria-hidden="true">AKENIUS</div>
-    <p class="foot">Akenius AB · Helsingborg, Sweden · Org.&nbsp;nr&nbsp;559594&#8209;8380</p>
+    <div class="foot">
+      <p><strong>AKENIUS</strong> · Ventures &amp; Advisory</p>
+      <p>Akenius AB · Helsingborg, Sweden · Org. nr 559594&#8209;8380</p>
+      <p><a href="mailto:info@akenius.eu">info@akenius.eu</a></p>
+      <p>© Akenius AB 2026</p>
+    </div>
   </div>
 </footer>
-</div>
 <script src="js/site.js" defer></script>
 </body>
 </html>
