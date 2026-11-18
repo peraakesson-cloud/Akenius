@@ -30,10 +30,6 @@ h1, h2, p { margin: 0; }
 .tlink:hover .arr { transform: translateX(4px); }
 .cta { margin-top: var(--space-6); }
 
-.prose { margin-top: clamp(2rem, 4vw, 3.5rem); max-width: var(--measure); }
-.prose p { color: var(--fg-muted); }
-.prose p + p { margin-top: 1.1em; }
-
 /* hero */
 .hero { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); isolation: isolate;
   --fg: var(--paper); --fg-muted: var(--ink-muted); --accent-text: var(--brass-light); --focus-ring: var(--brass-light); }
