@@ -123,13 +123,13 @@ html:not(.js) .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end
 .lockup .wm { font-family: var(--font-serif); font-weight: 500; font-size: 1.75rem; letter-spacing: var(--track-wordmark); }
 .lockup .rule { width: 6rem; height: 1px; background: var(--ink-muted); margin: 0.75rem 0; opacity: 0.6; }
 .desc { position: relative; display: inline-block; font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--brass-light); min-width: 9em; height: 1.4em; }
-.desc .d { position: absolute; left: 0; top: 0; opacity: 0; transition: opacity 700ms var(--ease); }
+.desc .d { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; transition: opacity 700ms var(--ease); }
 .desc .d.is-on { opacity: 1; }
 html:not(.js) .desc .d { position: static; opacity: 1; display: inline; }
 html:not(.js) .desc .d:first-child::after { content: " & "; }
 .hero .eyebrow { margin-bottom: var(--space-5); }
-.hero h1 { max-width: 19ch; font-size: clamp(2.75rem, 1rem + 5vw, 5.5rem); }
-.hero .lede { margin-top: clamp(1.5rem, 3vw, 2.5rem); color: var(--ink-muted); max-width: 46ch; }
+.hero h1 { max-width: 19ch; font-size: clamp(2.75rem, 1rem + 4.4vw, 4.75rem); }
+.hero .lede { margin-top: clamp(1.5rem, 3vw, 2.5rem); color: var(--ink-muted); max-width: 54ch; }
 .hero .cta-row { margin-top: clamp(2rem, 4vw, 3rem); }
 .hero.short h1 { max-width: 18ch; }
 .scroll-hint { position: absolute; left: var(--gutter); bottom: 1.5rem; font-size: 0.875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
